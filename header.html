@@ -7,13 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!--   <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/common.css">
     <script src="js/jquery-3.1.1.min.js"></script>
 </head>
 <style>
+body {
 
+    margin: 0;
+    padding: 0;
+    font-size: 0.93em;
+    font-weight: bold;
+    font-family: "微软雅黑";
+    color: #999;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a {
+    color: #999999;
+}
+
+.header {
+    line-height: 40px;
+    background-color: #f7f7f7;
+}
+
+.change_location {
+    font-weight: normal;
+    font-size: 0.9em;
+}
 </style>
 </head>
 <!--[if lt IE 9]>
@@ -43,27 +68,27 @@
 <![endif]-->
 
 <body>
-    <header>
-        <iframe id="header" src="header.html" height="40" frameborder="0" scrolling="no" width="100%"></iframe>
-    </header>
-    <div class="container">
-        <main class="search_Box">
-          <div class="row">
-             <div class="logo col-md-3">
-               <img class="float-left" src="https://wx2.sinaimg.cn/mw690/005zpxwhly1fmf94w5tqwj304g025q38.jpg" />
-             </div>
-              <div class="input-group col-md-6 search_obj">
-                 <input type="text" placeholder="请输入关键字" class="form-control search_val"> 
-                <span class="search_btn input-group-addon btn  btn-primary bg-primary  text-light">
-                   &nbsp;&nbsp;搜索&nbsp;&nbsp;
-                </span>
+    <div class="container-fluid header">
+        <div class="container">
+            <div class="row">
+                <div class="search_location col-md-6">
+                    <span class="show_location">郑州</span>
+                    <span class="change_location"><a class="text-muted" href="">[切换城市]</a></span>
+                </div>
+                <div class="form_box col-md-6">
+                    <div class="row pull-right">
+                        <span>
+              <i class="fa fa-reorder text-muted"></i>
+              <a href="#">网站导航</a>
+            </span> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span onclick="alert('登录')" class="login_box"><a href="#login">登录 &nbsp;|</a>&nbsp;</span>
+                        <span onclick="alert('注册')" class="reg_box">&nbsp;<a href="#regster">注册</a></span>
+                    </div>
+                </div>
             </div>
-          </div>
-           
-        </main>
-        <footer></footer>
+        </div>
     </div>
+   
 </body>
-<script src="js/common.js"></script>
 
 </html>
