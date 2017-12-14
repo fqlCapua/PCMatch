@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <!--   <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script src="js/jquery-3.1.1.min.js"></script>
+ <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+
+    <script src="js/jquery-1.10.2.min.js"></script>
 </head>
 <style>
 body {
-
+    border: 3px solid green;
     margin: 0;
     padding: 0;
-    font-size: 0.93em;
+    font-size: 0.90em;
     font-weight: bold;
     font-family: "微软雅黑";
     color: #999;
@@ -30,7 +30,7 @@ a {
     color: #999999;
 }
 
-.header {
+.header_child {
     line-height: 40px;
     background-color: #f7f7f7;
 }
@@ -38,6 +38,42 @@ a {
 .change_location {
     font-weight: normal;
     font-size: 0.9em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: '微软雅黑';
+}
+
+.search_Box {
+  
+}
+
+.search_val {
+    height: 45px;
+}
+
+.search_btn {
+    height: 45px;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 150px;
+    height: 66px;
+    border: 3px solid green;
+}
+
+.search_obj {
+    padding: 15px 0;
+}
+
+.logo {
+    overflow: hidden;
 }
 </style>
 </head>
@@ -68,7 +104,7 @@ a {
 <![endif]-->
 
 <body>
-    <div class="container-fluid header">
+    <div class="container-fluid header_child">
         <div class="container">
             <div class="row">
                 <div class="search_location col-md-6">
@@ -86,9 +122,22 @@ a {
                     </div>
                 </div>
             </div>
+             <main class="search_Box">
+            <div class="row">
+                <div class="logo col-md-3">
+                    <img class="float-left" src="https://wx2.sinaimg.cn/mw690/005zpxwhly1fmf94w5tqwj304g025q38.jpg" />
+                </div>
+                <div class="input-group col-md-6 search_obj">
+                    <input type="text" placeholder="请输入关键字" class="form-control search_val">
+                    <span class="search_btn input-group-addon btn  btn-primary bg-primary  text-light">
+                   &nbsp;&nbsp;搜索&nbsp;&nbsp;
+                </span>
+                </div>
+            </div>
+        </main>
         </div>
+       
     </div>
-   
 </body>
-
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </html>

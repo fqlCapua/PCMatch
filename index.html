@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+ <!--    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/common.css">
-    <script src="js/jquery-3.1.1.min.js"></script>
+ 
 </head>
 <style>
-
 </style>
 </head>
 <!--[if lt IE 9]>
@@ -44,26 +43,29 @@
 
 <body>
     <header>
-        <iframe id="header" src="header.html" height="40" frameborder="0" scrolling="no" width="100%"></iframe>
+        <iframe id="header" src="header.html" onload="this.height=100" frameborder="0" scrolling="no" width="100%"></iframe>
     </header>
+    <main>
+       <div class="container">
+         <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#">首页</a></li>
+            <li><a href="#">租房</a></li>
+            <li><a href="#">家政</a></li>
+            <li><a href="#">婚恋</a></li>
+            <li><a href="#">关于我们</a></li>
+          </ul> 
+       </div>
+    </main>
     <div class="container">
-        <main class="search_Box">
-          <div class="row">
-             <div class="logo col-md-3">
-               <img class="float-left" src="https://wx2.sinaimg.cn/mw690/005zpxwhly1fmf94w5tqwj304g025q38.jpg" />
-             </div>
-              <div class="input-group col-md-6 search_obj">
-                 <input type="text" placeholder="请输入关键字" class="form-control search_val"> 
-                <span class="search_btn input-group-addon btn  btn-primary bg-primary  text-light">
-                   &nbsp;&nbsp;搜索&nbsp;&nbsp;
-                </span>
-            </div>
-          </div>
-           
-        </main>
-        <footer></footer>
+        <footer class="fa fa-search fa-2x"></footer>
     </div>
 </body>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/layui.all.js"></script>
 <script src="js/common.js"></script>
+
+<script type="text/javascript">
+        layer.msg('111')
+</script>
 
 </html>
