@@ -1,3 +1,10 @@
+
+
+/*
+ *iframe自适应高度
+ *
+ *
+*/
   function reinitIframe(obj) {
   var iframe = document.getElementById(obj);
   
@@ -9,4 +16,4 @@
     iframe.height = height;
   } catch(e) {}
 }
-window.setInterval("reinitIframe('header')", 500);
+window.setInterval("reinitIframe('header')", 100);

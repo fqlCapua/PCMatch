@@ -6,18 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
- <!--    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-
-    <script src="js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <style>
 body {
-    border: 3px solid green;
     margin: 0;
     padding: 0;
-    font-size: 0.90em;
-    font-weight: bold;
     font-family: "微软雅黑";
     color: #999;
 }
@@ -26,18 +23,19 @@ a:hover {
     text-decoration: none;
 }
 
-a {
-    color: #999999;
+.header_child a{
+    font-size:13px;
+    color:#999999;
 }
 
 .header_child {
-    line-height: 40px;
+    line-height:35px;
     background-color: #f7f7f7;
 }
 
 .change_location {
-    font-weight: normal;
-    font-size: 0.9em;
+    font-weight:normal;
+    font-size:0.9em;
 }
 
 body {
@@ -50,30 +48,40 @@ body {
 }
 
 .search_Box {
-  
+    padding:15px 0 7px 0;
 }
 
 .search_val {
-    height: 45px;
+    height:38px;
+    border-radius:0;
 }
 
 .search_btn {
-    height: 45px;
+    height:38px;
     cursor: pointer;
+    border-radius:0;
+    background-color: #4082D4;
+    color:#efefef;
 }
 
 .logo img {
     width: 150px;
-    height: 66px;
-    border: 3px solid green;
+    height:60px;
+   
 }
 
 .search_obj {
-    padding: 15px 0;
-}
+    padding:10px  0;
 
+}
+.container{
+
+}
 .logo {
     overflow: hidden;
+}
+.top_header{
+    padding:0 13px; 
 }
 </style>
 </head>
@@ -104,9 +112,9 @@ body {
 <![endif]-->
 
 <body>
-    <div class="container-fluid header_child">
+    <div class="container-fluid  header_child">
         <div class="container">
-            <div class="row">
+            <div class="row top_header">
                 <div class="search_location col-md-6">
                     <span class="show_location">郑州</span>
                     <span class="change_location"><a class="text-muted" href="">[切换城市]</a></span>
@@ -116,28 +124,30 @@ body {
                         <span>
               <i class="fa fa-reorder text-muted"></i>
               <a href="#">网站导航</a>
-            </span> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            </span> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                         <span onclick="alert('登录')" class="login_box"><a href="#login">登录 &nbsp;|</a>&nbsp;</span>
                         <span onclick="alert('注册')" class="reg_box">&nbsp;<a href="#regster">注册</a></span>
                     </div>
                 </div>
             </div>
-             <main class="search_Box">
-            <div class="row">
-                <div class="logo col-md-3">
-                    <img class="float-left" src="https://wx2.sinaimg.cn/mw690/005zpxwhly1fmf94w5tqwj304g025q38.jpg" />
-                </div>
-                <div class="input-group col-md-6 search_obj">
-                    <input type="text" placeholder="请输入关键字" class="form-control search_val">
-                    <span class="search_btn input-group-addon btn  btn-primary bg-primary  text-light">
+        </div>
+    </div>
+    <div class="container">
+        <main class="search_Box">
+        <div class="row">
+            <div class="logo col-md-3">
+                <img class="float-left" src="https://wx2.sinaimg.cn/mw690/005zpxwhly1fmf94w5tqwj304g025q38.jpg" />
+            </div>
+            <div class="input-group col-md-5 col-md-offset-1 search_obj">
+                <input type="text" placeholder="请输入关键字" class="form-control search_val">
+                <span class="search_btn input-group-addon btn btn-primary text-light">
                    &nbsp;&nbsp;搜索&nbsp;&nbsp;
                 </span>
-                </div>
             </div>
-        </main>
         </div>
-       
+    </main>
     </div>
+    
 </body>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 </html>
