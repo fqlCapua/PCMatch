@@ -3,8 +3,8 @@
 }
 
 .main_menu ul li {
-    height: 45px;
-    width:14%;
+    height: 41px;
+    width: 20%;
     text-align: center;
     list-style: none;
 }
@@ -14,10 +14,10 @@
     width: 100%;
     display: block;
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     height: 100%;
     padding: 10px;
-    height: 45px;
+    height: 41px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -29,46 +29,128 @@
     background-color: #1A5DAF;
 }
 
-.main_menu ul li:hover {
- 
-}
-
+.main_menu ul li:hover {}
 
 .main_menu_ul {
-
     padding: 0;
     width: 100%;
     display: flex;
-    height: 45px;
-     background-color: #4082D4;
+    height: 41px;
+    background-color: #4082D4;
 }
 
 .main_menu {
-    height: 45px;
+    height: 41px;
     padding: 0;
     background-color: #4082D4;
 }
 
 @media only screen and (min-width: 100px) and (max-width: 640px) {
-  
-  .main_menu  .container{
-  	  height: 45px;
-      
-     
+    .main_menu .container {
+        height: 41px;
     }
     .main_menu ul li {
-        height: 43px;
-
-        width:30%;
+        height: 40px;
+        width: 30%;
         text-align: center;
         list-style: none;
     }
     .main_menu ul li a {
         font-size: 12px;
-        height: 43px;
+        height: 40px;
     }
-    .main_menu>div{
-    	 overflow: hidden;
-      
+    .main_menu>div {
+        overflow: hidden;
     }
+}
+
+
+/* 轮播展示 */
+
+.main_bg {
+    height: 270px;
+    overflow: hidden;
+}
+
+.main_bg img {
+    width: 100%;
+    height: 270px;
+}
+
+
+/* 二级菜单 */
+
+.classfication_menu {
+    margin-top: 6px;
+}
+
+.classMenu_title img {
+    vertical-align: bottom;
+}
+
+.classMenu_title {
+    padding: 8px 0 12px 0;
+    border-bottom: 1px solid rgba(136, 132, 132, 0.4);
+}
+
+.classMenu_title span {
+    margin-left: 3px;
+    font-size: 1.2em;
+    color: #484848;
+    display: inline-block;
+}
+
+.menu_box {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_box li {
+    list-style: none;
+    font-size: 13px;
+    padding-top: 8px;
+    display: inline-block;
+}
+
+.menu_box li span {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+.menu_box li a {
+    width: 55px;
+    line-height: 24px;
+    display: inline-block;
+}
+
+.new_house {
+    margin-right: 117px;
+}
+
+.menu_box li a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.classfication_menu2 ul li {
+    width: 45%;
+    padding-right: 0;
+}
+
+.classfication_menu2 ul li:nth-last-child(1) {
+    width: 80%;
+}
+
+.classfication_menu2 ul li a {
+    width: 55px;
+}
+
+.container {
+    width: 70%;
 }

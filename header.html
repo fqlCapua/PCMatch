@@ -1,87 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "微软雅黑";
-    color:#999;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-.header_child a{
-    font-size:13px;
-    color:#999999;
-}
-
-.header_child {
-    line-height:35px;
-    background-color: #f7f7f7;
-}
-
-.change_location {
-    font-weight:normal;
-    font-size:0.9em;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-* {
-    font-family: '微软雅黑';
-}
-
-.search_Box {
-    padding:15px 0 7px 0;
-}
-
-.search_val {
-    height:38px;
-    border-radius:0;
-}
-
-.search_btn {
-    height:38px;
-    cursor: pointer;
-    border-radius:0;
-    background-color: #4082D4;
-    color:#efefef;
-}
-
-.logo img {
-    width: 150px;
-    height:60px;
-   
-}
-
-.search_obj {
-    padding:10px  0;
-
-}
-.container{
-
-}
-.logo {
-    overflow: hidden;
-}
-.top_header{
-    padding:0 13px; 
-}
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑";
+        color: #999;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    .header_child a {
+        font-size: 12px;
+        color: #999999;
+    }
+    
+    .header_child {
+        line-height: 32px;
+        background-color: #f7f7f7;
+    }
+    
+    .change_location {
+        font-weight: normal;
+        font-size: 0.8em;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .search_Box {
+        padding: 12px 0 5px 0;
+    }
+    
+    .search_val {
+        height: 38px;
+        border-radius: 0;
+        font-size: 13px;
+    }
+    
+    .search_btn {
+        height: 38px;
+        cursor: pointer;
+        border-radius: 0;
+        background-color: #4082D4;
+        color: #efefef;
+    }
+    
+    .logo img {
+        width: 130px;
+        height: 50px;
+    }
+    
+    .search_obj {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .logo {
+        overflow: hidden;
+        margin-right: 40px;
+    }
+    
+    .top_header {}
+    
+    .form_box {
+        padding-right: 30px;
+    }
+    
+    .container {
+        width: 70%;
+    }
 </style>
 </head>
 <!--[if lt IE 9]>
@@ -121,9 +124,9 @@ body {
                 <div class="form_box col-md-6">
                     <div class="row pull-right">
                         <span>
-              <i class="fa fa-reorder text-muted"></i>
-              <a href="#">网站导航</a>
-            </span> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                               <i class="fa fa-reorder text-muted"></i>
+                               <a href="#">网站导航</a>
+                       </span> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                         <span onclick="alert('登录')" class="login_box"><a href="#login">登录 &nbsp;|</a>&nbsp;</span>
                         <span onclick="alert('注册')" class="reg_box">&nbsp;<a href="#regster">注册</a></span>
                     </div>
@@ -133,20 +136,20 @@ body {
     </div>
     <div class="container">
         <main class="search_Box">
-        <div class="row">
-            <div class="logo col-md-3">
-                <img class="float-left" src="https://wx2.sinaimg.cn/mw690/005zpxwhly1fmf94w5tqwj304g025q38.jpg" />
-            </div>
-            <div class="input-group col-md-5 col-md-offset-1 search_obj">
-                <input type="text" placeholder="请输入关键字" class="form-control search_val">
-                <span class="search_btn input-group-addon btn btn-primary text-light">
+            <div class="row">
+                <div class="logo col-md-3">
+                    <img class="float-left" src="https://wx2.sinaimg.cn/mw690/005zpxwhly1fmf94w5tqwj304g025q38.jpg" />
+                </div>
+                <div class="input-group col-md-5  search_obj">
+                    <input type="text" placeholder="婚恋  租房  家政" class="form-control search_val">
+                    <span class="search_btn input-group-addon btn btn-primary text-light">
                    &nbsp;&nbsp;搜索&nbsp;&nbsp;
                 </span>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
     </div>
-    
+
 </body>
 
 </html>
