@@ -1,0 +1,48 @@
+/*婚恋*/
+
+.container {
+   width: 70%;
+}
+.page_loc {
+    margin-top: 17px;
+    font-size: 13px;
+}
+.filter_banner {
+	border: 1px solid red
+}
+
+.filter_box div {
+    margin-top: 10px;
+    vertical-align: top;
+}
+.filter_title {
+	font-weight: bolder;
+    display: inline-block;
+    text-align: left;
+    font-size: 14px;
+    width: 10%;
+}
+.filter_cont {
+    display: inline-block;
+    display: inline-block;
+    width: 74%;
+}
+.filter_cont select {
+    display: inline-block;
+    width: 19%;
+    border: 1px solid #BABABA;
+    font-size: 13px;
+    margin: 0 3px 10px 0;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 2px;
+  
+
+}
+
+.filter_setting {
+    font-size: 14px;
+    display: inline-block;
+    display: inline-block;
+    width: 14%;
+}

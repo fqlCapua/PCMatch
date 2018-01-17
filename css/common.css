@@ -1,14 +1,12 @@
 * {
     font-family: "微软雅黑";
 }
-
 .main_menu ul li {
     height: 41px;
     width: 20%;
     text-align: center;
     list-style: none;
 }
-
 .main_menu ul li a {
     letter-spacing: 2px;
     width: 100%;
@@ -23,14 +21,11 @@
     text-overflow: ellipsis;
     background-color: #4082D4;
 }
-
 .main_menu ul li a:hover {
     text-decoration: none;
     background-color: #1A5DAF;
 }
-
 .main_menu ul li:hover {}
-
 .main_menu_ul {
     padding: 0;
     width: 100%;
@@ -38,13 +33,11 @@
     height: 41px;
     background-color: #4082D4;
 }
-
 .main_menu {
     height: 41px;
     padding: 0;
     background-color: #4082D4;
 }
-
 @media only screen and (min-width: 100px) and (max-width: 640px) {
     .main_menu .container {
         height: 41px;
@@ -63,94 +56,213 @@
         overflow: hidden;
     }
 }
-
-
 /* 轮播展示 */
 
+.home_title {
+    line-height:50px;
+    text-indent: 10px;
+    color: #007BFF;
+
+}
+.home_filter{
+    line-height:80px;
+    
+}
+.home_filter span, .home_filter div {
+    display: inline-block;
+    text-align: center;
+}
+.home_filter_title {
+    font: bolder 18px "微软雅黑";
+    font-size: 18px;
+}
+.home_filter div {
+    width: 10%;
+}
+.home_filter span {
+    width:25%;
+}
+.home_filter span select {
+    padding-left: 10px;
+    width: 30%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 3px;
+}
+.home_filter div select {
+    padding-left: 8px;
+    width: 80%;
+    margin-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 3px;
+}
+.container {
+    padding: 0;
+}
+.home_filter_btn {
+    cursor: pointer;
+    width: 80%;
+    text-align: center;
+    background-color: #4082D4;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    color: #fff;
+}
+.home_filter_btn:hover {
+    background-color: #1A5DAF;
+}
+/*今日推荐*/
+
 .main_bg {
-    height: 270px;
-    overflow: hidden;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #F6F6F6;
 }
+.today_update {
+    padding-top: 5px;
+}
+.today_update_title {
+    width: 150px;
+    position: relative;
+    top: 10px;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    padding-left: 20px;
+    background-color: #4082D4;
+}
+.update_arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0px;
+    height: 0px;
+    border-top: 40px solid #fff;
+    border-left: 30px solid transparent;
+    z-index: 2;
+}
+/*今日推荐*/
 
-.main_bg img {
+.today_update_body {
+    padding:10px 0;
+    margin-top:30px;
+    margin-left:auto;
+    margin-right: auto;
+    width:95%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.update_user:nth-child(3n-1) {
+    border: 1px dotted #BABABA;
+    border-top: none;
+}
+.update_user:nth-child(3n-2), .update_user:nth-child(3n) {
+    border-bottom: 1px dotted #BABABA;
+}
+.update_user {
+    margin: 0;
+    text-align: center;
+    width: 33%;
+    height: 300px;
+}
+.user_neckname {
+    color: #4886D5;
+    line-height: 35px;
+}
+.update_user .user_img {
     width: 100%;
-    height: 270px;
+    margin: 5px auto;
 }
-
-
+.update_user .user_img img {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+.neck_info>span {
+    font-weight: 500;
+}
+.update_user dt {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.update_user .user_des {
+    color: #A3A3A3;
+    line-height: 24px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 8px;
+    width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
 /* 二级菜单 */
 
 .classfication_menu {
+    padding:20px;
     margin-top: 6px;
 }
-
 .classMenu_title img {
     vertical-align: bottom;
 }
-
 .classMenu_title {
     padding: 8px 0 12px 0;
     border-bottom: 1px solid rgba(136, 132, 132, 0.4);
 }
-
 .classMenu_title span {
     margin-left: 3px;
     font-size: 1.2em;
     color: #484848;
     display: inline-block;
 }
-
 .menu_box {
     width: 100%;
     margin: 0;
     padding: 0;
 }
-
 .menu_box li {
     list-style: none;
     font-size: 13px;
     padding-top: 8px;
     display: inline-block;
 }
-
 .menu_box li span {
     display: inline-block;
     padding-right: 20px;
 }
-
 ol {
     margin: 0;
     padding: 0;
 }
-
 .menu_box li a {
     width: 55px;
     line-height: 24px;
     display: inline-block;
 }
-
 .new_house {
     margin-right: 117px;
 }
-
 .menu_box li a:hover {
     text-decoration: none;
     cursor: pointer;
 }
-
 .classfication_menu2 ul li {
     width: 45%;
     padding-right: 0;
 }
-
 .classfication_menu2 ul li:nth-last-child(1) {
     width: 80%;
 }
-
 .classfication_menu2 ul li a {
     width: 55px;
 }
-
 .container {
     width: 70%;
 }

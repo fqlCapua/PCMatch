@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-</head>
-<style>
-    body {
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                <meta content="ie=edge" http-equiv="X-UA-Compatible">
+                    <title>
+                        Document
+                    </title>
+                    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
+                    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
+                    </script>
+                    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">
+                    </script>
+                    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+                </meta>
+            </meta>
+        </meta>
+    </head>
+    <style>
+        body {
         margin: 0;
         padding: 0;
         font-family: "微软雅黑";
@@ -24,12 +30,13 @@
     }
     
     .header_child a {
-        font-size: 12px;
+
+        font-size:14px;
         color: #999999;
     }
     
     .header_child {
-        line-height: 32px;
+        line-height:35px;
         background-color: #f7f7f7;
     }
     
@@ -82,12 +89,14 @@
     .form_box {
         padding-right: 30px;
     }
-    
+    .show_location{
+        font-size: 14px;
+    }
     .container {
         width: 70%;
     }
-</style>
-</head>
+    </style>
+</html>
 <!--[if lt IE 9]>
   <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
   <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -113,44 +122,61 @@
         </a>
       </div>
 <![endif]-->
-
 <body>
-    <div class="container-fluid  header_child">
-        <div class="container">
-            <div class="row top_header">
-                <div class="search_location col-md-6">
-                    <span class="show_location">郑州</span>
-                    <span class="change_location"><a class="text-muted" href="">[切换城市]</a></span>
-                </div>
-                <div class="form_box col-md-6">
-                    <div class="row pull-right">
-                        <span>
-                               <i class="fa fa-reorder text-muted"></i>
-                               <a href="#">网站导航</a>
-                       </span> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span onclick="alert('登录')" class="login_box"><a href="#login">登录 &nbsp;|</a>&nbsp;</span>
-                        <span onclick="alert('注册')" class="reg_box">&nbsp;<a href="#regster">注册</a></span>
+    <div style="background-color: #F1F1F1;">
+        <div class="container-fluid header_child">
+            <div class="container">
+                <div class="row top_header">
+                    <div class="search_location col-md-6">
+                        <span class="show_location">
+                            郑州
+                        </span>
+                        <span class="change_location">
+                            <a class="text-muted" href="">
+                                [切换城市]
+                            </a>
+                        </span>
+                    </div>
+                    <div class="form_box col-md-6">
+                        <div class="row pull-right">
+                            <span>
+                                <i class="fa fa-reorder text-muted">
+                                </i>
+                                <a href="#">
+                                    网站导航
+                                </a>
+                            </span>&nbsp;&nbsp;&nbsp;
+                            <span class="login_box" onclick="alert('登录')">
+                                <a href="#login">
+                                    登录  |&nbsp;&nbsp;
+                                </a>
+                            </span>
+                            <span class="reg_box" onclick="alert('注册')">
+                                <a href="#regster">
+                                    注册
+                                </a>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <main class="search_Box">
-            <div class="row">
-                <div class="logo col-md-3">
-                    <img class="float-left" src="https://wx2.sinaimg.cn/mw690/005zpxwhly1fmf94w5tqwj304g025q38.jpg" />
+        <div class="container"  style="background-color: #fff;">
+            <main class="search_Box">
+                <div class="row">
+                    <div class="logo col-md-3" style="">
+                        <!-- 月老在线 -->
+                        <img class="float-left" src="images/logo.png"/>
+                    </div>
+                    <div class="input-group col-md-5 search_obj">
+                        <input class="form-control search_val" placeholder="婚恋  租房  家政" type="text">
+                            <span class="search_btn input-group-addon btn btn-primary text-light">
+                                搜索
+                            </span>
+                        </input>
+                    </div>
                 </div>
-                <div class="input-group col-md-5  search_obj">
-                    <input type="text" placeholder="婚恋  租房  家政" class="form-control search_val">
-                    <span class="search_btn input-group-addon btn btn-primary text-light">
-                   &nbsp;&nbsp;搜索&nbsp;&nbsp;
-                </span>
-                </div>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
-
 </body>
-
-</html>
