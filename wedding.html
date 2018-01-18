@@ -12,57 +12,74 @@
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/mode/wed.css" rel="stylesheet" />
-   
-<body>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <script type="text/javascript" src="js/mock.js"></script>
+   <script type="text/javascript" src="js/angular.js"></script>
+<body style="background-color:#F1F1F1;">
 
-   <main class="container">
+   <main class="container" ng-app="Myapp" style="background-color: #fff;">
     <article class="filter_banner">
       <div class="text-muted page_loc">
           <span>郑州</span>
           <span>></span>
           <span>婚恋</span>
        </div>
-       <section class="filter_box">
+       <section class="filter_box" ng-controller="filterUserCtr">
            <div class="filter_title">已选条件:</div>
-           <div class="filter_cont">
-              <select name="" id="" >
-                <option value="">男士</option>
+           <div class="filter_cont"  >
+              <select  id="user_Gender"  >
+                <option ng-repeat="x in Userselectors.user_Gender" >{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">21-26岁</option>
+              <select  id="user_info_married" ng-option >
+                <option  ng-repeat="x in Userselectors.user_info_married">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">河南 郑州</option>
+              <select  id="user_info_salary" >
+                <option  ng-repeat="x in Userselectors.user_info_salary">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">180-190cm</option>
+              <select  id="user_info_constellation" >
+                <option  ng-repeat="x in Userselectors.user_info_constellation">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">3000-5000元</option>
+              <select  id="user_info_animal" >
+                <option  ng-repeat="x in Userselectors.user_info_animal">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">未婚</option>
+              <select  id="user_info_height" >
+                <option  ng-repeat="x in Userselectors.user_info_height">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">大学本科</option>
+              <select  id="user_info_education" >
+                <option  ng-repeat="x in Userselectors.user_info_education">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">职业</option>
+              <select  id="user_info_nation" >
+                <option  ng-repeat="x in Userselectors.user_info_nation">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">有无子女</option>
+              <select  id="user_info_profession" >
+                <option  ng-repeat="x in Userselectors.user_info_profession">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">民族</option>
+              <select  id="user_info_weight" >
+                <option  ng-repeat="x in Userselectors.user_info_weight">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">生肖</option>
+              <select  id="user_info_child" >
+                <option  ng-repeat="x in Userselectors.user_info_child">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">星座</option>
+              <select  id="user_info_believe" >
+                <option  ng-repeat="x in Userselectors.user_info_believe">{{x}}</option>
               </select>
-              <select name="" id="" >
-                <option value="">宗教信仰</option>
+              <select  id="user_info_house" >
+                <option  ng-repeat="x in Userselectors.user_info_house">{{x}}</option>
+              </select>
+              <select  id="user_info_smoke" >
+                <option  ng-repeat="x in Userselectors.user_info_smoke">{{x}}</option>
+              </select>
+              <select  id="user_info_drink" >
+                <option  ng-repeat="x in Userselectors.user_info_drink">{{x}}</option>
+              </select>
+              <select  id="user_info_car" >
+                <option  ng-repeat="x in Userselectors.user_info_car">{{x}}</option>
+              </select>
+              <select  id="user_info_cook" >
+                <option  ng-repeat="x in Userselectors.user_info_cook">{{x}}</option>
+              </select>
+               <select  id="user_info_homework" >
+                <option  ng-repeat="x in Userselectors.user_info_homework">{{x}}</option>
               </select>
            </div>
            <div class="filter_setting">
@@ -70,9 +87,11 @@
               <span class="text-primary">设置更多条件</span>
            </div>
        </section>
+      
     </article>
        
    </main>
 </body>
 
+<script type="text/javascript" src="js/homeMode/wed.js"></script>
 </html>

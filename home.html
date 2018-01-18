@@ -1,381 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                <meta content="ie=edge" http-equiv="X-UA-Compatible">
+                    <title>
+                        Document
+                    </title>
+                    <link href="http://upload.jianshu.io/users/upload_avatars/7374810/e1dd0e76-bd7e-4b50-b9a2-82e3dc188918.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/114/h/114" rel="shortcut icon"/>
+                    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
+                    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
+                    </script>
+                    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js">
+                    </script>
+                    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">
+                    </script>
+                    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+                    <link href="css/common.css" rel="stylesheet"/>
+                    <script src="js/mock.js" type="text/javascript">
+                    </script>
+                   
+                </meta>
+            </meta>
+        </meta>
+    </head>
+    <body ng-app="Myapp" style="background-color:#F1F1F1;">
+        <div class="container today_update" style="background-color:#fff;">
+            <div class="main_bg">
+                <h3 class="home_title">
+                    婚恋
+                </h3>
+            </div>
+            <div class="today_update_title">
+                <div class="update_text">
+                    今日推荐
+                </div>
+                <div class="update_arrow">
+                </div>
+            </div>
+            <div class="today_update_body" ng-controller="updateCtr">
+                <dl class="update_user" ng-repeat="user in updateUsers">
+                    <dd class="user_img">
+                        <img src="{{user.headerImg}}"/>
+                    </dd>
+                    <dt>
+                        <h5 class="user_neckname">
+                            <b ng-bind="user.name">
+                                
+                            </b>
+                        </h5>
+                        <div class="neck_info">
+                            <span class="user_age">
+                                <span ng-bind="user.age">
+                                   
+                                </span>
+                                <span>
+                                    
+                                </span>,
+                            </span>
+                            <span class="user_location" ng-bind="user.city">
+                                
+                            </span>,
+                            <span class="user_height">
+                                <span ng-bind="user.height">
+                                    
+                                </span>
+                                ,
+                            </span>
+                            <span class="user_salary" >
+                                 <span ng-bind="user.salary"> </span>
+                              
+                            </span>
+                        </div>
+                        <div class="user_des" ng-bind="user.des">
+                         
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+        </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="http://upload.jianshu.io/users/upload_avatars/7374810/e1dd0e76-bd7e-4b50-b9a2-82e3dc188918.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/114/h/114" rel="shortcut icon" />
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-                <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js">
-            </script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/common.css" rel="stylesheet" />
-</head>
-
-<body >
+        <div class="container">
+            <div class="home_filter" style="background-color: #f1f1f1;">
+                <div class="home_filter_title">
+                    搜索ta:
+                </div>
+                <div class="home_filter_city">
+                    <select class="city_item">
+                        <option value="">
+                            郑州
+                        </option>
+                    </select>
+                </div>
+                <span class="home_filter_age">
+                    <select class="like_min_age">
+                        <option value="">
+                            20
+                        </option>
+                    </select>
+                    -
+                    <select class="like_max_age">
+                        <option value="">
+                            20
+                        </option>
+                    </select>
+                    岁
+                </span>
+                <span class="home_filter_height">
+                    <select class="like_min_height">
+                        <option value="">
+                            150
+                        </option>
+                    </select>
+                    -
+                    <select class="like_max_height">
+                        <option value="">
+                            170
+                        </option>
+                    </select>
+                    CM
+                </span>
+                <div class="home_filter_marry">
+                    <select class="maryy_item">
+                        <option value="">
+                            未婚
+                        </option>
+                        <option value="">
+                            已婚
+                        </option>
+                    </select>
+                </div>
+                <div class=" home_filter_btn">
+                    搜索
+                </div>
+            </div>
+        </div>
+        <!-- 分级菜单 -->
+        <div class="classfication container" style="background-color: #fff;">
+            <div class="classfication_menu">
+                <div class="classMenu_title ">
+                    <img alt="" height="30" src="https://wx3.sinaimg.cn/thumb150/005zpxwhly1fmvbw50gojj300q00qwe9.jpg" width="30"/>
+                    <span>
+                        房产
+                    </span>
+                </div>
+                <div class="classMenu_body">
+                    <ul class="menu_box">
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    租房
+                                </b>
+                            </span>
+                            <a href="rent.html" target="_blink">
+                                整租
+                            </a>
+                            <a href="rent.html" target="_blink">
+                                合租
+                            </a>
+                            <a href="rent.html" target="_blink">
+                                房东直租
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    二手房
+                                </b>
+                            </span>
+                            <a href="est.html" target="_blink">
+                                出售
+                            </a>
+                            <a href="est.html" target="_blink">
+                                小区
+                            </a>
+                            <a href="est.html" target="_blink">
+                                小户型
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    商铺
+                                </b>
+                            </span>
+                            <a href="est.html" target="_blink">
+                                出租
+                            </a>
+                            <a href="est.html" target="_blink">
+                                出售
+                            </a>
+                            <a href="est.html" target="_blink">
+                                转让
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    写字楼
+                                </b>
+                            </span>
+                            <a href="est.html" target="_blink">
+                                出租
+                            </a>
+                            <a href="est.html" target="_blink">
+                                出售
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    新房
+                                </b>
+                            </span>
+                            <a class="new_house" href="est.html" target="_blink">
+                                房源
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    厂房
+                                </b>
+                            </span>
+                            <a href="est.html" target="_blink">
+                                仓库
+                            </a>
+                            <a href="est.html" target="_blink">
+                                土地
+                            </a>
+                            <a href="est.html" target="_blink">
+                                单位
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    个人房源
+                                </b>
+                            </span>
+                            <a href="est.html" target="_blink">
+                                民宿预订
+                            </a>
+                            <a href="est.html" target="_blink">
+                                品牌公寓
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="classfication_menu classfication_menu2">
+                <div class="classMenu_title ">
+                    <img alt="" height="30" src="https://wx2.sinaimg.cn/thumb150/005zpxwhly1fmvbwbahdmj300s00omwx.jpg" width="30">
+                        <span>
+                            家政
+                        </span>
+                    </img>
+                </div>
+                <div class="classMenu_body">
+                    <ul class="menu_box">
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    搬家
+                                </b>
+                            </span>
+                            <a href="#">
+                                居民
+                            </a>
+                            <a href="#">
+                                公司
+                            </a>
+                            <a href="#">
+                                小型
+                            </a>
+                            <a href="#">
+                                长途
+                            </a>
+                            <a href="#">
+                                空调移机
+                            </a>
+                            
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    保姆
+                                </b>
+                            </span>
+                            <a href="#">
+                                月嫂
+                            </a>
+                            <a href="#">
+                                育儿嫂
+                            </a>
+                            <a href="#">
+                                钟点工
+                            </a>
+                            <a href="#">
+                                催乳师
+                            </a>
+                            <a href="#">
+                                保姆
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    保洁
+                                </b>
+                            </span>
+                            <a href="#">
+                                家庭保洁
+                            </a>
+                            <a href="#">
+                                开荒
+                            </a>
+                            <a href="#">
+                                玻璃
+                            </a>
+                            <a href="#">
+                                地板
+                            </a>
+                            <a href="#">
+                                油烟机
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    家务
+                                </b>
+                            </span>
+                            <a href="#">
+                                回收
+                            </a>
+                            <a href="#">
+                                疏通
+                            </a>
+                            <a href="#">
+                                配送
+                            </a>
+                            <a href="#">
+                                开锁
+                            </a>
+                            <a href="#">
+                                干洗
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    维修
+                                </b>
+                            </span>
+                            <a href="#">
+                                家电
+                            </a>
+                            <a href="#">
+                                房屋
+                            </a>
+                            <a href="#">
+                                家具
+                            </a>
+                            <a href="#">
+                                电脑
+                            </a>
+                            <a href="#">
+                                手机
+                            </a>
+                            <a href="#">
+                                空调
+                            </a>
+                            <a href="#">
+                                数码
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="classfication_menu">
+                <div class="classMenu_title ">
+                    <img alt="" height="30" src="https://wx4.sinaimg.cn/thumb150/005zpxwhly1fmvbwba3ydj300s00s3ya.jpg" width="30"/>
+                    <span>
+                        婚庆
+                    </span>
+                </div>
+                <div class="classMenu_body">
+                    <ul class="menu_box">
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    结婚
+                                </b>
+                            </span>
+                            <a href="wed.html">
+                                婚庆
+                            </a>
+                            <a href="wed.html">
+                                婚宴
+                            </a>
+                            <a href="wed.html">
+                                婚车
+                            </a>
+                            <a href="wed.html">
+                                司仪
+                            </a>
+                            <a href="wed.html">
+                                彩妆
+                            </a>
+                            <a href="wed.html">
+                                用品
+                            </a>
+                            <a href="wed.html">
+                                跟拍
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    摄影
+                                </b>
+                            </span>
+                            <a href="wed.html">
+                                婚纱
+                            </a>
+                            <a href="wed.html">
+                                儿童
+                            </a>
+                            <a href="wed.html">
+                                写真
+                            </a>
+                        </li>
+                        <li class="menu_small_box">
+                            <span>
+                                <b>
+                                    庆典
+                                </b>
+                            </span>
+                            <a href="wed.html">
+                                演出
+                            </a>
+                            <a href="wed.html">
+                                场地
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+     <script src="js/angular.js" type="text/javascript"></script>
+   <script type="text/javascript" src="js/homeMode/home.js"></script>
    
-    <div class="container" >
-      
-    </div>
-    
-    <div class="container today_update" style="background-color:#fff;">
-        <div class="main_bg">
-            <h3 class="home_title">婚恋</h3>
-        </div>
-         
-        <div class="today_update_title">
-            <div class="update_text">今日推荐</div>
-            <div class="update_arrow"></div>
-        </div>
-        <div class="today_update_body">
-            <dl class="update_user">
-                <dd class="user_img">
-                   <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=739322019,1387616363&fm=27&gp=0.jpg" />
-                </dd>
-                <dt>
-                    <h4 class="user_neckname"><b>邻家小妹</b></h4>
-                    <div class="neck_info">
-                        <span class="user_age">
-                              <span>21</span>
-                               <span>岁</span>
-                        </span>
-                        <span class="user_location"></span>
-                        <span class="user_height">
-                                  <span>170</span>
-                                  <span>cm</span>
-                        </span>
-                        <span class="user_salary">
-                              <span>3000-5000</span> 
-                              <span>元</span>
-                        </span>
-                        
-                    </div>
-                    <div class="user_des">
-                          性格开朗，对生活充满激情，希望找可靠踏实的男人，希望男生好好打拼自己的事业，更希望你能有时间为我撑起一把伞，而这把伞正好是你我都喜欢的颜色。有时间晚上给我读一篇格林童话，听着你的声音，就仿佛听到你到了格林的童话世界。
-
-                    </div>
-                </dt>
-            </dl>
-            <dl class="update_user">
-                <dd class="user_img">
-                   <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=739322019,1387616363&fm=27&gp=0.jpg" />
-                </dd>
-                <dt>
-                    <h4 class="user_neckname"><b>邻家小妹</b></h4>
-                    <div class="neck_info">
-                        <span class="user_age">
-                              <span>21</span>
-                               <span>岁</span>
-                        </span>
-                        <span class="user_location"></span>
-                        <span class="user_height">
-                                  <span>170</span>
-                                  <span>cm</span>
-                        </span>
-                        <span class="user_salary">
-                              <span>3000-5000</span> 
-                              <span>元</span>
-                        </span>
-                        
-                    </div>
-                    <div class="user_des">
-                          性格开朗，对生活充满激情，希望找可靠踏实的男人，希望男生好好打拼自己的事业，更希望你能有时间为我撑起一把伞，而这把伞正好是你我都喜欢的颜色。有时间晚上给我读一篇格林童话，听着你的声音，就仿佛听到你到了格林的童话世界。
-
-                    </div>
-                </dt>
-            </dl>
-            <dl class="update_user">
-                <dd class="user_img">
-                   <img src="https://wx1.sinaimg.cn/mw690/620cec29gy1fnigrnfcvuj21w02ioe81.jpg" />
-                </dd>
-                <dt>
-                    <h4 class="user_neckname"><b>邻家小妹</b></h4>
-                    <div class="neck_info">
-                        <span class="user_age">
-                              <span>21</span>
-                               <span>岁</span>
-                        </span>
-                        <span class="user_location"></span>
-                        <span class="user_height">
-                                  <span>170</span>
-                                  <span>cm</span>
-                        </span>
-                        <span class="user_salary">
-                              <span>3000-5000</span> 
-                              <span>元</span>
-                        </span>
-                        
-                    </div>
-                    <div class="user_des">
-                          性格开朗，对生活充满激情，希望找可靠踏实的男人，希望男生好好打拼自己的事业，更希望你能有时间为我撑起一把伞，而这把伞正好是你我都喜欢的颜色。有时间晚上给我读一篇格林童话，听着你的声音，就仿佛听到你到了格林的童话世界。
-
-                    </div>
-                </dt>
-            </dl>
-            <dl class="update_user">
-                <dd class="user_img">
-                   <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=739322019,1387616363&fm=27&gp=0.jpg" />
-                </dd>
-                <dt>
-                    <h4 class="user_neckname"><b>邻家小妹</b></h4>
-                    <div class="neck_info">
-                        <span class="user_age">
-                              <span>21</span>
-                               <span>岁</span>
-                        </span>
-                        <span class="user_location"></span>
-                        <span class="user_height">
-                                  <span>170</span>
-                                  <span>cm</span>
-                        </span>
-                        <span class="user_salary">
-                              <span>3000-5000</span> 
-                              <span>元</span>
-                        </span>
-                        
-                    </div>
-                    <div class="user_des">
-                          性格开朗，对生活充满激情，希望找可靠踏实的男人，希望男生好好打拼自己的事业，更希望你能有时间为我撑起一把伞，而这把伞正好是你我都喜欢的颜色。有时间晚上给我读一篇格林童话，听着你的声音，就仿佛听到你到了格林的童话世界。
-
-                    </div>
-                </dt>
-            </dl>
-            <dl class="update_user">
-                <dd class="user_img">
-                   <img src="https://wx3.sinaimg.cn/mw690/677e12c8ly1fnjksq49l5j21w02cyu0x.jpg" />
-                </dd>
-                <dt>
-                    <h4 class="user_neckname"><b>邻家小妹</b></h4>
-                    <div class="neck_info">
-                        <span class="user_age">
-                              <span>21</span>
-                               <span>岁</span>
-                        </span>
-                        <span class="user_location"></span>
-                        <span class="user_height">
-                                  <span>170</span>
-                                  <span>cm</span>
-                        </span>
-                        <span class="user_salary">
-                              <span>3000-5000</span> 
-                              <span>元</span>
-                        </span>
-                        
-                    </div>
-                    <div class="user_des">
-                          性格开朗，对生活充满激情，希望找可靠踏实的男人，希望男生好好打拼自己的事业，更希望你能有时间为我撑起一把伞，而这把伞正好是你我都喜欢的颜色。有时间晚上给我读一篇格林童话，听着你的声音，就仿佛听到你到了格林的童话世界。
-
-                    </div>
-                </dt>
-            </dl>
-
-            
-        </div>
-    </div>
-    <div class="container">
-        <div class="home_filter" style="background-color: #f1f1f1;">
-            <div class="home_filter_title">搜索ta:</div>
-            <div class="home_filter_city">
-                <select class="city_item">
-                   <option value="">郑州</option>
-                </select>
-                 
-            </div>
-            <span class="home_filter_age">
-                <select class="like_min_age">
-                   <option value="">20</option>
-                </select>
-                 - 
-                 <select class="like_max_age">
-                    <option value="">20</option>
-                </select>
-                 岁
-            </span>
-            <span class="home_filter_height">
-                <select class="like_min_height">
-                    <option value="">150</option>
-                </select>
-                 - 
-                 <select class="like_max_height">
-                    <option value="">170</option>
-                </select>
-                CM
-            </span>
-             <div class="home_filter_marry">
-                <select class="maryy_item">
-                    <option value="">未婚</option>
-                    <option value="">已婚</option>
-                </select>
-             </div>
-            <div class=" home_filter_btn">搜索</div>
-       </div>
-    </div>
-    <!-- 分级菜单 -->
-    <div class="classfication container" style="background-color: #fff;">
-
-        <div class="classfication_menu">
-            <div class="classMenu_title ">
-                <img width="30" height="30" src="https://wx3.sinaimg.cn/thumb150/005zpxwhly1fmvbw50gojj300q00qwe9.jpg" alt="" />
-                <span>房产</span>
-            </div>
-            <div class="classMenu_body">
-                <ul class="menu_box">
-                    <li class="menu_small_box">
-                        <span><b>租房</b></span>
-                        <a target="_blink" href="rent.html">整租</a>
-                        <a target="_blink" href="rent.html">合租</a>
-                        <a target="_blink" href="rent.html">房东直租</a>
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>二手房</b></span>
-                        <a target="_blink" href="est.html">出售</a>
-                        <a target="_blink" href="est.html">小区</a>
-                        <a target="_blink" href="est.html">小户型</a>
-
-                    </li>
-
-                    <li class="menu_small_box">
-                        <span><b>商铺</b></span>
-
-                        <a target="_blink" href="est.html">出租</a>
-                        <a target="_blink" href="est.html">出售</a>
-                        <a target="_blink" href="est.html">转让</a>
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>写字楼</b></span>
-                        <a target="_blink" href="est.html">出租</a>
-                        <a target="_blink" href="est.html">出售</a>
-
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>新房</b></span>
-                        <a class="new_house" target="_blink" href="est.html">房源</a>
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>厂房</b></span>
-                        <a target="_blink" href="est.html">仓库</a>
-                        <a target="_blink" href="est.html">土地</a>
-                        <a target="_blink" href="est.html">单位</a>
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>个人房源</b></span>
-                        <a target="_blink" href="est.html">民宿预订</a>
-                        <a target="_blink" href="est.html">品牌公寓</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="classfication_menu classfication_menu2">
-            <div class="classMenu_title ">
-                <img width="30" height="30" src="https://wx2.sinaimg.cn/thumb150/005zpxwhly1fmvbwbahdmj300s00omwx.jpg" alt="">
-                <span>家政</span>
-            </div>
-            <div class="classMenu_body">
-                <ul class="menu_box">
-                    <li class="menu_small_box">
-                        <span><b>搬家</b></span>
-                        <a href="#">居民</a>
-                        <a href="#">公司</a>
-                        <a href="#">小型</a>
-                        <a href="#">长途</a>
-                        <a href="#">空调移机</a>
-                        <a href="#">设备</a>
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>保姆</b></span>
-                        <a href="#">月嫂</a>
-                        <a href="#">育儿嫂</a>
-                        <a href="#">钟点工</a>
-                        <a href="#">催乳师</a>
-                        <a href="#">保姆</a>
-                    </li>
-
-                    <li class="menu_small_box">
-                        <span><b>保洁</b></span>
-
-                        <a href="#">家庭保洁</a>
-                        <a href="#">开荒</a>
-                        <a href="#">玻璃</a>
-                        <a href="#">地板</a>
-                        <a href="#">油烟机</a>
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>家务</b></span>
-                        <a href="#">回收</a>
-                        <a href="#">疏通</a>
-                        <a href="#">配送</a>
-                        <a href="#">开锁</a>
-
-                        <a href="#">干洗</a>
-
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>维修</b></span>
-                        <a href="#">家电</a>
-                        <a href="#">房屋</a>
-                        <a href="#">家具</a>
-                        <a href="#">电脑</a>
-                        <a href="#">手机</a>
-                        <a href="#">空调</a>
-                        <a href="#">数码</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-
-        <div class="classfication_menu">
-            <div class="classMenu_title ">
-                <img width="30" height="30" src="https://wx4.sinaimg.cn/thumb150/005zpxwhly1fmvbwba3ydj300s00s3ya.jpg" alt="" />
-                <span>婚庆</span>
-            </div>
-            <div class="classMenu_body">
-                <ul class="menu_box">
-                    <li class="menu_small_box">
-                        <span><b>结婚</b></span>
-                        <a href="wed.html">婚庆</a>
-                        <a href="wed.html">婚宴</a>
-                        <a href="wed.html">婚车</a>
-                        <a href="wed.html">司仪</a>
-                        <a href="wed.html">彩妆</a>
-                        <a href="wed.html">用品</a>
-                        <a href="wed.html">跟拍</a>
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>摄影</b></span>
-                        <a href="wed.html">婚纱</a>
-                        <a href="wed.html">儿童</a>
-                        <a href="wed.html">写真</a>
-
-                    </li>
-                    <li class="menu_small_box">
-                        <span><b>庆典</b></span>
-                        <a href="wed.html">演出</a>
-                        <a href="wed.html">场地</a>
-
-
-                    </li>
-
-
-                </ul>
-            </div>
-        </div>
-
-
-    </div>
-</body>
-<script type="text/javascript">
-    var userInfo=$('.update_user');
-    for (var i=0;i<=20;i++) {
-      
-       $(".today_update_body").append(userInfo);
-    }
-</script>
-
 </html>
