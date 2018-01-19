@@ -8,13 +8,15 @@
     <link href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516091843456&di=5561920b164547e9de3ee5b14b179129&imgtype=0&src=http%3A%2F%2Fwww.qqtn.com%2Fup%2F2011-2%2F20112512256819.gif" rel="shortcut icon" />
     <title>月老在线 婚恋</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="css/kkPageCss.css" />
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <link href="css/mode/wed.css" rel="stylesheet" />
     <script type="text/javascript" src="js/layer.js"></script>
     <script type="text/javascript" src="js/mock.js"></script>
    <script type="text/javascript" src="js/angular.js"></script>
+
 <body style="background-color:#F1F1F1;">
 
    <main class="container" ng-app="Myapp" style="background-color: #fff;">
@@ -86,12 +88,40 @@
               <i class="fa fa-arrow-circle-o-down text-primary filter_setIcon"></i>
               <span class="text-primary">设置更多条件</span>
            </div>
-       </section>
-      
-    </article>
-       
-   </main>
-</body>
 
+       </section>
+       
+    </article>
+     <article class="user_box_big" ng-controller="AllUserCtr">
+          <ul class="user_box" id="content" >
+            <li class="s_user_box" ng-repeat="user in Allusers">
+              <dl>
+                <dd class="user_header_img">
+                 <img src="{{user.headerImg}}">
+                </dd>
+                <dt>
+                   <h5 class="user_neck_name" ng-bind="user.name"></h5>
+                   <div>
+                     <span class="user_age" ng-bind="user.age"></span>,
+                     <span class="user_height" ng-bind="user.height"></span>
+                   </div>
+                   <div>
+                     <span class="user_isMarry" ng-bind="user.isMarry"></span>,
+                     <span class="user_city" ng-bind="user.city"></span>
+                   </div>
+                   <div class="sayHellobtn">
+                      打招呼
+                   </div>
+                </dt>
+              </dl>
+            </li>
+          </ul>
+        
+          
+       </article>
+   </main>
+     
+</body>
+   <script type="text/javascript" src="js/jquery.kkPages.js"></script>
 <script type="text/javascript" src="js/homeMode/wed.js"></script>
 </html>

@@ -5,13 +5,15 @@
     font-family: "微软雅黑";}
 .container {
    width: 70%;
+   padding: 0;
 }
 .page_loc {
     padding-top: 17px;
     font-size: 13px;
 }
 .filter_banner {
-	
+   width: 96%;
+   margin-left:2%;
 }
 
 .filter_box div {
@@ -31,10 +33,11 @@
     width: 74%;
 }
 .filter_cont select {
+    color: #948EA2;
     display: inline-block;
     width: 19%;
     border:1px solid #BABABA;
-    font-size: 13px;
+    font-size: 12px;
     margin: 0 3px 10px 0;
     height: 30px;
     line-height: 30px;
@@ -54,4 +57,87 @@ select::-ms-expand { display: none; }
     display: inline-block;
     display: inline-block;
     width: 14%;
+}
+
+/*个人页*/
+.user_box_big{
+    padding-top:20px; 
+    background-color: #F1F1F1;
+}
+.user_box{
+    margin: 0;
+    padding: 0;
+    width:100%;
+    flex-wrap:nowrap;
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.s_user_box{
+    height: 260px;
+    list-style: none;
+    margin:0;
+    width:16.66%;
+    margin-top:15px;
+   
+}
+.user_box .s_user_box:nth-child(6n-5){
+   
+}
+.user_box .s_user_box:nth-child(6n){
+    margin-right:0;
+}
+.s_user_box dl{
+    background-color:#fff;
+    border-radius:2px;
+    width:85%;
+    margin: 0 auto;
+    height: 100%;
+    
+    padding-top: 10px;
+    text-align: center;
+}
+.s_user_box dl dd{
+    margin:0 auto;
+    width:80%;
+    height:44%;
+   
+    overflow:hidden;
+}
+.s_user_box dl dt{
+
+    color: #848484;
+    font-weight:200;
+    font-size: 13px;
+    
+    padding-top:12px;
+}
+.s_user_box dl dt div span{
+    display: inline-block;
+   
+    overflow: hidden;
+    white-space: nowrap;
+}
+}
+.s_user_box dl dt h5{
+    margin-bottom:10px;
+    color: #5590D9;
+    text-align: center;   
+}
+.user_header_img{
+ 
+}
+.user_header_img img{
+    width: 100%;
+    height: 100%;
+}
+.sayHellobtn{
+    background-color: #EA4661;
+    color: #fff;
+    width:65%;
+    margin:13px auto;
+    text-align: center;
+    border-radius:20px;
+    line-height:26px;
+    cursor: pointer;
 }

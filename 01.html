@@ -1,26 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	 <link href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516091843456&di=5561920b164547e9de3ee5b14b179129&imgtype=0&src=http%3A%2F%2Fwww.qqtn.com%2Fup%2F2011-2%2F20112512256819.gif" rel="shortcut icon" />
-    <title>月老在线</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/common.css" rel="stylesheet" />
-</head>
-<body>
-	
-</body>
-<script type="text/javascript">
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Title
+            </title>
+            <style>
+                *{
+                  margin:0;
+                  padding:0;
+                }
+            .card{
+              display:grid;
 
-	$.getJSON('JSON/main.json', function(res) {
-			$.each(res,function (i,ele) {
-			    console.log(ele);
-			})
-	});
-</script>
+               grid-template-rows: repeat(4,100px);
+               grid-template-columns:30px repeat(3,1fr) 30px;
+               
+           }
+                .grid-area_a{
+                 grid-row: 2 / span 3;
+                 grid-column: 2/span 3;
+                 background-color:red;
+                }
+                .grid-area_b{
+                 background-color: blue;  
+                }
+                .grid-area_c{
+                 background-color: green;
+                }
+                .grid-area_d{
+                 background-color:yellow;
+                }
+                .grid-area_e{
+                 background-color:pink;
+                }
+                .grid-area_f{
+                 background-color:#337AB7;
+                }
+            </style>
+        </meta>
+    </head>
+    <body>
+  <!--       <div class="card">
+            <div class="grid-area grid-area_a">
+                A区
+            </div>
+            <div class="grid-area grid-area_b">
+                B区
+            </div>
+            <div class="grid-area grid-area_c">
+                C区
+            </div>
+            <div class="grid-area grid-area_d">
+                D区
+            </div>
+            <div class="grid-area grid-area_e">
+                E区
+            </div>
+            <div class="grid-area grid-area_f">
+                F区
+            </div>
+        </div> -->
+        <style type="text/css">
+           .Pagination{
+             display: flex;
+           }
+           a{
+            text-decoration: none;
+           }
+           .Pagination>a{
+             background-color: #EA4661;
+            display: inline-block;
+            width:100px;
+            height:30px;
+            color: #fff;
+            text-align: center;
+            margin-right:6px; 
+           }
+           .pagesnum a{
+            background-color: #EA4661;
+            color: #fff;
+            border-radius:3px;
+            text-align: center;
+              padding:5 8px;
+           }
+        </style>
+        <div>
+            <div class="Pagination">
+                <a class="homePage" href="javascript:;">
+                    首页
+                </a>
+                <a class="PagePrev" href="javascript:;">
+                    上一页
+                </a>
+                <span class="Ellipsis" style="">
+                    <b>
+                        ...
+                    </b>
+                </span>
+                <div class="pagesnum">
+                    <a class="" href="javascript:;" style="display: none;">
+                        1
+                    </a>
+                    <a class="" href="javascript:;" style="display: none;">
+                        2
+                    </a>
+                    <a class="" href="javascript:;" style="display: none;">
+                        3
+                    </a>
+                    <a class="" href="javascript:;" style="display: none;">
+                        4
+                    </a>
+                    <a class="" href="javascript:;" style="">
+                        5
+                    </a>
+                    <a href="javascript:;" style="">
+                        6
+                    </a>
+                    <a class="PageCur" href="javascript:;" style="">
+                        7
+                    </a>
+                </div>
+                <span class="Ellipsis">
+                    <b>
+                        ...
+                    </b>
+                </span>
+                <a class="PageNext" href="javascript:;">
+                    下一页
+                </a>
+                <a class="lastPage" href="javascript:;">
+                    尾页
+                </a>
+                <cite class="FormNum">
+                    直接到第
+                    <input id="PageNum" name="PageNum" type="text">
+                        页
+                    </input>
+                </cite>
+                <a class="PageNumOK" href="javascript:;">
+                    确定
+                </a>
+                <span>
+                    共
+                    <b>
+                        195
+                    </b>
+                    条，共
+                    <b>
+                        7
+                    </b>
+                    页
+                </span>
+                <br class="clearfix">
+                    <br>
+                        <br/>
+                    </br>
+                </br>
+            </div>
+        </div>
+    </body>
 </html>
