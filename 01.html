@@ -2,162 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-            <title>
-                Title
-            </title>
-            <style>
-                *{
-                  margin:0;
-                  padding:0;
-                }
-            .card{
-              display:grid;
-
-               grid-template-rows: repeat(4,100px);
-               grid-template-columns:30px repeat(3,1fr) 30px;
-               
-           }
-                .grid-area_a{
-                 grid-row: 2 / span 3;
-                 grid-column: 2/span 3;
-                 background-color:red;
-                }
-                .grid-area_b{
-                 background-color: blue;  
-                }
-                .grid-area_c{
-                 background-color: green;
-                }
-                .grid-area_d{
-                 background-color:yellow;
-                }
-                .grid-area_e{
-                 background-color:pink;
-                }
-                .grid-area_f{
-                 background-color:#337AB7;
-                }
-            </style>
-        </meta>
+        <style>
+            #display{width: 300px;height: 300px}
+        </style>
     </head>
     <body>
-  <!--       <div class="card">
-            <div class="grid-area grid-area_a">
-                A区
-            </div>
-            <div class="grid-area grid-area_b">
-                B区
-            </div>
-            <div class="grid-area grid-area_c">
-                C区
-            </div>
-            <div class="grid-area grid-area_d">
-                D区
-            </div>
-            <div class="grid-area grid-area_e">
-                E区
-            </div>
-            <div class="grid-area grid-area_f">
-                F区
-            </div>
-        </div> -->
-        <style type="text/css">
-           .Pagination{
-             display: flex;
-           }
-           a{
-            text-decoration: none;
-           }
-           .Pagination>a{
-             background-color: #EA4661;
-            display: inline-block;
-            width:100px;
-            height:30px;
-            color: #fff;
-            text-align: center;
-            margin-right:6px; 
-           }
-           .pagesnum a{
-            background-color: #EA4661;
-            color: #fff;
-            border-radius:3px;
-            text-align: center;
-              padding:5 8px;
-           }
-        </style>
-        <div>
-            <div class="Pagination">
-                <a class="homePage" href="javascript:;">
-                    首页
-                </a>
-                <a class="PagePrev" href="javascript:;">
-                    上一页
-                </a>
-                <span class="Ellipsis" style="">
-                    <b>
-                        ...
-                    </b>
-                </span>
-                <div class="pagesnum">
-                    <a class="" href="javascript:;" style="display: none;">
-                        1
-                    </a>
-                    <a class="" href="javascript:;" style="display: none;">
-                        2
-                    </a>
-                    <a class="" href="javascript:;" style="display: none;">
-                        3
-                    </a>
-                    <a class="" href="javascript:;" style="display: none;">
-                        4
-                    </a>
-                    <a class="" href="javascript:;" style="">
-                        5
-                    </a>
-                    <a href="javascript:;" style="">
-                        6
-                    </a>
-                    <a class="PageCur" href="javascript:;" style="">
-                        7
-                    </a>
-                </div>
-                <span class="Ellipsis">
-                    <b>
-                        ...
-                    </b>
-                </span>
-                <a class="PageNext" href="javascript:;">
-                    下一页
-                </a>
-                <a class="lastPage" href="javascript:;">
-                    尾页
-                </a>
-                <cite class="FormNum">
-                    直接到第
-                    <input id="PageNum" name="PageNum" type="text">
-                        页
-                    </input>
-                </cite>
-                <a class="PageNumOK" href="javascript:;">
-                    确定
-                </a>
-                <span>
-                    共
-                    <b>
-                        195
-                    </b>
-                    条，共
-                    <b>
-                        7
-                    </b>
-                    页
-                </span>
-                <br class="clearfix">
-                    <br>
-                        <br/>
-                    </br>
-                </br>
-            </div>
-        </div>
+    <div id="app">
+        <p><a href="#/">home-first</a></p>
+        <p><a href="#/home">home</a></p>
+        <p><a href="#/contact">contact</a></p>
+        <p><a href="#/news">news</a></p>
+    </div>
+    <div id="display">
+
+    </div>
+   
     </body>
 </html>

@@ -20,6 +20,8 @@
             "user_info_homework": ["家务", "任劳任怨", "希望对方承担家务", "一起分工合作", "看各自闲忙，协商分担"]
         }
     });
+
+
     var Allusersdata = Mock.mock({
         "userInfo|100-200": [{
             "headerImg|1": ["https://wx2.sinaimg.cn/mw690/e732ef12ly1fmzrv422bhj20px0pe46r.jpg", "https://wx2.sinaimg.cn/mw690/e732ef12ly1fmzrv5p1j4j20qo0qo0xn.jpg", "https://wx2.sinaimg.cn/mw690/e732ef12ly1fmyw7tsdalj20go0go75j.jpg", "https://wx4.sinaimg.cn/mw690/e732ef12ly1fnahqpj7a6j20ku0ku76u.jpg", "https://wx2.sinaimg.cn/mw690/e732ef12ly1fmwgflx4x4j20h30gqq4y.jpg", "https://wx2.sinaimg.cn/mw690/e732ef12ly1fn6joko0m7j20k00k0nli.jpg", "https://wx1.sinaimg.cn/mw690/e732ef12ly1fn6jojlf60j20g40g4t9h.jpg", "https://wx1.sinaimg.cn/mw690/e732ef12ly1fn6jom3d76j222g219ndp.jpg", "https://wx1.sinaimg.cn/mw690/e732ef12ly1fnchxcz2xhj20ju0jujty.jpg", "https://wx3.sinaimg.cn/mw690/e732ef12ly1fnchxd8uivj20ku0ku0v6.jpg"],
@@ -29,28 +31,30 @@
             "isMarry|1": ["未婚", "离异"],
             "salary|1": ["<3000元", "3000-5000元", "5000-8000元", ">8000元"],
             "height": "@natural(155,180)" + "cm",
-            "city|1": ["新郑", "新密", "登封", "荥阳", "巩义", "洛阳", "偃师", "商丘", "永城", "安阳", "林州", "南阳", "邓州", "开封", "平顶山", "汝州", "焦作", "沁阳", "孟州", "新乡", "卫辉", "辉县", "鹤壁", "濮阳", "许昌", "禹州", "长葛", "漯河", "三门峡", "义马", "灵宝", "信阳", "周口", "项城", "驻马", "济源"],
+            "city|1": ["新郑", "新密", "登封", "荥阳", "巩义", "洛阳", "偃师", "商丘", "永城", "安阳", "林州", "南阳", "邓州", "开封", "平顶山", "汝州", "焦作", "沁阳", "孟州", "新乡", "卫辉", "辉县", "鹤壁", "濮阳", "许昌", "禹州", "长葛", "漯河", "三门峡", "义马", "灵宝", "信阳", "周口", "项城", "驻马店", "济源"],
             "des|1": ["朋友不是看他有钱时能分你多少，而是看他没钱时能对你多好。", "我怎么变这样，这样倔强。", "我不怕苦不怕累不怕失败不怕鼻青脸肿不怕遍体鳞伤我只怕自己有梦却没从努力过。", "无论走多远 都不要忘了当初为了什么出发", "努力吧，你要对得起你所受过的苦。", "活得有棱有角是一种态度", "要么混日子等老要么拼命赢未来", "无论我此时是如何的彷徨迷茫最终我都要为自己想要过的生活而努力", "性格开朗，对生活充满激情，希望找可靠踏实的男人，希望男生好好打拼自己的事业，更希望你能有时间为我撑起一把伞，而这把伞正好是你我都喜欢的颜色。有时间晚上给我读一篇格林童话，听着你的声音，就仿佛听到你到了格林的童话世界。"]
         }]
     });
-   // console.log(Allusersdata.userInfo)
+
+
+
+    // console.log(Allusersdata.userInfo)
     var app = angular.module("Myapp", []);
-    app.controller("filterUserCtr",function($scope) {
-          $scope.Userselectors = user_selectors.choices;
-        
+    app.controller("filterUserCtr", function($scope) {
+        $scope.Userselectors = user_selectors.choices;
+
     })
     app.controller("AllUserCtr", function($scope) {
-      $scope.Allusers=Allusersdata.userInfo;
-     
-    });
+        $scope.Allusers = Allusersdata.userInfo;
 
- $(function () {
-    $("#content").kkPages({
-          PagesClass:".s_user_box",
-          PagesMth:30,
-          PagesNavMth: 4 //显示导航个数
+    });
+   
+    $(function() {
+        $("#content").kkPages({
+            PagesClass: ".s_user_box",
+            PagesMth: 30,
+            PagesNavMth: 4 //显示导航个数
+
+        })
 
     })
-
- }) 
- 

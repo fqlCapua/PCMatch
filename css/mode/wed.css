@@ -141,3 +141,57 @@ select::-ms-expand { display: none; }
     line-height:26px;
     cursor: pointer;
 }
+/*婚介所*/
+.office_boxes{
+    background-color: #fff;
+    width:100%;
+    padding:0 10px;
+    border-radius:2px;
+    margin:8px auto;
+    height: 140px;
+
+}
+.office_boxes dd,.office_boxes dt{
+   
+    height:100%;
+    display: inline-block;
+    vertical-align:top;
+}
+.office_boxes dd img{
+    width:90%;
+    height:90%;
+    margin:5% 0;
+}
+.office_boxes dd{
+     width:20%;
+     text-align: center;
+     height:100%;
+    }
+    .office_boxes dt{
+     height: 100%;
+     width:79%;
+     
+    }
+    .office_boxes dt{
+        padding:5px 0 0 20px;
+        margin-top:10px;
+        height:90%;
+
+    }
+    .office_info span span{
+        display: inline-block;
+        color: #797979;
+        font-weight:500;
+        font-size:15px;
+        line-height:30px;
+    }
+    .office_address{
+        color: #797979;
+        font-size:15px;
+        font-weight:500;
+    }
+.office_title1{
+    font-size:22px;
+    font-weight:500; 
+    padding-bottom: 6px;  
+}

@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1.0" name="viewport">
-                <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <meta charset="utf-8" />
+            <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+                <meta content="ie=edge" http-equiv="X-UA-Compatible" />
                     <title>
-                        Document
+                        
                     </title>
                     <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
                     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
                     </script>
-                    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">
+                    
                     </script>
                     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-                </meta>
-            </meta>
-        </meta>
-    </head>
-    <style>
+                   
+         
+          <style>
         body {
         margin: 0;
         padding: 0;
@@ -97,7 +95,10 @@
     .container {
         width: 70%;
     }
+    
     </style>
+    </head>
+  
 </html>
 <!--[if lt IE 9]>
   <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
@@ -148,13 +149,13 @@
                                     网站导航
                                 </a>
                             </span>&nbsp;&nbsp;&nbsp;
-                            <span class="login_box" onclick="alert('登录')">
-                                <a href="#login">
+                            <span >
+                                <a class="login_box" href="#/login">
                                     登录  |&nbsp;&nbsp;
                                 </a>
                             </span>
-                            <span class="reg_box" onclick="alert('注册')">
-                                <a href="#regster">
+                            <span >
+                                <a  class="reg_box" href="#/regster">
                                     注册
                                 </a>
                             </span>
@@ -171,7 +172,7 @@
                         <img class="float-left" src="images/logo.png"/>
                     </div>
                     <div class="input-group col-md-5 search_obj">
-                        <input class="form-control search_val" placeholder="婚恋  租房  家政" type="text">
+                        <input class="form-control search_val" placeholder="" type="text">
                             <span class="search_btn input-group-addon btn btn-primary text-light">
                                 <i class="fa fa-search "></i>
                             </span>
@@ -182,3 +183,31 @@
         </div>
     </div>
 </body>
+<script type="text/javascript">
+    $(function(){
+        
+    })
+    $(".search_btn").click(function(event) {
+       var val=$(".search_val").val();
+       
+       if(val!==""){
+        
+        parent.$("#main").attr("src","wedding_office.html");
+       }else{
+          parent.layer.msg("请输入搜索内容");
+          
+       }
+    });
+    $(".reg_box").click(function(event) {
+       var val=$(".search_val").val();
+       parent.$("#main").attr("src","reg.html");
+       
+    });
+    $(".login_box").click(function(event) {
+       var val=$(".search_val").val();
+       parent.$("#main").attr("src","login.html");
+       
+    });
+</script>
+
+</html>

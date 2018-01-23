@@ -73,7 +73,7 @@
 				//跳转页面
 				var $input = $this.find(".Pagination #PageNum");
 				var $submit = $this.find(".Pagination .PageNumOK");
-				
+				var that=this;
 				//跳转页面文本框
 				$input.keyup(function(){
 					
