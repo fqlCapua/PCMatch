@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-            <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
-            <link href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516091843456&di=5561920b164547e9de3ee5b14b179129&imgtype=0&src=http%3A%2F%2Fwww.qqtn.com%2Fup%2F2011-2%2F20112512256819.gif" rel="shortcut icon"/>
-            <title>
-                月老在线
-            </title>
-            <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
 
-            <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
-            </script>
-           
-             <script type="text/javascript" src="js/layer.js"></script>
-            <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-            <link href="css/common.css" rel="stylesheet"/>
-            <script src="js/mock.js" type="text/javascript">
-            </script>
-        </meta>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <link href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516091843456&di=5561920b164547e9de3ee5b14b179129&imgtype=0&src=http%3A%2F%2Fwww.qqtn.com%2Fup%2F2011-2%2F20112512256819.gif" rel="shortcut icon" />
+    <title>
+        月老在线
+    </title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+    <script src="js/mock.js" type="text/javascript">
+    </script>
+    </meta>
+</head>
+
 </html>
 <!--[if lt IE 9]>
   <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
@@ -46,12 +46,11 @@
         </a>
       </div>
 <![endif]-->
+
 <body>
     <div style="background-color:#F1F1F1;">
-      
-            <iframe frameborder="0" id="header" onload="this.height=100" scrolling="no" src="header.html" width="100%">
-            </iframe>
-      
+        <iframe frameborder="0" id="header" onload="this.height=100" scrolling="no" src="header.html" width="100%">
+        </iframe>
         <main ng-app="iframeApp">
             <div class="main_menu">
                 <div class="container">
@@ -84,34 +83,31 @@
                     </ul>
                 </div>
             </div>
-              <iframe frameborder="0" id="main" onload="this.height=100" scrolling="no" src="" width="100%">
+            <iframe frameborder="0" id="main" onload="this.height=100" scrolling="no" src="" width="100%">
             </iframe>
             <!-- <div ng-view="">
             </div> -->
         </main>
         <div class="">
             <br>
-                <br>
-                    <br>
-                        <footer class="footer">
-                            <iframe frameborder="0" id="footer" onload="this.height=100" scrolling="no" src="foot.html" width="100%">
-                            </iframe>
-                        </footer>
-                    </br>
-                </br>
+            <br>
+            <br>
+            <footer class="footer">
+                <iframe frameborder="0" id="footer" onload="this.height=100" scrolling="no" src="foot.html" width="100%">
+                </iframe>
+            </footer>
+            </br>
+            </br>
             </br>
         </div>
     </div>
 </body>
 <script src="js/common.js"></script>
-
 <script src="js/homeMode/index.js" type="text/javascript"></script>
 <script type="text/javascript">
-    $(".main_menu_ul li a").click(function(event) {
-        /* Act on the event */
-        var src=$(this).attr("name")+".html";
-        $("#main").attr("src",src);
-    });
+$(".main_menu_ul li a").click(function(event) {
+    /* Act on the event */
+    var src = $(this).attr("name") + ".html";
+    $("#main").attr("src", src);
+});
 </script>
-
-

@@ -1,0 +1,215 @@
+  /*婚介所详情*/
+    .container {
+        width: 70%;
+    }
+    .dt_bottom{
+    padding-top:20px;
+  }
+    .dt_bottom section{
+       display: inline-block;
+       vertical-align: top;
+    }
+    .t_menu{
+      font-size: 13px;
+    }
+    .office_info{
+      padding-top: 20px;
+    }
+    .office_info>div{
+      display: inline-block;
+      vertical-align: top;
+    }
+    .office_img{
+      text-align: center;
+      width: 35%;
+    }
+    .office_text{
+      width: 64%;
+    }
+    .text_line1>span{
+      display: inline-block;
+      color: #2C83EF;
+      font-size:1.5em;
+      width:40%;
+      line-height:45px;
+    }
+    .office_text_line span{
+      font-size:0.9em;
+      line-height: 30px;
+    }
+.office_text_line>div{
+      display: inline-block;
+      width: 40%;
+    }
+ 
+    .text_line5>div{
+      font-size: 0.9em;
+      
+      cursor: pointer;
+      margin:15px;
+      color: #EEEEEE;
+      text-align: center;
+      width:22%;
+      padding:5px 10px;
+      border-radius:25px;
+    }
+    .text_line5{
+      padding:10px 0;
+    }
+    .text_line5>div:hover{
+      background-color: #396AA7;
+    }
+    .office_address{
+    
+       width:15%;
+    }
+    .office_map{
+        width:50%;
+      
+    }
+  .text_line4{
+    padding:10px 0 20px 0;
+
+    border-bottom: 1px dotted #BABABA;
+  }
+  .text_line4>div{
+    display: inline-block;
+    vertical-align: top;
+
+  }
+    .office_map iframe{
+      width:100%;
+      height:100%;
+      
+      display: block;
+    }
+.dt_b_l{
+  width:70%;
+}
+.dt_b_r{
+  margin-left: 20px;
+  width:27%;
+}
+
+.dt_b_lt_des_cont{
+  text-indent: 20px;
+  
+  font-size:13px;
+  letter-spacing: 1px;
+  line-height: 22px;
+}
+.dt_b_lt{
+  margin-bottom:20px;
+}
+.dt_b_lt,.dt_b_lb,.dt_b_r{
+  padding:20px;
+  background-color: #fff;
+}
+
+.dt_b_lt_title span{
+  margin:0 0 10px 5px;
+  font-size:1.5em;
+  letter-spacing: 1px;
+  color: #272822;
+}
+.office_users_list dd,.office_users_list dt{
+  display: inline-block;
+vertical-align: top;
+}
+.office_users_list{
+  padding:10px;
+  
+}
+
+.office_users_lists_cont .office_users_list dd{
+  text-align: center;
+  line-height: 120px;
+  width: 20%;
+  height: 120px;
+  
+}
+.office_users_list dd img{
+  
+  width:99%;
+  height:99%;
+  margin: 0 auto;
+  border-radius:6px;
+}
+.office_users_lists_cont .office_users_list dt{
+  width: 78%;
+  height: 120px;
+
+}
+.office_users_list .user_nickName{
+  
+  font-size:20px;
+  line-height:50px;
+}
+.office_users_list .user_NickInfo span{
+  color: #676767;
+  font-weight:500;
+  font-size: 0.93em;
+   line-height:30px;
+
+  height:30px;
+  overflow: hidden;
+}
+
+.office_users_list .user_Nick_des{
+   line-height:30px;
+   font-size: 0.93em;
+   font-weight:500;
+   color: #676767;
+    height:30px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.intro_office_users_list dd,.intro_office_users_list dt{
+  display: inline-block;
+  vertical-align: top;
+}
+.intro_office_users_list  dd{
+  text-align: center;
+  line-height:100px;
+  width:50%;
+  height:100px;
+ 
+}
+dl{
+  margin:0;
+}
+.intro_office_users_list dd img{
+  width:90%;
+  height:80%;
+  margin:0 auto;
+  border-radius:6px;
+}
+.intro_office_users_list  dt{
+  width:47%;
+  height:100px;
+ 
+}
+.intro_office_users_list span span{
+  font-size:14px;
+  font-weight:500;
+  color:#717171;
+  line-height:30px;
+}
+
+.intro_office_users_list .user_Nick_des{
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+   font-weight:500;
+  color:#717171;
+}
+.intro_office_users_list .user_nickName{
+  padding-top:6px;
+  font-size:16px;
+  color: #3889F0;
+  line-height:40px;
+
+}

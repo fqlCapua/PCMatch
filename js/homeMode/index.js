@@ -37,12 +37,7 @@
         r.path('/About',function(){
               $("#main").attr("src","About.html")
         })
-        r.path('/login',function(){
-             $("#main").attr("src","login.html")
-        });
-         r.path('/regist',function(){
-             $("#main").attr("src","regster.html")
-        });
+        
         r.init()
 
 

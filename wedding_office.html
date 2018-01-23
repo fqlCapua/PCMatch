@@ -24,10 +24,10 @@
         <main class="container" id="office_cont" style="padding-top: 15px;">
            
             <dl class="office_boxes"   ng-repeat="office in AllOffices">
-              <dd class="office_img" >
+              <dd class="office_img" office_id="{{office.user_agency_id}}">
                  <img src="{{office.agency_pics}}" />
               </dd>
-              <dt office_id="ng-bind:office.user_agency_id">
+              <dt office_id="{{office.user_agency_id}}">
                   <div class="office_title1" ng-bind="office.agency_name"></div>
                   <div class="office_info">
                       <span>
@@ -57,14 +57,6 @@
     <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/homeMode/wed_office.js"></script>
 <script type="text/javascript">
-    $(function() {
-        $("#office_cont").kkPages({
-            PagesClass: ".office_boxes",
-            PagesMth:4,
-            PagesNavMth: 4 //显示导航个数
-
-        })
-
-    })
+   
 </script>
 </html>

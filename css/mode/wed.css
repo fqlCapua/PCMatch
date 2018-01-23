@@ -149,10 +149,10 @@ select::-ms-expand { display: none; }
     border-radius:2px;
     margin:8px auto;
     height: 140px;
-
+   
 }
 .office_boxes dd,.office_boxes dt{
-   
+    cursor: pointer;
     height:100%;
     display: inline-block;
     vertical-align:top;
@@ -195,3 +195,5 @@ select::-ms-expand { display: none; }
     font-weight:500; 
     padding-bottom: 6px;  
 }
+
+  
