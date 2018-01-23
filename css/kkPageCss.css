@@ -1,0 +1,195 @@
+
+a:hover,
+a:active {
+	/*text-decoration: underline;*/
+	-webkit-transition: color .15s linear, background-color .3s linear;
+	-moz-transition: color .15s linear, background-color .3s linear;
+	-o-transition: color .15s linear, background-color .3s linear;
+	-ms-transition: color .15s linear, background-color .3s linear;
+	transition: color .15s linear, background-color .3s linear;
+	cursor: pointer;
+}
+
+.clear {
+	height: 0;
+	width: 100%;
+	overflow: hidden;
+	clear: both;
+}
+
+.clear8 {
+	height: 8px;
+	overflow: hidden;
+	clear: both;
+}
+
+.float_left {
+	float: left;
+}
+
+.float_right {
+	float: right;
+}
+
+
+/* All end */
+
+
+/* kkPages */
+
+.Pagination {
+	
+	width: 100%;
+	padding:10px;
+	height: 55px;
+	_height: 45px;
+	line-height: 20px;
+	margin-right: 15px;
+	_margin-right: 5px;
+	color: #565656;
+	margin-top: 10px;
+	_margin-top: 20px;
+	clear: both;
+}
+
+.Pagination span {
+	margin-right: 5px;
+	display: block;
+	float: left;
+	margin-left: 5px;
+}
+
+.Pagination span b {
+	padding:0 2px;
+	display: inline-block;
+	line-height: 40px;
+}
+
+.Pagination div {
+	float: left
+}
+
+.Pagination a {
+	font-size: 12px;
+	text-decoration: none;
+	display: block;
+	float: left;
+	color: #565656;
+	border: 1px solid #cacaca;
+	height:40px;
+	line-height:37px;
+	padding: 0 15px;
+	border-radius: 4px;
+	margin: 0 2px;
+}
+
+.Pagination .Ellipsis {
+	line-height: 37px;
+	overflow: hidden;
+	/*display: none;*/
+}
+
+cite.FormNum {
+	display: block;
+	float: left;
+	line-height:37px;
+	height: 40px;
+	font-style: normal;
+	padding-left: 10px;
+}
+
+#PageNum {
+	color: #777;
+	width: 50px;
+	height: 40px;
+	line-height:40px;
+	border:1px solid #cacaca;
+	margin:0 5px;
+	text-align: center;
+}
+
+.Pagination a:hover,
+.Pagination a.PageCur {
+	text-decoration: none;
+	background-color: #EA4661;
+	border-radius:4px;
+	color: #ffffff;
+}
+
+
+/* Demo */
+
+.wrap {
+	border: 1px solid red;
+	width: 880px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.pagelist .item {
+	float: left;
+	width: 218px;
+	border: 1px solid #CCC;
+	text-align: center;
+}
+
+.newslist {
+	line-height: 24px;
+}
+
+.newslist ul li {
+	height: 24px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #999;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.newslist a {
+	color: #444
+}
+
+/*.newslist ul li div {
+	float: left;
+	background-image: url(../Images/h-1.gif);
+	background-repeat: no-repeat;
+	background-position: 4px center;
+	padding-left: 16px;
+}*/
+
+.newslist ul li span {
+	float: right;
+	color: #666;
+}
+
+.title {
+	height: 150px;
+	padding-top: 50px;
+	text-align: center;
+	font-size: 14px;
+	color: #036;
+	line-height: 25px;
+}
+
+.yongfa {
+	line-height: 25px;
+}
+
+.copy {
+	line-height: 25px;
+	text-align: center;
+}
+
+.copy a {
+	color: #000;
+}
+
+.copy a:hover {
+	color: #F00;
+	padding-bottom: 10px;
+}
+
+.title font {
+	font-size: 12px;
+}
