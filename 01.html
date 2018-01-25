@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <style>
-            #display{width: 300px;height: 300px}
-        </style>
-    </head>
-    <body>
-    <div id="app">
-        <p><a href="#/">home-first</a></p>
-        <p><a href="#/home">home</a></p>
-        <p><a href="#/contact">contact</a></p>
-        <p><a href="#/news">news</a></p>
-    </div>
-    <div id="display">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
-    </div>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+// $.ajax( {
+//   "async": true,
+//   "url": "http://47.104.94.216:8000/api/get_infos",
+//   "method": "GET",
+// }).done(function (response) {
+//   console.log(response);
+// });
+$.ajax({
+    url: 'http://47.104.94.216:8000/api/get_infos',
+    type: 'GET',
    
-    </body>
+})
+.done(function(res) {
+    console.log(res);
+})
+.fail(function() {
+    console.log("error");
+})
+.always(function() {
+    console.log("complete");
+});
+
+</script>
 </html>

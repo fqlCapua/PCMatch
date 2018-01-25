@@ -9,7 +9,8 @@
                 this.paths[str]=func;
             },
             refresh:function(){
-                this.curPath=location.hash.slice(1)||'/home'
+           
+                this.curPath=String(location.hash.slice(1)).split("?")[0]||'/home'
                 this.paths[this.curPath]()
             },
             init:function(){
@@ -36,6 +37,22 @@
         });
         r.path('/About',function(){
               $("#main").attr("src","About.html")
+        })
+         r.path('/office_list',function(){
+              $("#main").attr("src","wedding_office.html")
+       
+        })
+        r.path('/office_detail',function(){
+              $("#main").attr("src","office_detail.html")
+       
+        })
+         r.path('/login',function(){
+              $("#main").attr("src","login.html")
+       
+        })
+         r.path('/regster',function(){
+              $("#main").attr("src","reg.html")
+       
         })
         
         r.init()

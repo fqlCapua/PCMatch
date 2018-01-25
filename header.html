@@ -185,17 +185,26 @@
 </body>
 <script type="text/javascript">
     $(function(){
-        
+         $(".form_box span a").click(function(){
+             
+             var url=window.location.href.split("#")[0];
+            
+            var hsh=$(this).attr("href");
+            console.log(url+hsh);
+           var newHref=url.replace("header.html","index.html")+hsh;
+           parent.window.location.href=newHref; 
+         });
+
     })
     $(".search_btn").click(function(event) {
        var val=$(".search_val").val();
        
        if(val!==""){
-        
-        parent.$("#main").attr("src","wedding_office.html");
+          // window.open("index.html#/search");
+          var url="index.html#/office_list?val="+val;
+          window.open(url); 
        }else{
-          parent.layer.msg("请输入搜索内容");
-          
+          parent.layer.msg("请输入搜索内容");          
        }
     });
     $(".reg_box").click(function(event) {
