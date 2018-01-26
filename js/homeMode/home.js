@@ -1,5 +1,6 @@
   var JSONdata = Mock.mock({
       "userInfo|13-50": [{
+          "hid|+1":1,
           "headerImg|1": ["https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=739322019,1387616363&fm=27&gp=0.jpg", "https://wx1.sinaimg.cn/mw690/620cec29gy1fnigrnfcvuj21w02ioe81.jpg", "http://wx3.sinaimg.cn/thumb180/7d453399gy1fmxfp9x6kxj21kw11zqag.jpg", "http://wx2.sinaimg.cn/thumb180/80c55ebagy1fmxa80y43pj20qo1bewmb.jpg", "http://wx3.sinaimg.cn/thumb180/677a5bc4gy1fmw573nqvjj20ht0bn3zf.jpg", "http://wx3.sinaimg.cn/thumb180/65f8ed38gy1fmvshl95h9j20qo0zi7au.jpg", "http://wx4.sinaimg.cn/thumb180/cf1114f6gy1fmvr2de839j20s90qowi9.jpg", "http://wx2.sinaimg.cn/thumb180/6253641fly1fmvooi4xixj20k00zkdkb.jpg", "http://wx1.sinaimg.cn/thumb180/671ba324ly1fmvm8kdpbvj20yi1a0x6p.jpg"],
           "name": "@cname",
           "gender|1": ["男", "女"],
@@ -14,4 +15,12 @@
   var app = angular.module("Myapp", []);
   app.controller("updateCtr", function($scope) {
       $scope.updateUsers = JSONdata.userInfo;
+      $scope.getDetail=function($event){
+   
+       var Obj=$event.currentTarget;
+       var hid=$(Obj).find(".user_img").attr("name");
+       var url="index.html#/user_detail?hid="+hid;
+            window.open(url);
+
+      }
   })

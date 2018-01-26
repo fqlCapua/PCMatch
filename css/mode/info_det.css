@@ -35,7 +35,8 @@
     }
     .office_text_line span{
       font-size:0.9em;
-      line-height: 30px;
+      line-height: 35px;
+      color: #777777;
     }
 .office_text_line>div{
       display: inline-block;
@@ -44,13 +45,12 @@
  
     .text_line5>div{
       font-size: 0.9em;
-      
       cursor: pointer;
-      margin:15px;
-      color: #EEEEEE;
+      margin:15px 10% 0 0;
+      color:#fff;
       text-align: center;
       width:22%;
-      padding:5px 10px;
+      padding:6px 10px;
       border-radius:25px;
     }
     .text_line5{
@@ -212,4 +212,9 @@ dl{
   color: #3889F0;
   line-height:40px;
 
+}
+/*个人信息*/
+.user_detail_tel>div{
+ width: auto;
+ color: #333333;
 }

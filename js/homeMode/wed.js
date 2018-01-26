@@ -24,6 +24,7 @@
 
     var Allusersdata = Mock.mock({
         "userInfo|100-200": [{
+            "hid|+1":1,
             "headerImg|1": ["https://wx2.sinaimg.cn/mw690/e732ef12ly1fmzrv422bhj20px0pe46r.jpg", "https://wx2.sinaimg.cn/mw690/e732ef12ly1fmzrv5p1j4j20qo0qo0xn.jpg", "https://wx2.sinaimg.cn/mw690/e732ef12ly1fmyw7tsdalj20go0go75j.jpg", "https://wx4.sinaimg.cn/mw690/e732ef12ly1fnahqpj7a6j20ku0ku76u.jpg", "https://wx2.sinaimg.cn/mw690/e732ef12ly1fmwgflx4x4j20h30gqq4y.jpg", "https://wx2.sinaimg.cn/mw690/e732ef12ly1fn6joko0m7j20k00k0nli.jpg", "https://wx1.sinaimg.cn/mw690/e732ef12ly1fn6jojlf60j20g40g4t9h.jpg", "https://wx1.sinaimg.cn/mw690/e732ef12ly1fn6jom3d76j222g219ndp.jpg", "https://wx1.sinaimg.cn/mw690/e732ef12ly1fnchxcz2xhj20ju0jujty.jpg", "https://wx3.sinaimg.cn/mw690/e732ef12ly1fnchxd8uivj20ku0ku0v6.jpg"],
             "name": "@cname",
             "gender|1": ["男", "女"],
@@ -46,6 +47,13 @@
     })
     app.controller("AllUserCtr", function($scope) {
         $scope.Allusers = Allusersdata.userInfo;
+
+        $scope.getDetail=function($event){
+            var Obj=$event.currentTarget;
+            var hid=$(Obj).attr("name");
+            var url="index.html#/user_detail?hid="+hid;
+            window.open(url);
+        }
 
     });
    

@@ -28,8 +28,8 @@
        </div>
        <section class="filter_box" ng-controller="filterUserCtr">
            <div class="filter_title">已选条件:</div>
-           <div class="filter_cont"  >
-              <select  id="user_Gender"  >
+           <div class="filter_cont" >
+              <select  id="user_Gender" >
                 <option ng-repeat="x in Userselectors.user_Gender" >{{x}}</option>
               </select>
               <select  id="user_info_married" ng-option >
@@ -95,9 +95,9 @@
      <article class="user_box_big" ng-controller="AllUserCtr">
           <ul class="user_box" id="content" >
             <li class="s_user_box" ng-repeat="user in Allusers">
-              <dl>
+              <dl ng-click="getDetail($event)"  name="{{user.hid}}">
                 <dd class="user_header_img">
-                 <img src="{{user.headerImg}}">
+                  <img src="{{user.headerImg}}">
                 </dd>
                 <dt>
                    <h5 class="user_neck_name" ng-bind="user.name"></h5>

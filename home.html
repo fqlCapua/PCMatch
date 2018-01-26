@@ -36,8 +36,8 @@
                 </div>
             </div>
             <div class="today_update_body" ng-controller="updateCtr">
-                <dl class="update_user" ng-repeat="user in updateUsers">
-                    <dd class="user_img">
+                <dl class="update_user" ng-repeat="user in updateUsers" ng-click="getDetail($event)">
+                    <dd class="user_img" name="{{user.hid}}">
                         <img src="{{user.headerImg}}"/>
                     </dd>
                     <dt>
