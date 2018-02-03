@@ -33,8 +33,13 @@
               $("#main").attr("src","estate.html")
         });
          r.path('/domestic',function(){
-              $("#main").attr("src","domestic.html")
+              // $("#main").attr("src","domestic.html");
+              $("#main").attr("src","404.html")
         });
+        r.path('/rent',function(){
+              $("#main").attr("src","rent.html")
+       
+        })
         r.path('/About',function(){
               $("#main").attr("src","About.html")
         })
@@ -60,6 +65,6 @@
         })
         
         r.init()
-
+console.log()
 
 

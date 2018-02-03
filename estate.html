@@ -2,22 +2,88 @@
 <html lang="en">
 
 <head>
-   <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <link href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516091843456&di=5561920b164547e9de3ee5b14b179129&imgtype=0&src=http%3A%2F%2Fwww.qqtn.com%2Fup%2F2011-2%2F20112512256819.gif" rel="shortcut icon" />
     <title>月老在线 房产</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/common.css" rel="stylesheet" />
-   
-<body>
+    <script type="text/javascript" src="js/mock.js"></script>
+    <link href="css/mode/house.css" rel="stylesheet" />
 
-   <main class="container">
-   	 房产
-   </main>
-</body>
+    <body ng-app="myApp">
+        <main class="container">
+            <div class="text-muted page_loc">
+                <span>郑州</span>
+                <span>></span>
+                <span>房产</span>
+            </div>
+            <section class="filter_box" ng-controller="houseCtr">
+                <div class="filter_cont">
+                    <div class="filter_title">位置:</div>
+                    <div class="filter_con">
+                        <select id="h_location">
+                            <option>全部</option>
+                            <option class="ele" ng-repeat="x in Userselectors.h_location">{{x}}</option>
+                        </select>
+                        <select id="user_info_married">
+                            <option>全部</option>
+                            <option class="ele" ng-repeat="x in Userselectors.h_subway">{{x}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter_cont">
+                    <div class="filter_title">总价:</div>
+                    <div class="filter_con">
+                        <span>全部</span>
+                        <span class="ele" ng-repeat="x in Userselectors.h_sum" ng-bind="x"></span>
+                    </div>
+                </div>
+                <div class="filter_cont">
+                    <div class="filter_title">房型:</div>
+                    <div class="filter_con">
+                        <span>全部</span>
+                        <span class="ele" ng-repeat="x in Userselectors.h_type" ng-bind="x"></span>
+                    </div>
+                </div>
+                <div class="filter_cont">
+                    <div class="filter_title">面积:</div>
+                    <div class="filter_con">
+                        <span>全部</span>
+                        <span class="ele" ng-repeat="x in Userselectors.h_area">{{x}}<sup>2</sup></span>
+                    </div>
+                </div>
+                <div class="filter_cont">
+                    <div class="filter_title">更多:</div>
+                    <div class="filter_con">
+                        <select>
+                            <option>房龄</option>
+                            <option ng-repeat="x in Userselectors.h_subway">{{x}}</option>
+                        </select>
+                        <select>
+                            <option>楼层</option>
+                            <option ng-repeat="x in Userselectors.h_subway">{{x}}</option>
+                        </select>
+                        <select>
+                            <option>朝向</option>
+                            <option ng-repeat="x in Userselectors.h_subway">{{x}}</option>
+                        </select>
+                        <select>
+                            <option>产权</option>
+                            <option ng-repeat="x in Userselectors.h_subway">{{x}}</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <section class="choosen"></section>
+          
+        </main>
+    </body>
+    <script type="text/javascript" src="js/jquery.kkPages.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/homeMode/house.js"></script>
+    
 
 </html>

@@ -1,0 +1,69 @@
+/*
+*name：房产
+*user:capufa;
+*email:13523450460@sina.cn;
+*date:2018/02/02;
+*/
+*{
+	padding: 0;
+	margin:0;
+	list-style: none;
+	text-decoration: none;
+	font-family:"微软雅黑";
+}
+.container{
+	width: 70%;
+	border: 1px solid red;
+}
+.page_loc {
+    padding-top: 17px;
+    font-size: 13px;
+}
+.filter_cont div{
+	display: inline-block;
+	line-height:35px;
+}
+.filter_title {
+	font-weight: bolder;
+    
+    font-size: 14px;
+    width: 8%;
+}
+.filter_box{
+	padding-top:15px;
+}
+.filter_cont{
+    width:91%;
+    
+}
+
+.filter_con span:nth-child(1){
+	color:#1A5DAF;
+}
+.filter_con span{
+	cursor: pointer;
+	display: inline-block;
+	color: #828282;
+	padding:3px 5px; 
+	font-size: 13px;
+}
+.filter_cont select {
+    color: #948EA2;
+    display: inline-block;
+    width:140px;
+    border:1px solid #BABABA;
+    font-size: 12px;
+    margin: 0 3px 10px 0;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 2px;
+    padding-left:10px;
+    appearance:none;  
+   -moz-appearance:none;  
+   -webkit-appearance:none;  
+   background: url("../../images/seleArrow.png") no-repeat right center transparent; 
+   background-size:17px 12px; 
+    
+
+}
+select::-ms-expand { display: none; } 
