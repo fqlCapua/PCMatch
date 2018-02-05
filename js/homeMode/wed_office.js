@@ -46,7 +46,7 @@ app.controller("officeCtr", function($scope) {
 /*婚介所详情*/
 $("#office_cont").on('click',".office_boxes",function() {
     /* Act on the event */
-    var office_id=$(this).find("dd").attr("office_id");
+    var office_id=$(this).attr("office_id");
     //console.log(office_id);
     var url="index.html#/office_detail?oId="+office_id;
      window.open(url);

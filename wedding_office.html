@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
-    <link href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516091843456&di=5561920b164547e9de3ee5b14b179129&imgtype=0&src=http%3A%2F%2Fwww.qqtn.com%2Fup%2F2011-2%2F20112512256819.gif" rel="shortcut icon" />
+    <link href="" rel="shortcut icon" />
     <title>月老在线 婚恋</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -24,11 +24,11 @@
         </header>
         <main class="container" id="office_cont" style="padding-top: 15px;">
            
-            <dl class="office_boxes"   ng-repeat="office in AllOffices">
-              <dd class="office_img" office_id="{{office.user_agency_id}}">
+            <dl class="office_boxes"   ng-repeat="office in AllOffices" office_id="{{office.user_agency_id}}">
+              <dd class="office_img">
                  <img src="{{office.agency_pics}}" />
               </dd>
-              <dt office_id="{{office.user_agency_id}}">
+              <dt office_id="{{office.headerImg}}">
                   <div class="office_title1" ng-bind="office.agency_name"></div>
                   <div class="office_info">
                       <span>

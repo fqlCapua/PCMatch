@@ -55,6 +55,10 @@
               $("#main").attr("src","user_detail.html")
        
         })
+         r.path('/house_detail',function(){
+              $("#main").attr("src","house_detail.html")
+       
+        })
          r.path('/login',function(){
               $("#main").attr("src","login.html")
        

@@ -67,3 +67,67 @@
 
 }
 select::-ms-expand { display: none; } 
+.choosen{
+    height:40px;
+}
+.nav_h_res{
+    border-bottom:2px solid #4082D4;
+}
+.nav_h_res li{
+    cursor:pointer;
+    display:inline-block;
+    width:8em;
+     font-size: 16px;
+     line-height:40px;
+     text-align: center;
+}
+.nav_active{
+    background-color:#4082D4;
+    color:#fff;
+}
+.nav_h_res li:hover{
+    background-color:#4082D4;
+    color:#fff;
+}
+.house_box dd,.house_box dt{
+    display:inline-block;
+    vertical-align: top;
+}
+.house_box dt{
+    width:80%;
+    
+}
+.house_box .house_img{
+   
+    width:15%;
+    text-align:center;
+}
+.house_box .house_img img{
+    width:100%;
+    height:100%;
+}
+.house_box dt{
+    padding-left:20px;
+}
+.house_box dt .house_title{
+    
+    color:#000;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height:40px;
+}
+.house_box span:not(.house_title){
+     color:#555;
+     font-weight:500;
+     font-size: 0.9em;
+     line-height:30px;
+}
+.Pagination a:hover, .Pagination a.PageCur{
+    background-color: #4082D4;
+}
+.dt_b_lt_title{
+    font-weight: bold;
+
+    font-size:20px;
+    line-height: 40px;
+}
