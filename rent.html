@@ -1,26 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-   <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
-    <link href="" rel="shortcut icon" />
-    <title>月老在线 租房</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/common.css" rel="stylesheet" />
-   
-<body>
-	 <header>
-        <iframe frameborder="0" id="header" onload="this.height=100" scrolling="no" src="header.html" width="100%">
-        </iframe>
-    </header>
-   <main class="container">
-   	 租房
-   </main>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <link href="" rel="shortcut icon" />
+        <title>
+            月老在线 出租
+        </title>
+        <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/kkPageCss.css">
+     
+        <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+         <link href="css/mode/house.css" rel="stylesheet" />
+            <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="js/layer.js"></script>
+        <script src="js/mock.js" type="text/javascript">
+        </script>
+       
+
+        <body ng-app="myApp">
+            <main class="container">
+                <article>
+                    <div class="text-muted page_loc">
+                        <span>
+                                郑州
+                            </span>
+                        <span>
+                                >
+                            </span>
+                        <span>
+                                出租
+                            </span>
+                    </div>
+                    <section class="filter_box" ng-controller="houseFilterCtr">
+                        <div class="filter_cont">
+                            <div class="filter_title">
+                                位置:
+                            </div>
+                            <div class="filter_con">
+                                <select id="h_location">
+                                    <option>
+                                        全部
+                                    </option>
+                                    <option class="ele" ng-repeat="x in Userselectors.h_location">
+                                        {{x}}
+                                    </option>
+                                </select>
+                                <select id="user_info_married">
+                                    <option>
+                                        全部
+                                    </option>
+                                    <option class="ele" ng-repeat="x in Userselectors.h_subway">
+                                        {{x}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter_cont">
+                            <div class="filter_title">
+                                租金:
+                            </div>
+                            <div class="filter_con">
+                                <span>
+                                        全部
+                                    </span>
+                                <span class="ele" ng-bind="x" ng-repeat="x in Userselectors.h_sum">
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="filter_cont">
+                            <div class="filter_title">
+                                房型:
+                            </div>
+                            <div class="filter_con">
+                                <span>
+                                        全部
+                                    </span>
+                                <span class="ele" ng-bind="x" ng-repeat="x in Userselectors.h_type">
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="filter_cont">
+                            <div class="filter_title">
+                                面积:
+                            </div>
+                            <div class="filter_con">
+                                <span>
+                                        全部
+                                    </span>
+                                <span class="ele" ng-repeat="x in Userselectors.h_area">
+                                        {{x}}
+                                        <sup>
+                                            2
+                                        </sup>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="filter_cont">
+                            <div class="filter_title">
+                                更多:
+                            </div>
+                            <div class="filter_con">
+                                <select>
+                                    <option>
+                                        房龄
+                                    </option>
+                                    <option ng-repeat="x in Userselectors.h_subway">
+                                        {{x}}
+                                    </option>
+                                </select>
+                                <select>
+                                    <option>
+                                        楼层
+                                    </option>
+                                    <option ng-repeat="x in Userselectors.h_subway">
+                                        {{x}}
+                                    </option>
+                                </select>
+                                <select>
+                                    <option>
+                                        朝向
+                                    </option>
+                                    <option ng-repeat="x in Userselectors.h_subway">
+                                        {{x}}
+                                    </option>
+                                </select>
+                                <select>
+                                    <option>
+                                        产权
+                                    </option>
+                                    <option ng-repeat="x in Userselectors.h_subway">
+                                        {{x}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="choosen">
+                    </section>
+                </article>
+                <article>
+                    <ul class="nav_h_res">
+                        <li class="nav_active" name="All">
+                            全部房源
+                        </li>
+                        <li name="private">
+                            个人房源
+                        </li>
+                         <li name="agent">
+                            经纪人
+                        </li>
+                        <li name="brand">
+                            品牌公寓
+                        </li>
+                    </ul>
+                    <section class="nav_h_result" ng-controller="AllrentCtr">
+                        <dl class="house_box" ng-repeat="house in Allhouses" house_id="{{house.hid}}" ng-click="getDetail($event)">
+                            <dd class="house_img">
+                                <img   src="{{house.headerImg}}" />
+                            </dd>
+                            <dt house_id="{{house.user_agency_id}}">
+                                <div class="house_title" ng-bind="house.title">
+                                </div>
+                                <div class="house_info">
+                                     <span class="officeUser_num" ng-bind="house.rentAll"></span><span>&nbsp;|&nbsp;</span>
+                                    <span class="office_age" ng-bind="house.style"><span>&nbsp;|&nbsp;</span>
+                                     </span>
+                                      <span class="office_tel" ng-bind="house.fineDecro"></span><span>&nbsp;|&nbsp;</span>
+                                        <span class="office_tel" ng-bind="house.floor"></span>
+                                </div>
+                                <div class="house_info">
+                                     <span>
+                                      地址:
+                                     </span>
+                                     <span ng-bind="house.location+house.road">
+                                     </span><span>&nbsp;|&nbsp;</span>
+                                     <span class="username" ng-bind="house.username">
+                                     </span>
+                                   
+                                </div>
+                            </dt>
+                        </dl>
+                    </section>
+                </article>
+            </main>
+        </body>
+        <script src="js/jquery.kkPages.js" type="text/javascript">
+        </script>
+        <script src="js/angular.js" type="text/javascript">
+        </script>
+        <script src="js/homeMode/rent.js" type="text/javascript">
+        </script>
+        </meta>
+    </head>
 
 </html>

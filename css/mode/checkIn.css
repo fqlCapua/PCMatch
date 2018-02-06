@@ -1,0 +1,102 @@
+.page_loc {
+    padding-top: 17px;
+    font-size: 13px;
+}
+   * {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            font-family: "微软雅黑";
+        }
+        .banner {
+            border: 1px solid #F7F7F7
+        }
+        .container {
+            width: 70%;
+        }
+        .page_loc {
+            font-size: 14px;
+            color: #868E96;
+            padding: 10px 0 0 0;
+        }
+        .office_name {
+            font-size: 1.3em;
+            color: #2C83EF;
+            line-height: 45px;
+        }
+        .container section {
+            display: inline-block;
+        }
+        .left_menu {
+            width: 20%;
+            vertical-align: top;
+        }
+        .left_menu ul {
+            width: 70%;
+            margin: 0 auto;
+            background-color: #F8F8F8;
+        }
+
+        .left_menu ul li {
+            cursor: pointer;
+            text-align: center;
+            line-height: 43px;
+            border-bottom: 1px solid #F3F3F3;
+            font-size: .1.1em;
+        }
+        .li_active {
+            color: #fff;
+            background-color: #2C83EF;
+        }
+        .right_cont {
+            width: 79%;
+            vertical-align: top;
+        }
+        .right_cont ul li {
+            display: none;
+           
+            padding: 20px;
+            border-left: 1px solid #F7F7F7;
+        }
+        .right_cont ul li:nth-child(1) {
+            display: block;
+        }
+        .form-inline {
+            line-height: 50px;
+        }
+        .form-inline label {
+            text-align: left;
+            width: 100px;
+        }
+        .myintro textarea {
+            resize: none;
+        }
+        .tips div {
+            display: inline-block;
+        }
+        .tips div:nth-child(1) {
+            vertical-align: top;
+            width: 10%;
+        }
+        .tips div:nth-child(2) {
+            vertical-align: top;
+            width: 89%;
+        }
+        .upload_btn{
+            display: inline-block;
+            cursor: pointer;
+            border:1px solid #F7F7F7;
+            width:150px;
+            height:150px;
+            font-weight:200;
+            font-size:100px;
+            line-height:120px;
+            color: #fff;
+            background-color: #BFBFBF;
+            text-align:center;
+        }
+        .sub_all{
+            cursor: pointer;
+        }
+       
