@@ -196,6 +196,7 @@
         </div>
     </div>
 </body>
+
 <script type="text/javascript">
     $(function(){
          $(".form_box span a").click(function(){
@@ -203,7 +204,7 @@
              var url=window.location.href.split("#")[0];
             
             var hsh=$(this).attr("href");
-            console.log(url+hsh);
+        
            var newHref=url.replace("header.html","index.html")+hsh;
            parent.window.location.href=newHref; 
          });

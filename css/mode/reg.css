@@ -1,0 +1,79 @@
+ body{
+  font-family: "微软雅黑";
+    /* set background tensile */
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
+   
+}
+
+#content{
+
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 420px;
+    border: 1px solid #BABABA;
+    border-radius: 6px;
+    padding:10px 20px;
+    margin:40px auto 300px auto;
+    display: block;
+}
+
+
+
+.login_header{
+    color:#337AB7;
+    font-size:30px;
+    line-height:45px;
+    letter-spacing:1px;
+    text-align: center;
+    width:90%;
+padding-bottom:20px
+     
+}
+.login_box label,.login_box input{
+	display: inline-block;
+}
+.login_box label{
+    font-size: 13px;
+}
+.login_button_box {
+	text-align: center;
+}
+.login_button_box button{
+	width:60%;
+	margin:0 auto;
+}
+.pro_label{
+    
+    display: inline-block;
+   margin-top: 10px;
+}
+.login_box {
+	width: 95%;
+	margin-bottom: 20px;
+}
+.logon-box{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.logon-box a{
+    margin: 30px;
+    color: #4a4744;
+    font-size: 13px;
+    text-decoration: none;
+}
+.provideBtn{
+    cursor: pointer;
+}
+.logon-box a:hover{
+    color: #ff7d0a;
+}
+
+.logon-box a:active{
+    color: #ee7204;
+}
+.login_box .phone,.provideBtn{
+    font-size: 14px;
+}

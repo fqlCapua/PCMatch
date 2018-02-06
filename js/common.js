@@ -17,3 +17,4 @@ function reinitIframe(obj) {
 window.setInterval("reinitIframe('header')", 100);
 window.setInterval("reinitIframe('footer')", 100);
 window.setInterval("reinitIframe('main')", 100);
+

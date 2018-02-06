@@ -1,95 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
-        <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1.0" name="viewport">
-                <meta content="ie=edge" http-equiv="X-UA-Compatible">
-                    <title>
-                        登录
-                    </title>
-                    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
-                    <style type="text/css">
-                        body{
-  font-family: "微软雅黑";
-    /* set background tensile */
-    background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    margin: 0;
-    padding: 0;
-   
-}
-
-#content{
-
-    background-color: rgba(255, 255, 255, 0.95);
-    width: 420px;
-    border: 1px solid #BABABA;
-    border-radius: 6px;
-    padding:10px 20px;
-    margin:40px auto 300px auto;
-    display: block;
-}
-
-
-
-.login_header{
-    color:#337AB7;
-    font-size:30px;
-    line-height:45px;
-    letter-spacing:1px;
-    text-align: center;
-    width:90%;
-padding-bottom:20px
-     
-}
-.login_box label,.login_box input{
-	display: inline-block;
-}
-.login_box label{
-    font-size: 13px;
-}
-.login_button_box {
-	text-align: center;
-}
-.login_button_box button{
-	width:60%;
-	margin:0 auto;
-}
-.pro_label{
-    
-    display: inline-block;
-   margin-top: 10px;
-}
-.login_box {
-	width: 95%;
-	margin-bottom: 20px;
-}
-.logon-box{
-    margin-top: 20px;
-    text-align: center;
-}
-
-.logon-box a{
-    margin: 30px;
-    color: #4a4744;
-    font-size: 13px;
-    text-decoration: none;
-}
-.provideBtn{
-    cursor: pointer;
-}
-.logon-box a:hover{
-    color: #ff7d0a;
-}
-
-.logon-box a:active{
-    color: #ee7204;
-}
-                    </style>
-                </meta>
-            </meta>
-        </meta>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>
+            注册
+        </title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/mode/reg.css" />
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/layer.js" ></script>
     </head>
+
     <body>
         <div id="content">
             <div class="login_header text-center">
@@ -98,31 +22,29 @@ padding-bottom:20px
             <form>
                 <div class="login_box input-group">
                     <label class="col-md-3 pro_label">手机号:</label>
-                    <input class="form-control search_val col-md-col-md-9" placeholder="请输入手机号" type="text">
-                            <span class="provideBtn input-group-addon btn btn-primary text-light bg-primary">
+                    <input class="form-control phone  col-md-col-md-9" placeholder="请输入手机号" type="text">
+                    <span class="provideBtn input-group-addon btn btn-primary text-light bg-primary">
                                 获取验证码
                             </span>
-                   </input>                  
+                    </input>
                 </div>
-               <div class="login_box form-inline">
-                    <label for=""  class="col-md-3">验证码:</label>
+                <div class="login_box form-inline">
+                    <label for="" class="col-md-3">验证码:</label>
                     <input class="form-control col-md-3" type="password">
                     </input>
                 </div>
                 <div class="login_box form-inline">
-                    <label for=""  class="col-md-3">密码:</label>
-                    <input class="form-control col-md-9" placeholder="请输入密码" type="password">
+                    <label for="" class="col-md-3">密码:</label>
+                    <input class="form-control userpwd col-md-9" placeholder="请输入密码" type="password">
                     </input>
                 </div>
                 <div class="login_box form-inline">
-                    <label for=""  class="col-md-3">再次输入:</label>
-                    <input class="form-control col-md-9" placeholder="请输入密码" type="password">
+                    <label for="" class="col-md-3">再次输入:</label>
+                    <input class="form-control userpwd2 col-md-9" placeholder="请输入密码" type="password">
                     </input>
                 </div>
-                
             </form>
             <div class="remember-box">
-                
             </div>
             <div class="login_button_box">
                 <button class="btn btn-primary">
@@ -137,4 +59,6 @@ padding-bottom:20px
             <br />
         </div>
     </body>
+    <script type="text/javascript" src="js/homeMode/header.js"></script>
+
 </html>
