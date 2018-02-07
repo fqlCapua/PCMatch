@@ -8,6 +8,7 @@
                         登录
                     </title>
                     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+                    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
                     <style type="text/css">
                         body{
   font-family: "微软雅黑";
@@ -117,10 +118,16 @@ padding-bottom:20px
                 <a href="">
                     忘记密码?
                 </a>
-                <a href="">
+                <a class="reg" href="">
                     注册
                 </a>
             </div>
         </div>
     </body>
+    <script type="text/javascript">
+        $(".logon-box .reg").click(function(event) {
+           
+           parent.window.location.href="index.html#/regster";
+        });
+    </script>
 </html>

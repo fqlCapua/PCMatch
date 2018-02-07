@@ -1,10 +1,15 @@
-function check_phone(phone) {
+var Ajax = {
+    type: "POST",
+    url: "http://47.104.94.216/api/public/"
+}
 
+function check_phone(Phone) {
 
     var flag;
     var reg = /^1[34578]\d{9}$/;
-    if ($(".phone").val() != "") {
-        if (reg.test(phone)) {
+    if (Phone != "") {
+
+        if (reg.test(Phone)) {
             flag = true;
         } else {
             flag = false;
@@ -14,6 +19,8 @@ function check_phone(phone) {
             });
         }
     } else {
+
+        flag = false;
         layer.tips("不能为空", ".phone", {
             tips: [1, "#4082D4"],
             tipsMore: true
@@ -38,6 +45,7 @@ function check_pwd(pwd) {
             });
         }
     } else {
+        flag = false;
         layer.tips("不能为空", ".userpwd", {
             tips: [1, "#4082D4"],
             tipsMore: true
@@ -52,47 +60,112 @@ function check_vCode(code) {
 
     var flag;
     var reg = /^[a-zA-Z0-9]{6,18}$/;
+
     if ($(".vCode").val() != "") {
-        if (reg.test(phone)) {
+      
+    } else {
+        flag = false;
+        layer.tips("不能为空", ".vCode", {
+            tips: [1, "#4082D4"],
+            tipsMore: true
+        });
+    }
+
+    return flag;
+}
+
+
+function check_PwdToPwd(pwd1, pwd2) {
+    var flag;
+    if ($(".userpwd2").val() != "") {
+        if (pwd2 == pwd1) {
             flag = true;
         } else {
             flag = false;
-            layer.tips("验证码错误", ".vCode", {
+            layer.tips("密码不一致", ".userpwd2", {
                 tips: [1, "#4082D4"],
                 tipsMore: true
             });
         }
     } else {
-          layer.tips("不能为空", ".vCode", {
-                tips: [1, "#4082D4"],
-                tipsMore: true
-            });
-    }
-
-    return flag;
-}
-
-function check_PwdToPwd(pwd1, pwd2) {
-    var flag;
-    if($(".userpwd2").val()!=""){
- if (pwd2 == pwd1) {
-        flag = true;
-    } else {
         flag = false;
-        layer.tips("密码不一致", ".userpwd2", {
+        layer.tips("不能为空", ".userpwd2", {
             tips: [1, "#4082D4"],
             tipsMore: true
         });
     }
-    }else{
-  layer.tips("不能为空", ".userpwd2", {
-            tips: [1, "#4082D4"],
-            tipsMore: true
-        });
-    }
-   
+
     return flag;
 }
-console.log(check_phone("135"));
-console.log(check_pwd("135"));
-console.log(check_PwdToPwd("2", "3"));
+
+function Send_code() {
+	var Code;
+    var timeStamp = Date.parse(new Date) / 1000;
+    var md_token = hex_md5("my58_" + hex_md5("my58_" + timeStamp));
+    $.ajax({
+            url: 'http://47.104.94.216/api/public/',
+            type: 'POST',
+            async:false,
+            data: {
+                service: "App.User.Get_code",
+                time: timeStamp,
+                token: md_token,
+                user_phone:"18882221111"
+            },
+        })
+        .done(function(res) {
+        	if(res.ret==200){
+        		Code=res.data.code;
+        	}else{
+        		layer.msg("发送失败");
+        	}
+            
+             
+        })
+       .fail(function(err) {
+          
+        })
+        .always(function() {
+             
+        });
+  return  Code;
+}
+console.log(Send_code())
+var InterValObj; //timer变量，控制时间 
+var count = 300; //间隔函数，1秒执行 
+var curCount; //当前剩余秒数
+function NoClick() {
+    curCount = count;
+    Send_code(Phone)
+    $(".provideBtn").attr("disabled", true);
+    $(".provideBtn").val(curCount + "s后重新发送");
+    timer1 = window.setInterval("remainTime()", 1000);
+}
+
+function remainTime() {
+    if (curCount == 0) {
+        clearInterval(timer1);
+        $(".provideBtn").val("免费获取验证码");
+        $(".provideBtn").removeAttr('disabled');
+    } else {
+        curCount--;
+        $(".provideBtn").val(curCount + "s后重新发送");
+
+    }
+
+}
+
+$(".logon-box a").click(function(){
+	parent.window.location.href="index.html#/login";
+})
+
+$(".provideBtn").click(function() {
+    var phone = $(".phone").val();
+    if (check_phone(phone)) {
+        NoClick();
+        Send_code(phone);
+    }
+});
+$(".submiBtn").click(function(event) {
+	//if(check_phone()&&check_pwd()&&)
+});
