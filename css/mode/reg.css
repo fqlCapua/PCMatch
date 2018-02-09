@@ -31,11 +31,13 @@
 padding-bottom:20px
      
 }
-.login_box label,.login_box input{
+.login_box input{
 	display: inline-block;
-   font-size: 14px;
+    font-size: 14px;
 }
 .login_box label{
+   
+   margin-top: 10px;
     font-size: 13px;
 }
 .login_button_box {
@@ -46,7 +48,6 @@ padding-bottom:20px
 	margin:0 auto;
 }
 .pro_label{
-    
     display: inline-block;
     
 }

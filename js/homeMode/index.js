@@ -72,7 +72,7 @@
               $("#main").attr("src","login.html");
        
         });
-         r.path('/regster',function(){
+         r.path('/register',function(){
               $("#main").attr("src","reg.html");
        
         });

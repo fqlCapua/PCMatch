@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    	<meta chaset="utf-8"/>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
         <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
         var InterValObj; //timer变量，控制时间 
@@ -35,6 +36,17 @@
     <body>
         <input id="btnSendCode" type="button" value="发送验证码" onclick="sendMessage()" />
         </p>
+        <form name="form" novalidate ng-app="myApp" ng-controller="ctr1">
+            <label>你的邮箱：</label>
+            <input type="text" placeholder="邮箱地址" required>
+            <input type="submit" value="提交">
+        </form>
     </body>
-
+    <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript">
+      var app=angular.module("myApp",[]);
+      app.controller("ctr1",function($scope){
+          
+      })
+  </script>
 </html>
