@@ -34,19 +34,20 @@
 
                     ss.removeItem("io");
                     if (ss.removeItem("io") == null) {
-                        parent.layer.msg("注销成功")
-                    } else {
+                         parent.layer.msg("注销成功");
+                         $scope.entrance = true;
+                         $scope.outrance = false;
+                    }else {
                         parent.layer.msg("注销失败");
                     }
               
            }else{
-
+                  
            }
             
            
 
-            $scope.entrance = true;
-            $scope.outrance = false;
+           
 
         }
         $scope.entrance = true;
@@ -58,7 +59,7 @@
             $scope.outrance = true;
             var userInfo = JSON.parse(ss.getItem("io"));
             $scope.userid = userInfo.user_id;
-            $scope.userphone = replace_phone(userInfo.user_phone);
+            $scope.userphone =$("").text()+replace_phone(userInfo.user_phone);
             $scope.userlast = userInfo.user_last_login_time;
 
         } else {
