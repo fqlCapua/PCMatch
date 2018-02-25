@@ -41,8 +41,8 @@
        
         });
         r.path('/About',function(){
-              //$("#main").attr("src","About.html")
-              $("#main").attr("src","404.html");
+            $("#main").attr("src","About.html")
+             // $("#main").attr("src","404.html");
         });
          r.path('/office_list',function(){
               $("#main").attr("src","wedding_office.html");
@@ -76,7 +76,10 @@
               $("#main").attr("src","reg.html");
        
         });
-        
+        r.path('/change_info',function(){
+              $("#main").attr("src","change_info.html");
+       
+        });
         r.init();
 console.log()
 

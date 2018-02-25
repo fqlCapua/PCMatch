@@ -18,3 +18,7 @@ window.setInterval("reinitIframe('header')", 100);
 window.setInterval("reinitIframe('footer')", 100);
 window.setInterval("reinitIframe('main')", 100);
 
+$(".change_details").click(function() {
+ 
+   parent.location.href="index.html#/change_info";
+});
