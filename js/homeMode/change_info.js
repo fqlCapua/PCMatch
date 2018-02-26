@@ -1,3 +1,4 @@
+  var ReqUrl="http://47.104.94.216/api/public/";
   var user_infos = Mock.mock({
         "choices": {
         	"req_age": "@natural(18,50)"+"岁",
@@ -27,16 +28,17 @@ app.controller('infoCtr', function($scope){
 	$scope.users=user_infos.choices;
 	
 	$scope.saveInfo=function(){
-        var index=layer.load(1,{shade:[0.1,"#eee"]});
-        //$scope.form1=new formData($(""))
+        var index=layer.load(1,{shade:[0.1,"#eee"],offset: ['50%', '50%']});
+       var userid=getSession()[0]
 		$.ajax({
-			url:ReqUrl,
+			url:"http://47.104.94.216/api/public/",
 			type:'POST',
+            async:false,
 			data: {
-				service:"App.User.Login",
+				service:"App.User.Save_user",
                 time:time_token()[0],
                 token:time_token()[1],
-                user_id:getSession()[0],
+                user_id:userid,
                 user_age:"",
                 user_head_img:"",
                 user_married:"",
@@ -78,26 +80,25 @@ app.controller('infoCtr', function($scope){
                 user_choice_height:"",
                 user_choice_salary:"",
                 user_choice_life_area:"",
-                user_choice_married:"",
-
-
-
+                user_choice_married:""
 
 			},
 
 		})
 		.done(function(res) {
+            console.log(res);
              if(res.ret==200){
-                layer.close(index);
-                console.log(res);
+                 console.log(res);
              }
 			
 		})
 		.fail(function() {
+            
 			console.log("error");
 		})
 		.always(function() {
-			
+             layer.close(index);
+			console.log("complete");
 		});
 		
 	}

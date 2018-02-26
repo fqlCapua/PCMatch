@@ -10,7 +10,7 @@
 		console.log(userid);
 		return userInfos;
   } else {
-     //layer.msg('请先登录');
+     layer.msg('请先登录');
 
   }
  	   
