@@ -14,9 +14,6 @@ function time_token() {
     return timeArr;
 }
 
-
-
-
 function check_phone(Phone) {
 
     var flag;
@@ -43,6 +40,8 @@ function check_phone(Phone) {
 
     return flag;
 }
+
+
 
 function check_pwd(pwd) {
     var flag;
