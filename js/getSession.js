@@ -7,7 +7,7 @@
 		var userphone=jsonTxt.user_phone;
 		userInfos.push(userid);
 		userInfos.push(userphone);
-		console.log(userid);
+		
 		return userInfos;
   } else {
      layer.msg('请先登录');

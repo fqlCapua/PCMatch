@@ -1,7 +1,8 @@
   var ReqUrl="http://47.104.94.216/api/public/";
   var user_infos = Mock.mock({
         "choices": {
-        	"req_age": "@natural(18,50)"+"岁",
+        	"req_minage": "@range(18,50)"+"岁",
+            "r_maxage": "@range(19,50)"+"岁",
             "user_Gender": ["性别", "男", "女"],
             "user_info_married": [ "未婚", "离异", "丧偶", "已婚"],
             "user_info_salary": [ "<2000", "2000-3000", "3000-4000", "4000-5000", "5000-7000", "7000-1000", "10000-15000", "  15000-20000", " 20000-30000", ">30000"],
@@ -27,79 +28,89 @@ var app=angular.module("infoApp",[]);
 app.controller('infoCtr', function($scope){
 	$scope.users=user_infos.choices;
 	
-	$scope.saveInfo=function(){
-        var index=layer.load(1,{shade:[0.1,"#eee"],offset: ['50%', '50%']});
-       var userid=getSession()[0]
-		$.ajax({
-			url:"http://47.104.94.216/api/public/",
-			type:'POST',
-            async:false,
-			data: {
-				service:"App.User.Save_user",
+	
+})
+
+    function sub_all(){ 
+         var index=layer.load(0,{shade:[0.1,"#eee"],offset: ['50%', '50%']});
+         var userid=getSession()[0];
+            var formData={
+                service:"App.User.Save_user",
                 time:time_token()[0],
                 token:time_token()[1],
                 user_id:userid,
-                user_age:"",
-                user_head_img:"",
-                user_married:"",
-                user_salary:"",
-                user_constellation:"",
-                user_animal:"",
-                user_height:"",
-                user_education:"",
-                user_origin:"",
-                user_nation:"",
-                user_life_area:"",
-                user_nickname:"",
-                user_identity:"",
-                user_maid:"",
-                user_introduce:"",
-                user_profession:"",
-                user_pics:"",
-                user_sex:"",
-                user_birth_year:"",
-                user_birth_month:"",
-                user_birth_day:"",
-                user_true_name:"",
-                user_weight:"",
-                user_child:"",
-                user_believe:"",
-                user_house:"",
-                user_smoke:"",
-                user_drink:"",
-                user_car:"",
-                user_cook:"",
-                user_homework:"",
-                user_choice_sex:"",
-                user_choice_max_age:"",
-                user_choice_min_age:"",
-                user_choice_house:"",
-                user_choice_car:"",
-                user_choice_education:"",
-                user_choice_child:"",
-                user_choice_height:"",
-                user_choice_salary:"",
-                user_choice_life_area:"",
-                user_choice_married:""
+                user_age:$(".user_age").val(),
+                user_head_img:$(".user_head_img").attr("name"),
+                user_married:$(".user_married").children("option:selected").index(),
+                user_salary:$(".user_salary").children("option:selected").index(),
+                user_constellation:$(".user_constellation").children("option:selected").index(),
+                user_animal:$(".user_animal").children("option:selected").index(),
+                user_height:$(".user_height").children("option:selected").index(),
+                user_education:$(".user_education").children("option:selected").index(),
+                user_origin:$(".user_origin1").children("option:selected").index()+$(".user_origin2").children("option:selected").index(),
+                user_nation:$(".user_nation").children("option:selected").index(),
+                user_life_area:$(".user_life_area1").children("option:selected").index()+$(".user_life_area2").children("option:selected").index(),
+                user_nickname:$(".user_nickname").val(),
+                user_identity:$(".user_identity").val(),
+               //user_maid:$(".user_maid").val(),
+                user_introduce:$(".user_introduce").val(),
+                user_profession:$(".user_profession").children("option:selected").index(),
+                // user_pics:"",
+                // user_sex:"",
+                // user_birth_year:"",
+                // user_birth_month:"",
+                // user_birth_day:"",
+                // user_true_name:"",
+                // user_weight:"",
+                // user_child:"",
+                // user_believe:"",
+                // user_house:"",
+                // user_smoke:"",
+                // user_drink:"",
+                // user_car:"",
+                // user_cook:"",
+                // user_homework:"",
+                // user_choice_sex:"",
+                // // user_choice_max_age:"",
+                // // user_choice_min_age:"",
+                // user_choice_house:"",
+                // user_choice_car:"",
+                // user_choice_education:"",
+                // user_choice_child:"",
+                // user_choice_height:"",
+                // user_choice_salary:"",
+                // user_choice_life_area:"",
+                // user_choice_married:""
 
-			},
+            };
+      
+          $.ajax({
+            url:"http://47.104.94.216/api/public/",
+            type:'POST',
+            async:false,
+            data:formData,
 
-		})
-		.done(function(res) {
-            console.log(res);
-             if(res.ret==200){
-                 console.log(res);
+        })
+        .done(function(res) {
+            console.log(formData)
+            if(res.ret==200){
+                  layer.msg("保存成功...")
+                 console.log(res.data);
+             }else{
+                layer.msg(res.msg)
              }
-			
-		})
-		.fail(function() {
             
-			console.log("error");
-		})
-		.always(function() {
+        })
+        .fail(function(err) {
+          
+            console.log("error");
+        })
+        .always(function() {
              layer.close(index);
-			console.log("complete");
-		});
-		
-	}
-})
+            
+            console.log("complete");
+        });
+        
+   
+
+}
