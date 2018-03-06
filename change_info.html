@@ -34,86 +34,156 @@
                 </section>
                 <section class="right_cont">
                     <form name="infoForm" id="infoForm">
-                         <ul>
+                        <ul>
                             <li class="mybasic">
                                 <div>
                                     <div class="form-inline">
                                         <label for="">年龄：</label>
-                                        <input type="text" class="user_age col-md-4 form-control" ng-bind="user_age" >
+                                        <input type="number" min="18" max="50" class="user_age col-md-4 form-control" ng-bind="user_age">
                                     </div>
                                     <div class="form-inline">
                                         <label class="user_head_img" for="">头像：</label>
-                                        <input type="file" class=" col-md-8 form-control ">
+                                        <input type="file" class="col-md-3 form-control header_img">
+                                        <span style="border:2px solid #BABABA;border-radius:50%;overflow: hidden;"><img style="border-radius:50%;" src="" class="show_head_img" width="70" height="70" alt="加载失败"></span>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">婚姻状况：</label>
-                                        <select class="form-control col-md-3 user_married" >
-                                            <option ng-repeat="user_married in users.user_info_married" ng-bind="user_married"></option>
-                                          
+                                        <select class="form-control col-md-3 user_married">
+                                            <option>请选择</option>
+                                            <option>未婚</option>
+                                            <option>离异</option>
+                                            <option>丧偶</option>
+                                            <option>已婚</option>
                                         </select>
                                     </div>
-                                   
-                                   <div class="form-inline">
+                                    <div class="form-inline">
                                         <label for="">月收入：</label>
-                                        <select class="form-control col-md-4 user_salary" >
-                                            <option ng-repeat="user_salary in users.user_info_salary" ng-bind="user_salary"></option>
+                                        <select class="form-control col-md-4 user_salary">
+                                            <option>请选择</option>
+                                            <option>
+                                                <2000</option>
+                                                    <option>2000-3000</option>
+                                                    <option>3000-4000</option>
+                                                    <option>4000-5000</option>
+                                                    <option>5000-7000</option>
+                                                    <option>7000-1000</option>
+                                                    <option>10000-15000</option>
+                                                    <option>15000-20000</option>
+                                                    <option>20000-30000</option>
+                                                    <option>>30000</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">星座：</label>
                                         <select class="form-control col-md-3 user_constellation" name="" id="">
-                                            <option ng-repeat="user_constellation in users.user_info_constellation" ng-bind="user_constellation"></option>
+                                            <option>请选择</option>
+                                            <option>白羊座</option>
+                                            <option>金牛座</option>
+                                            <option>双子座</option>
+                                            <option>巨蟹座</option>
+                                            <option>狮子座</option>
+                                            <option>处女座</option>
+                                            <option>天秤座</option>
+                                            <option>天蝎座</option>
+                                            <option>射手座</option>
+                                            <option>魔羯座</option>
+                                            <option>水瓶座</option>
+                                            <option>双鱼座</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">生肖：</label>
-                                        <select class="form-control col-md-4 user_animal" >
-                                            <option ng-repeat="user_animal in users.user_info_animal" ng-bind="user_animal"></option>
+                                        <select class="form-control col-md-4 user_animal">
+                                            <option>请选择</option>
+                                            <option>鼠</option>
+                                            <option>牛</option>
+                                            <option>虎</option>
+                                            <option>兔</option>
+                                            <option>龙</option>
+                                            <option>蛇</option>
+                                            <option>马</option>
+                                            <option>羊</option>
+                                            <option>猴</option>
+                                            <option>鸡</option>
+                                            <option>狗</option>
+                                            <option>猪</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">身高：</label>
-                                        <select class="form-control col-md-4 user_height" >
-                                            <option ng-repeat="user_height in users.user_info_height" ng-bind="user_height"></option>
+                                        <select class="form-control col-md-4 user_height">
+                                            <option>请选择</option>
+                                            <option>
+                                                <140cm</option>
+                                                    <option>140-145cm</option>
+                                                    <option>145-150cm</option>
+                                                    <option>150-155cm</option>
+                                                    <option>155-160cm</option>
+                                                    <option>160-165cm</option>
+                                                    <option>165-170cm</option>
+                                                    <option>170-175cm</option>
+                                                    <option>175-180cm</option>
+                                                    <option>180-185cm</option>
+                                                    <option>185-190cm</option>
+                                                    <option>190-195cm</option>
+                                                    <option>>195cm</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">学历：</label>
                                         <select class="form-control col-md-3 user_education" name="" id="">
-                                            <option ng-repeat="user_education in users.user_info_education" ng-bind="user_education"> </option>
+                                            <option>请选择</option>
+                                            <option>初中</option>
+                                            <option>中专/职高/技校</option>
+                                            <option>高中</option>
+                                            <option>大专</option>
+                                            <option>本科</option>
+                                            <option>硕士</option>
+                                            <option>博士</option>
+                                            <option>博士后</option>
                                         </select>
                                     </div>
-                                    <div class="form-inline user_origin" >
+                                    <div class="form-inline user_origin">
                                         <label for="">籍贯：</label>
-                                        <select class="form-control col-md-3 prov1 user_origin1"></select>
-                                        <select class="form-control col-md-3 proc1 user_origin2"  ></select>
-                                       
-                                       
-                                       
+                                        <select class="form-control col-md-3 prov1 user_origin1">
+                                            <option>请选择</option>
+                                        </select>
+                                        <select class="form-control col-md-3 proc1 user_origin2"></select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">民族：</label>
                                         <select class="form-control col-md-3 user_nation" name="" id="">
-                                            <option  ng-repeat="user_info_nation in users.user_info_nation" ng-bind="user_info_nation">汉</option>
+                                            <option>请选择</option>
+                                            <option>汉族</option>
+                                            <option>蒙古族</option>
+                                            <option>回族</option>
+                                            <option>藏族</option>
+                                            <option>维吾尔族</option>
+                                            <option>苗族</option>
+                                            <option>彝族</option>
+                                            <option>壮族</option>
+                                            <option>布依族</option>
+                                            <option>朝鲜族</option>
+                                            <option>其他民族</option>
+                                            <option>满</option>
                                         </select>
                                     </div>
                                     <div class="form-inline user_life_area">
                                         <label for="">工作地区：</label>
-                                        <select class="form-control col-md-3 prov2 user_life_area1" name="prov" >
+                                        <select class="form-control col-md-3 prov2 user_life_area1" name="prov">
                                         </select>
                                         &nbsp;
-                                        <select class="form-control col-md-3 proc2 user_life_area2" name="proc" >
+                                        <select class="form-control col-md-3 proc2 user_life_area2" name="proc">
                                         </select>
-                                        
+
                                     </div>
-                                   
                                     <div class="form-inline">
                                         <label for="">昵称：</label>
                                         <input type="text" class="col-md-4 form-control user_nickname">
                                     </div>
                                     <div class="form-inline">
                                         <label for="">身份证号：</label>
-                                        <input type="text" class="col-md-4 form-control user_identity">
+                                        <input type="text" class="col-md-7 form-control user_identity">
                                     </div>
                                     <div class="form-inline" style="display: none;">
                                         <label for="">婚介所：</label>
@@ -128,85 +198,94 @@
                                 <div class="text-muted">请介绍一下自己，让对方更了解自己</div>
                                 <div class="tips">
                                     <div class="">温馨提示:</div>
-                                    <div class="col-md-10" >为保障个人用户信息安全，文字中请勿出现QQ、微信、微博、联系电话等联系方式</div>
+                                    <div class="col-md-10">为保障个人用户信息安全，文字中请勿出现QQ、微信、微博、联系电话等联系方式</div>
                                 </div>
                             </li>
                             <li class="mydetail">
                                 <div>
                                     <div class="form-inline">
                                         <label for="">职业：</label>
-                                        <select class="form-control col-md-3 user_profession" >
+                                        <select class="form-control col-md-3 user_profession">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_profession in users.user_info_profession" ng-bind="user_info_profession"></option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">性别：</label>
-                                        <select class="form-control col-md-2 user_sex" >
+                                        <select class="form-control col-md-2 user_sex">
+                                            <option>请选择</option>
                                             <option value="">男</option>
                                             <option value="">女</option>
                                         </select>
                                     </div>
-                                    <div class="form-inline" >
+                                    <div class="form-inline">
                                         <label for="">出生日期：</label>
-                                        <input type="date" class="col-md-4 form-control">
+                                        <input type="date" class="col-md-4 form-control user_date">
                                     </div>
-                                    
                                     <div class="form-inline">
                                         <label for="">真实姓名：</label>
                                         <input type="text" class="col-md-4 form-control user_true_name">
                                     </div>
                                     <div class="form-inline">
                                         <label for="">体重：</label>
-                                        <select class="form-control col-md-3 user_weight" >
+                                        <select class="form-control col-md-3 user_weight">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_weight in users.user_info_weight" ng-bind="user_info_weight"></option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">有无子女：</label>
                                         <select class="form-control col-md-3 user_child">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_child in users.user_info_child" ng-bind="user_info_child"></option>
-                                          
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">信仰：</label>
                                         <select class="form-control col-md-3  user_believe" name="" id="">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_believe in users.user_info_believe" ng-bind="user_info_believe">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">购房情况：</label>
                                         <select class="form-control col-md-3 user_house" name="" id="">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_house in users.user_info_house" ng-bind="user_info_house">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">吸烟：</label>
                                         <select class="form-control col-md-3 user_smoke" name="" id="">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_smoke in users.user_info_smoke" ng-bind="user_info_smoke">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">喝酒：</label>
-                                        <select class="form-control col-md-3 user_drink" >
+                                        <select class="form-control col-md-3 user_drink">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_drink in users.user_info_drink" ng-bind="user_info_drink">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">购车：</label>
-                                        <select class="form-control col-md-3 user_car" >
+                                        <select class="form-control col-md-3 user_car">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_car in users.user_info_car" ng-bind="user_info_car">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">厨艺：</label>
-                                        <select class="form-control col-md-3 user_cook" >
+                                        <select class="form-control col-md-3 user_cook">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_cook in users.user_info_cook" ng-bind="user_info_cook">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">家务态度：</label>
                                         <select class="form-control col-md-3 user_homework" name="" id="">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_info_homework in users.user_info_homework" ng-bind="user_info_homework">不限</option>
                                         </select>
                                     </div>
@@ -216,88 +295,109 @@
                                 <div>
                                     <div class="form-inline">
                                         <label for="">性别：</label>
-                                        <select class="form-control col-md-2 user_choice_sex" >
-                                       
+                                        <select class="form-control col-md-2 user_choice_sex">
+                                            <option>请选择</option>
                                             <option value="">男</option>
                                             <option value="">女</option>
                                         </select>
                                     </div>
-                               <!--      <div class="form-inline" >
+                                    <div class="form-inline">
                                         <label for="">年龄：</label>
-                                        <select class="form-control col-md-3">
-                                            <option ng-repeat="user_choice_min_age in users.req_minage" ng-bind="user_choice_min_age"></option>
+                                        <!--  <select class="form-control col-md-3">
+                                            <option ng-repeat="user_choice_min_age in users.minage" ng-bind="user_choice_min_age"></option>
                                         </select>
-                                        &nbsp;
-                                        <select class="form-control col-md-3" >
-                                            <option ng-repeat="user_choice_max_age in users.r_maxage" ng-bind="user_choice_max_age"></option>
+                                        &nbsp; -->
+                                        <select class="form-control col-md-3 user_choice_age">
+                                            <option>请选择</option>
+                                            <option ng-repeat="user_choice_age in users.req_age" ng-bind="user_choice_age"></option>
                                         </select>
-                                    </div> -->
+                                    </div>
                                     <div class="form-inline">
                                         <label for="">购房情况：</label>
-                                        <select class="form-control col-md-3 user_choice_house" >
+                                        <select class="form-control col-md-3 user_choice_house">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_choice_house in users.user_info_house" ng-bind="user_choice_house">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">购车情况：</label>
-                                        <select class="form-control col-md-3 user_choice_car" >
+                                        <select class="form-control col-md-3 user_choice_car">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_choice_car in users.user_info_car" ng-bind="user_choice_car">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">学历：</label>
-                                        <select class="form-control col-md-5 user_choice_education" >
+                                        <select class="form-control col-md-5 user_choice_education">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_choice_education in users.user_info_education" ng-bind="user_choice_education">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">有无子女：</label>
-                                        <select class="form-control col-md-5 user_choice_child" >
+                                        <select class="form-control col-md-5 user_choice_child">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_choice_child in users.user_info_child" ng-bind="user_choice_child">不限</option>
                                         </select>
                                     </div>
                                     <div class="form-inline">
                                         <label for="">身高：</label>
-                                        <select class="form-control col-md-4 user_choice_height" >
+                                        <select class="form-control col-md-4 user_choice_height">
+                                            <option>请选择</option>
                                             <option ng-repeat="user_choice_height in users.user_info_height" ng-bind="user_choice_height"></option>
                                         </select>
                                     </div>
-                                      <div class="form-inline ">
+                                    <div class="form-inline ">
                                         <label for="">月收入：</label>
                                         <select class="form-control col-md-5 user_choice_salary">
-                                            <option ng-repeat="user_choice_salary in users.user_info_salary" ng-bind="user_choice_salary"">不限</option>
+                                            <option>请选择</option>
+                                            <option ng-repeat="user_choice_salary in users.user_info_salary" ng-bind="user_choice_salary" ">不限</option>
                                         </select>
                                     </div>
-                                    <div class="form-inline" class="user_choice_life_area">
-                                        <label for="">工作地区：</label>
-                                        <select class="form-control col-md-3 prov3" >
-                                            <option value="">河南</option>
+                                    <div class="form-inline " class="user_choice_life_area ">
+                                        <label for=" ">工作地区：</label>
+                                        <select class="form-control col-md-3 prov3 " >
+
+                                            
                                         </select>
                                         &nbsp;
-                                        <select class="form-control col-md-3 proc3" >
-                                            <option value="">郑州</option>
+                                        <select class="form-control col-md-3 proc3 " >
+                                        
                                         </select>
                                     </div>
                                    
-                                    <div class="form-inline">
-                                        <label for="">婚姻状况：</label>
-                                        <select class="form-control col-md-3 user_choice_married" >
-                                            <option ng-repeat="user_choice_married in users.user_info_married" ng-bind="user_choice_married"></option>
+                                    <div class="form-inline ">
+                                        <label for=" ">婚姻状况：</label>
+                                        <select class="form-control col-md-3 user_choice_married " >
+                                            
+                                             <option>请选择</option>
+                                            <option ng-repeat="user_choice_married in users.user_info_married " ng-bind="user_choice_married "></option>
 
                                             
                                         </select>
                                     </div>
                                 </div>
                             </li>
-                            <li class="myphotos">
-                                <input type="file" style="display: none;">
-                                <div class="upload_btn">+</div>
+                            <li class="myphoto">
+                                <input type="file" class="myphotos" multiple  style="display: none; ">
+                                <div class="upload_btn ">+</div>
+                                <style type="text/css">
+                                    .imgBox img{
+                                        width: 80px;
+                                        height: 80px;
+                                        display: inline-block;
+                                    }
+                                </style>
+                                <div class="imgBox">
+                                   
+                                </div>
+                                
                             </li>
                         </ul>
                     </form>
                 </section>
-                <section style="width:100%;text-align: center;">
-                    <div  class="btn btn-primary sub_all" onclick="sub_all()">保存</div>
+                <section style="width:100%;text-align: center; ">
+                    <div  class="btn btn-primary sub_all " onclick="sub_all() ">保存</div>
                 </section>
                 <br />
                 <br />
@@ -307,29 +407,32 @@
             </article>
         </div>
     </body>
-     <script class="resources library" src="js/homeMode/area.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/homeMode/com.js"></script>
-    <script type="text/javascript" src="js/angular.js"></script>
-    <script type="text/javascript" src="js/homeMode/change_info.js"></script>
-     <script type="text/javascript">
+     <script class="resources library " src="js/homeMode/area.js " type="text/javascript "></script>
+     <script type="text/javascript ">
                                         $(document).ready(function() {
-                                            $.initProv(".prov1", ".proc1", "河南省", "郑州市");
+                                            $.initProv(".prov1 ", ".proc1 ", "河南省 ", "郑州市 ");
                                         });
                                         $(document).ready(function() {
-                                            $.initProv(".prov2", ".proc2", "河南省", "郑州市");
+                                            $.initProv(".prov2 ", ".proc2 ", "河南省 ", "郑州市 ");
                                         });
                                          $(document).ready(function() {
-                                            $.initProv(".prov3", ".proc3", "河南省", "郑州市");
+                                            $.initProv(".prov3 ", ".proc3 ", "河南省 ", "郑州市 ");
                                         });
                                         </script>
-    <script>
-    $(".left_menu ul li").click(function() {
+   
+    <script type="text/javascript " src="js/homeMode/com.js "></script>
+
+    <script type="text/javascript " src="js/angular.js "></script>
+    <script type="text/javascript " src="js/homeMode/change_info.js "></script>
+      <script>
+    $(".left_menu ul li ").click(function() {
         var index = $(this).index();
         $(this).siblings().removeClass('li_active');
         $(this).addClass('li_active');
-
-        $(".right_cont ul li").eq(index).css("display", "block");
-        $(".right_cont ul li").eq(index).siblings().css("display", "none");
+       $(".right_cont ul li ").eq(index).show();
+        $(".right_cont ul li ").eq(index).siblings().hide();
+        // $(".right_cont ul li ").eq(index).css("display ", "block ");
+        // $(".right_cont ul li ").eq(index).siblings().css("display ", "none ");
     });
     </script>
 

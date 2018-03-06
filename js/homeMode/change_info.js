@@ -1,8 +1,7 @@
   var ReqUrl="http://47.104.94.216/api/public/";
   var user_infos = Mock.mock({
         "choices": {
-        	"req_minage": "@range(18,50)"+"岁",
-            "r_maxage": "@range(19,50)"+"岁",
+        	 "req_age":["18-23","23-28","28-33","33-39","39-43","43-48","48-53"],
             "user_Gender": ["性别", "男", "女"],
             "user_info_married": [ "未婚", "离异", "丧偶", "已婚"],
             "user_info_salary": [ "<2000", "2000-3000", "3000-4000", "4000-5000", "5000-7000", "7000-1000", "10000-15000", "  15000-20000", " 20000-30000", ">30000"],
@@ -30,6 +29,115 @@ app.controller('infoCtr', function($scope){
 	
 	
 })
+function upload_ImgStr(obj) {
+
+    var fileArr = [];
+    var cur_timestamp = Date.parse(new Date()) / 1000;
+    var md_token = hex_md5("law_" + hex_md5(String(cur_timestamp)) + "_law");
+    var fileNum = obj[0].files;
+    $.each(fileNum, function(i,ele) {
+        
+        var fileData = new FormData();
+        var fileobj = obj[0].files[i];
+        fileData.append('service', "App.Common.Upload_user_pic");
+        fileData.append('time', cur_timestamp);
+        fileData.append('token', md_token);
+          fileData.append('user_pic_file', ele);
+         $.ajax({
+            type: "post",
+            url: "http://47.104.94.216/api/public/",
+            async: false,
+            cache: false,
+            processData: false,
+            contentType: false,
+            data: fileData,
+            success: function(data) {
+               if(data.ret == 200) {
+                   // layer.msg("上传成功");
+                    var str = data.data.path;
+                    fileArr.push(str);
+                }else {
+                    layer.msg(data.msg);
+                    
+                }
+            },
+            error:function(data) {
+                 layer.msg(data);
+            }
+        })
+       
+
+    });
+  return fileArr.join(",");
+  
+}
+
+function upload_HeadImgStr(obj) {
+
+    var fileArr = [];
+    var cur_timestamp = Date.parse(new Date()) / 1000;
+    var md_token = hex_md5("law_" + hex_md5(String(cur_timestamp)) + "_law");
+    var fileNum = obj[0].files[0];
+   
+        
+        var fileData = new FormData();
+        var fileobj = obj[0].files[0];
+        fileData.append('service',"App.Common.Upload_head_img");
+        fileData.append('time',cur_timestamp);
+        fileData.append('token',md_token);
+          fileData.append('head_img_file',fileobj);
+         $.ajax({
+            type: "post",
+            url: "http://47.104.94.216/api/public/",
+            async: false,
+            cache: false,
+            processData: false,
+            contentType: false,
+            data: fileData,
+            success: function(data) {
+               if(data.ret == 200) {
+                //layer.msg("上传头像成功");
+                    var str=data.data.path;
+                        fileArr.push(str);
+                }else {
+                    layer.msg(data.msg);
+                    
+                }
+            },
+            error:function(data) {
+                 layer.msg(data);
+            }
+        })
+       
+
+    
+    //console.log(fileArr.join(""))  
+  return fileArr.join(",");
+}
+//上传图片
+ $(".myphotos").change(function(event) {
+     var photosStr=upload_ImgStr($(this));
+     $(".upload_btn").attr("name",photosStr);
+ });
+
+ $(".upload_btn").click(function(event) {
+       $(".myphotos").click();
+        
+ });
+//上传头像
+ $(".header_img").change(function(event) {
+        var headerStr=upload_HeadImgStr($(this));
+        $(".user_head_img").attr("name",headerStr);
+ });
+function  appendImg(Str){
+   var imgArr=String(Str).split(",");
+   var imgStr="";
+   $.each(imgArr,function(index, el) {
+       var ele="http://www.yuelao666.com"+el;
+       imgStr+="<img src='"+ele+"'  />"
+   });
+   return imgStr;
+}
 
     function sub_all(){ 
          var index=layer.load(0,{shade:[0.1,"#eee"],offset: ['50%', '50%']});
@@ -52,38 +160,38 @@ app.controller('infoCtr', function($scope){
                 user_life_area:$(".user_life_area1").children("option:selected").index()+$(".user_life_area2").children("option:selected").index(),
                 user_nickname:$(".user_nickname").val(),
                 user_identity:$(".user_identity").val(),
-               //user_maid:$(".user_maid").val(),
+                user_maid:$(".user_maid").val(),
                 user_introduce:$(".user_introduce").val(),
                 user_profession:$(".user_profession").children("option:selected").index(),
-                // user_pics:"",
-                // user_sex:"",
-                // user_birth_year:"",
-                // user_birth_month:"",
-                // user_birth_day:"",
-                // user_true_name:"",
-                // user_weight:"",
-                // user_child:"",
-                // user_believe:"",
-                // user_house:"",
-                // user_smoke:"",
-                // user_drink:"",
-                // user_car:"",
-                // user_cook:"",
-                // user_homework:"",
-                // user_choice_sex:"",
-                // // user_choice_max_age:"",
-                // // user_choice_min_age:"",
-                // user_choice_house:"",
-                // user_choice_car:"",
-                // user_choice_education:"",
-                // user_choice_child:"",
-                // user_choice_height:"",
-                // user_choice_salary:"",
-                // user_choice_life_area:"",
-                // user_choice_married:""
+                user_pics:$(".upload_btn").attr("name"),
+                user_sex:$(".user_sex").children("option:selected").index(),
+                user_birth_year:$(".user_date").val().split("-")[0],
+                user_birth_month:$(".user_date").val().split("-")[1],
+                user_birth_day:$(".user_date").val().split("-")[2],
+                user_true_name:$(".user_true_name").val(),
+                user_weight:$(".user_weight").children("option:selected").index(),
+                user_child:$(".user_child").children("option:selected").index(),
+                user_believe:$(".user_believe").children("option:selected").index(),
+                user_house:$(".user_house").children("option:selected").index(),
+                user_smoke:$(".user_smoke").children("option:selected").index(),
+                user_drink:$(".user_drink").children("option:selected").index(),
+                user_car:$(".user_car").children("option:selected").index(),
+                user_cook:$(".user_cook").children("option:selected").index(),
+                user_homework:$(".user_homework").children("option:selected").index(),
+                user_choice_sex:$(".user_choice_sex").children("option:selected").index(),
+                user_choice_max_age:$(".user_choice_age").children("option:selected").index(),
+                //user_choice_min_age:$(".user_cook").children("option:selected").index(),
+                user_choice_house:$(".user_choice_house").children("option:selected").index(),
+                user_choice_car:$(".user_choice_car").children("option:selected").index(),
+                user_choice_education:$(".user_choice_education").children("option:selected").index(),
+                user_choice_child:$(".user_choice_child").children("option:selected").index(),
+                user_choice_height:$(".user_choice_height").children("option:selected").index(),
+                user_choice_salary:$(".user_choice_salary").children("option:selected").index(),
+                user_choice_life_area:$(".user_choice_life_area").children("option:selected").index(),
+                user_choice_married:$(".user_choice_married").children("option:selected").index()
 
             };
-      
+    
           $.ajax({
             url:"http://47.104.94.216/api/public/",
             type:'POST',
@@ -92,10 +200,10 @@ app.controller('infoCtr', function($scope){
 
         })
         .done(function(res) {
-            console.log(formData)
+          
             if(res.ret==200){
-                  layer.msg("保存成功...")
-                 console.log(res.data);
+                  layer.msg("保存成功")
+               
              }else{
                 layer.msg(res.msg)
              }
@@ -108,9 +216,91 @@ app.controller('infoCtr', function($scope){
         .always(function() {
              layer.close(index);
             
-            console.log("complete");
+             
         });
         
    
 
 }
+
+
+//加载
+ $(function(){ 
+        
+         var userid=getSession()[0];
+      
+          $.ajax({
+            url:"http://47.104.94.216/api/public/",
+            type:'POST',
+            async:false,
+            data:{
+                service:"App.User.Get_user",
+                time:time_token()[0],
+                token:time_token()[1],
+                user_id:userid,
+            },
+
+        })
+        .done(function(res) {
+           if(res.ret==200){
+               var userInfo=res.data;
+               $(".user_age").val(userInfo.user_age),
+             
+              //$(".user_head_img").attr("name"),
+                $(".show_head_img").attr("src","http://www.yuelao666.com"+userInfo.user_head_img)
+                $(".user_married").children("option").eq(userInfo.user_married).attr("selected",true);
+                $(".user_salary").children("option").eq(userInfo.user_salary).attr("selected",true);
+                $(".user_constellation").children("option").eq(userInfo.user_constellation).attr("selected",true);
+                $(".user_animal").children("option").eq(userInfo.user_animal).attr("selected",true);
+                $(".user_height").children("option").eq(userInfo.user_height).attr("selected",true);
+                $(".user_education").children("option").eq(userInfo.user_education).attr("selected",true);
+                $(".user_origin1").children("option").eq(String(userInfo.user_origin).split("")[0]).attr("selected",true);+$(".user_origin2").children("option").eq(String(userInfo.user_origin).split("")[1]).attr("selected",true);
+                $(".user_nation").children("option").eq(userInfo.user_nation).attr("selected",true);
+                $(".user_life_area1").children("option").eq(String( userInfo.user_life_area).split("")[0]).attr("selected",true);+$(".user_life_area2").children("option").eq(String( userInfo.user_life_area).split("")[1]).attr("selected",true);
+                $(".user_nickname").val(userInfo.user_nickname),
+                $(".user_identity").val(userInfo.user_identity),
+               //$(".user_maid").val(userInfo.user_maid),
+                $(".user_introduce").val(userInfo.user_introduce),
+                $(".user_profession").children("option").eq(userInfo.user_profession).attr("selected",true);
+                var objImg=appendImg(userInfo.user_pics);
+                $(".imgBox").append($(String(objImg)));
+                $(".user_sex").children("option").eq( userInfo.user_sex).attr("selected",true);
+                $(".user_date").val(userInfo.user_birth_year+"-"+ userInfo.user_birth_month+"-"+userInfo.user_birth_day)
+               $(".user_true_name").val( userInfo.user_true_name),
+                $(".user_weight").children("option").eq(userInfo.user_weight).attr("selected",true);
+                $(".user_child").children("option").eq(userInfo.user_child).attr("selected",true);
+                $(".user_believe").children("option").eq(userInfo.user_believe).attr("selected",true);
+                $(".user_house").children("option").eq(userInfo.user_house).attr("selected",true);
+                $(".user_smoke").children("option").eq(userInfo.user_smoke).attr("selected",true);
+                $(".user_drink").children("option").eq(userInfo.user_drink).attr("selected",true);
+                $(".user_car").children("option").eq(userInfo.user_car).attr("selected",true);
+                $(".user_cook").children("option").eq(userInfo.user_cook).attr("selected",true);
+                $(".user_homework").children("option").eq(userInfo.user_homework).attr("selected",true);
+                $(".user_choice_sex").children("option").eq(userInfo.user_choice_sex).attr("selected",true);
+                $(".user_cook").children("option").eq(userInfo.user_cook).attr("selected",true);
+                $(".user_choice_age").children("option").eq(userInfo.user_choice_max_age).attr("selected",true);
+                $(".user_choice_house").children("option").eq(userInfo.user_choice_house).attr("selected",true);
+                $(".user_choice_car").children("option").eq(userInfo.user_choice_car).attr("selected",true);
+                $(".user_choice_education").children("option").eq(userInfo.user_choice_education).attr("selected",true);
+                $(".user_choice_child").children("option").eq(userInfo.user_choice_child).attr("selected",true);
+                $(".user_choice_height").children("option").eq(userInfo.user_choice_height).attr("selected",true);
+                $(".user_choice_salary").children("option").eq(userInfo.user_choice_salary).attr("selected",true);
+                $(".user_choice_life_area").children("option").eq(userInfo.user_choice_life_area).attr("selected",true);
+                $(".user_choice_married").children("option").eq(userInfo.user_choice_married).attr("selected",true);
+             }else{
+                layer.msg(res.msg)
+             }
+            
+        })
+        .fail(function(err) {
+          console.log("error");
+        })
+        .always(function() {
+            
+            
+             
+        });
+        
+   
+
+})
