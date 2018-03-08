@@ -2,6 +2,10 @@
  * @license AngularJS v1.5.8
  * (c) 2010-2016 Google, Inc. http://angularjs.org
  * License: MIT
+ *part:wed_end  
+  *user:13523450460@sina.cn
+  *date:2018/03/5
+   
  */
 (function(window) {'use strict';
 

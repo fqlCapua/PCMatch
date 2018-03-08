@@ -1,127 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-   <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
-    <link href="" rel="shortcut icon" />
-    <title>月老在线 婚恋</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
-   <link rel="stylesheet" href="css/kkPageCss.css" />
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    
-    <link href="css/mode/wed.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/layer.js"></script>
-    <script type="text/javascript" src="js/mock.js"></script>
-   <script type="text/javascript" src="js/angular.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <link href="" rel="shortcut icon" />
+        <title>月老在线 婚恋</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/kkPageCss.css" />
+        <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="js/md5.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <link href="css/mode/wed.css" rel="stylesheet" />
+        <script type="text/javascript" src="js/getSession.js"></script>
+        <script type="text/javascript" src="js/layer.js"></script>
+        <script type="text/javascript" src="js/mock.js"></script>
+        <script type="text/javascript" src="js/angular.js"></script>
 
-<body style="background-color:#F1F1F1;">
+        <body style="background-color:#F1F1F1;">
+            <main class="container" ng-app="Myapp" style="background-color: #fff;" ng-controller="AllUserCtr">
+                <article class="filter_banner">
+                    <div class="text-muted page_loc">
+                        <span>郑州</span>
+                        <span>></span>
+                        <span>婚恋</span>
+                    </div>
+                    <section class="filter_box" >
+                        <div class="filter_title">已选条件:</div>
+                        <div class="filter_cont">
+                            <select   id="user_Gender"    class="user_sex">
+                                <option>性别</option>
+                                <option>男</option>
+                                <option>女</option>
+                            </select>
+                           
+                            <select  id="user_info_salary" class="user_info_salary">
+                                <option>请选择</option>
+                                        <option><2000</option>
+                                        <option>2000-3000</option>
+                                        <option>3000-4000</option>
+                                        <option>4000-5000</option>
+                                        <option>5000-7000</option>
+                                        <option>7000-1000</option>
+                                        <option>10000-15000</option>
+                                        <option>15000-20000</option>
+                                        <option>20000-30000</option>
+                                        <option>>30000</option>
+                            </select>
 
-   <main class="container" ng-app="Myapp" style="background-color: #fff;">
-    <article class="filter_banner">
-      <div class="text-muted page_loc">
-          <span>郑州</span>
-          <span>></span>
-          <span>婚恋</span>
-       </div>
-       <section class="filter_box" ng-controller="filterUserCtr">
-           <div class="filter_title">已选条件:</div>
-           <div class="filter_cont" >
-              <select  id="user_Gender" >
-                <option ng-repeat="x in Userselectors.user_Gender" >{{x}}</option>
-              </select>
-              <select  id="user_info_married" ng-option >
-                <option  ng-repeat="x in Userselectors.user_info_married">{{x}}</option>
-              </select>
-              <select  id="user_info_salary" >
-                <option  ng-repeat="x in Userselectors.user_info_salary">{{x}}</option>
-              </select>
-              <select  id="user_info_constellation" >
-                <option  ng-repeat="x in Userselectors.user_info_constellation">{{x}}</option>
-              </select>
-              <select  id="user_info_animal" >
-                <option  ng-repeat="x in Userselectors.user_info_animal">{{x}}</option>
-              </select>
-              <select  id="user_info_height" >
-                <option  ng-repeat="x in Userselectors.user_info_height">{{x}}</option>
-              </select>
-              <select  id="user_info_education" >
-                <option  ng-repeat="x in Userselectors.user_info_education">{{x}}</option>
-              </select>
-              <select  id="user_info_nation" >
-                <option  ng-repeat="x in Userselectors.user_info_nation">{{x}}</option>
-              </select>
-              <select  id="user_info_profession" >
-                <option  ng-repeat="x in Userselectors.user_info_profession">{{x}}</option>
-              </select>
-              <select  id="user_info_weight" >
-                <option  ng-repeat="x in Userselectors.user_info_weight">{{x}}</option>
-              </select>
-              <select  id="user_info_child" >
-                <option  ng-repeat="x in Userselectors.user_info_child">{{x}}</option>
-              </select>
-              <select  id="user_info_believe" >
-                <option  ng-repeat="x in Userselectors.user_info_believe">{{x}}</option>
-              </select>
-              <select  id="user_info_house" >
-                <option  ng-repeat="x in Userselectors.user_info_house">{{x}}</option>
-              </select>
-              <select  id="user_info_smoke" >
-                <option  ng-repeat="x in Userselectors.user_info_smoke">{{x}}</option>
-              </select>
-              <select  id="user_info_drink" >
-                <option  ng-repeat="x in Userselectors.user_info_drink">{{x}}</option>
-              </select>
-              <select  id="user_info_car" >
-                <option  ng-repeat="x in Userselectors.user_info_car">{{x}}</option>
-              </select>
-              <select  id="user_info_cook" >
-                <option  ng-repeat="x in Userselectors.user_info_cook">{{x}}</option>
-              </select>
-               <select  id="user_info_homework" >
-                <option  ng-repeat="x in Userselectors.user_info_homework">{{x}}</option>
-              </select>
-           </div>
-           <div class="filter_setting" style="display: none;">
-              <i class="fa fa-arrow-circle-o-down text-primary filter_setIcon"></i>
-              <span class="text-primary">设置更多条件</span>
-           </div>
+                            <select   id="user_info_constellation" class="user_info_constellation">
+                                <option>请选择</option>
+                                <option>白羊座</option>
+                                <option>金牛座</option>
+                                <option>双子座</option>
+                                <option>巨蟹座</option>
+                                <option>狮子座</option>
+                                <option>处女座</option>
+                                <option>天秤座</option>
+                                <option>天蝎座</option>
+                                <option>射手座</option>
+                                <option>魔羯座</option>
+                                <option>水瓶座</option>
+                                <option>双鱼座</option>
+                            </select>
+                            <select  id="user_info_animal" class="user_info_animal">
+                                <option>请选择</option>
+                                <option>鼠</option>
+                                <option>牛</option>
+                                <option>虎</option>
+                                <option>兔</option>
+                                <option>龙</option>
+                                <option>蛇</option>
+                                <option>马</option>
+                                <option>羊</option>
+                                <option>猴</option>
+                                <option>鸡</option>
+                                <option>狗</option>
+                                <option>猪</option>
+                            </select>
+                            <select   id="user_info_height" class="user_info_height">
+                                <option>请选择</option>
+                                <option>
+                                    <140cm</option>
+                                        <option>140-145cm</option>
+                                        <option>145-150cm</option>
+                                        <option>150-155cm</option>
+                                        <option>155-160cm</option>
+                                        <option>160-165cm</option>
+                                        <option>165-170cm</option>
+                                        <option>170-175cm</option>
+                                        <option>175-180cm</option>
+                                        <option>180-185cm</option>
+                                        <option>185-190cm</option>
+                                        <option>190-195cm</option>
+                                        <option>>195cm</option>
+                            </select>
+                            <select   id="user_info_education" class="user_info_education">
+                                <option>请选择</option>
+                                <option>初中</option>
+                                <option>中专/职高/技校</option>
+                                <option>高中</option>
+                                <option>大专</option>
+                                <option>本科</option>
+                                <option>硕士</option>
+                                <option>博士</option>
+                                <option>博士后</option>
+                            </select>
+                            <select  id="user_info_nation"  class="user_info_nation">
+                                <option>请选择</option>
+                                <option>汉族</option>
+                                <option>蒙古族</option>
+                                <option>回族</option>
+                                <option>藏族</option>
+                                <option>维吾尔族</option>
+                                <option>苗族</option>
+                                <option>彝族</option>
+                                <option>壮族</option>
+                                <option>布依族</option>
+                                <option>朝鲜族</option>
+                                <option>其他民族</option>
+                                <option>满</option>
+                            </select>
+                            <select   id="user_info_profession"  class="user_info_profession">
+                                <option>请选择</option>
+                                <option>计算机/互联网</option>
+                                <option>电子电器/通信技术</option>
+                                <option>机械/仪器仪表</option>
+                                <option>销售</option>
+                                <option>客服及技术支持</option>
+                                <option>财务/审计/税务</option>
+                                <option>证券/金融/投资/银行</option>
+                                <option>保险</option>
+                                <option>生产/营运</option>
+                                <option>质量/安全管理</option>
+                                <option>工程/能源</option>
+                                <option>贸易/采购</option>
+                                <option>物流/仓储/运输</option>
+                                <option>技工</option>
+                                <option>化工/环保</option>
+                                <option>生物/制药/医疗器械</option>
+                                <option>医院/医疗/护理</option>
+                                <option>广告</option>
+                                <option>市场/公关</option>
+                                <option>影视/媒体</option>
+                                <option>写作/出版/印刷</option>
+                                <option>翻译</option>
+                                <option>艺术/设计/创意</option>
+                                <option>建筑/房地产/装饰装修</option>
+                                <option>物业管理</option>
+                                <option>人力资源</option>
+                                <option>高级经营管理</option>
+                                <option>行政/后勤</option>
+                                <option>咨询/顾问</option>
+                                <option>律师/法务/合规</option>
+                                <option>教育/培训</option>
+                                <option>科研</option>
+                                <option>酒店/旅游/餐饮/娱乐</option>
+                                <option>美容/健身</option>
+                                <option>商业零售服务</option>
+                                <option>交通运输服务</option>
+                                <option>保安/家政服务</option>
+                                <option>警察/其它</option>
+                                <option>公务员</option>
+                                <option>运动员</option>
+                                <option>农/林/牧/渔</option>
+                                <option>自由职业/兼职</option>
+                                <option>储备干部/培训生/实习生</option>
+                                <option>在校学生</option>
+                                <option>其他</option>
+                            </select>
+                            <select  id="user_info_weight" class="user_info_weight">
+                                <option>请选择</option>
+                                <option>40公斤以下</option>
+                                <option>40公斤</option>
+                                <option>41公斤</option>
+                                <option>42公斤</option>
+                                <option>43公斤</option>
+                                <option>44公斤</option>
+                                <option>45公斤</option>
+                                <option>46公斤</option>
+                                <option>47公斤</option>
+                                <option>48公斤</option>
+                                <option>49公斤</option>
+                                <option>50公斤</option>
+                                <option>51公斤</option>
+                                <option>52公斤</option>
+                                <option>53公斤</option>
+                                <option>54公斤</option>
+                                <option>55公斤</option>
+                                <option>56公斤</option>
+                                <option>57公斤</option>
+                                <option>58公斤</option>
+                                <option>59公斤</option>
+                                <option>60公斤</option>
+                                <option>61公斤</option>
+                                <option>62公斤</option>
+                                <option>63公斤</option>
+                                <option>64公斤</option>
+                                <option>65公斤</option>
+                                <option>66公斤</option>
+                                <option>67公斤</option>
+                                <option>68公斤</option>
+                                <option>69公斤</option>
+                                <option>70公斤</option>
+                                <option>71公斤</option>
+                                <option>72公斤</option>
+                                <option>73公斤</option>
+                                <option>74公斤</option>
+                                <option>75公斤</option>
+                                <option>76公斤</option>
+                                <option>77公斤</option>
+                                <option>78公斤</option>
+                                <option>79公斤</option>
+                                <option>80公斤</option>
+                                <option>81公斤</option>
+                                <option>82公斤</option>
+                                <option>83公斤</option>
+                                <option>84公斤</option>
+                                <option>85公斤</option>
+                                <option>86公斤</option>
+                                <option>87公斤</option>
+                                <option>88公斤</option>
+                                <option>89公斤</option>
+                                <option>90公斤</option>
+                                <option>91公斤</option>
+                                <option>92公斤</option>
+                                <option>93公斤</option>
+                                <option>94公斤</option>
+                                <option>95公斤</option>
+                                <option>96公斤</option>
+                                <option>97公斤</option>
+                                <option>98公斤</option>
+                                <option>99公斤</option>
+                                <option>100公斤</option>
+                                <option>101公斤</option>
+                                <option>102公斤</option>
+                                <option>103公斤</option>
+                                <option>104公斤</option>
+                                <option>105公斤</option>
+                                <option>106公斤</option>
+                                <option>107公斤</option>
+                                <option>108公斤</option>
+                                <option>109公斤</option>
+                                <option>110公斤</option>
+                                <option>111公斤</option>
+                                <option>112公斤</option>
+                                <option>113公斤</option>
+                                <option>114公斤</option>
+                                <option>115公斤</option>
+                                <option>116公斤</option>
+                                <option>117公斤</option>
+                                <option>118公斤</option>
+                                <option>119公斤</option>
+                                <option>120公斤</option>
+                                <option>120公斤以</option>
+                            </select>
+                            <select   id="user_info_child" class="user_info_child">
+                                <option>没有</option>
+                                <option>有,和我住一起</option>
+                                <option>有,有时和我住一起</option>
+                                <option>有,不和我住一起</option>
+                            </select>
+                            <select   id="user_info_believe" class="user_info_believe">
+                                <option>无神论</option>
+                                <option>佛教</option>
+                                <option>道教</option>
+                                <option>基督教</option>
+                                <option>天主教</option>
+                                <option>信神但未定教</option>
+                                <option>儒教</option>
+                                <option>犹太教</option>
+                                <option>回教</option>
+                                <option>伊斯兰教</option>
+                                <option>印度教</option>
+                                <option>其</option>
+                            </select>
+                            <select   id="user_info_house" class="user_info_house">
+                                <option>以后再告诉你</option>
+                                <option>与父母同住</option>
+                                <option>租房</option>
+                                <option>已购房(有贷款)</option>
+                                <option>已购房(无贷款)</option>
+                                <option>住单位房</option>
+                                <option>住亲朋家</option>
+                                <option>需要时购</option>
+                            </select>
+                            <select   id="user_info_car" class="user_info_car">
+                                <option>未购车</option>
+                                <option>已购车</option>
+                                <option>单位用车</option>
+                                <option>需要时购置</option>
+                            </select>
+                            <select   id="user_info_married" class="user_info_married">
+                                <option>请选择</option>
+                                <option>未婚</option>
+                                <option>离异</option>
+                                <option>丧偶</option>
+                                <option>已婚</option>
+                            </select>
+                        </div>
+                        <!--  *part:wed_end  
+                  *user:13523450460@sina.cn
+                  *date:2018/03/5
+                  -->
+                        <div class="filter_setting" ng-click="changeUsers()">
+                            <i class="fa fa-arrow-circle-o-down text-primary filter_setIcon"></i>
+                            <span class="text-primary">设置更多条件</span>
+                        </div>
+                    </section>
+                </article>
+                <article class="user_box_big" >
+                    <ul class="user_box" id="content">
+                        <li class="s_user_box" ng-repeat="user in Allusers">
+                           <!--  <div ng-bind="{{Allusers}}.length"></div> -->
+                            <dl ng-click="getDetail($event)" name="{{user.user_id}}">
+                                <dd class="user_header_img">
+                                    <img src="http://www.yuelao666.com{{user.user_head_img}}">
+                                </dd>
+                                <dt>
+                                    <style>
+                                    .user_neck_name,
+                                    .gender {
+                                        font-weight: bold;
+                                        display: inline-block;
+                                        vertical-align: top;
+                                    }
+                                    </style>
+                                    <div>
+                                        <span class="user_neck_name" ng-bind="user.user_nickname"></span>
+                                        <span class="gender" style="font-weight: bold;">
+                                           <span ng-if="user.user_sex==0" class="fa fa-mars text-primary" ></span>
+                                           <span ng-if="user.user_sex==1" class="fa fa-venus" style="color: #D664C6;"></span>
+                                        </span>
+                                    </div>
+                                    <span class="user_age" ng-bind="user.user_age+'岁'"></span>,
+                                    <span class="user_height" ng-bind="usersInfo.user_info_height[user.user_height]"></span>
+                                    </div>
+                                    <div>
+                                        <span class="user_isMarry" ng-bind="usersInfo.user_info_married[user.user_married]"></span>,
+                                        <span class="user_city" ng-bind="user.user_life_area|cityfilter"></span>
+                                    </div>
+                                    <div class="sayHellobtn">
+                                        打招呼
+                                    </div>
+                                </dt>
+                            </dl>
+                        </li>
+                    </ul>
+                </article>
+            </main>
+        </body>
+        <script type="text/javascript" src="js/homeMode/com.js"></script>
+        <script type="text/javascript" src="js/jquery.kkPages.js"></script>
+        <script type="text/javascript" src="js/homeMode/wed.js"></script>
 
-       </section>
-       
-    </article>
-     <article class="user_box_big" ng-controller="AllUserCtr">
-          <ul class="user_box" id="content" >
-            <li class="s_user_box" ng-repeat="user in Allusers">
-              <dl ng-click="getDetail($event)"  name="{{user.hid}}">
-                <dd class="user_header_img">
-                  <img src="{{user.headerImg}}">
-                </dd>
-                <dt>
-                   <h5 class="user_neck_name" ng-bind="user.name"></h5>
-                   <div>
-                     <span class="user_age" ng-bind="user.age"></span>,
-                     <span class="user_height" ng-bind="user.height"></span>
-                   </div>
-                   <div>
-                     <span class="user_isMarry" ng-bind="user.isMarry"></span>,
-                     <span class="user_city" ng-bind="user.city"></span>
-                   </div>
-                   <div class="sayHellobtn">
-                      打招呼
-                   </div>
-                </dt>
-              </dl>
-            </li>
-          </ul>
-        
-          
-       </article>
-   </main>
-     
-</body>
-   <script type="text/javascript" src="js/jquery.kkPages.js"></script>
-<script type="text/javascript" src="js/homeMode/wed.js"></script>
 </html>
