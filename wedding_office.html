@@ -22,6 +22,7 @@
     <body style="background-color: #f1f1f1;"   ng-app="officeApp" ng-controller="officeCtr">
         <header>
         </header>
+         {{office.length}}
         <main class="container" id="office_cont" style="padding-top: 15px;">
              <!--  
  
@@ -30,26 +31,28 @@
   *date:2017/12
    
  -->
-            <dl class="office_boxes"   ng-repeat="office in AllOffices" office_id="{{office.user_agency_id}}">
+            <dl class="office_boxes"   ng-repeat="office in AllOffices" office_id="{{office.agency_id}}">
+
               <dd class="office_img">
-                 <img src="{{office.agency_pics}}" />
+                 <img src="'http://www.yuelao666.com{{office.agency_pics}}[0]'" alt="未设置" />
               </dd>
-              <dt office_id="{{office.headerImg}}">
+              <dt office_id="{{office.agency_id}}">
                   <div class="office_title1" ng-bind="office.agency_name"></div>
                   <div class="office_info">
-                      <span>
-                          <span>登记人员:</span>
-                          <span class="officeUser_num" ng-bind="office.numbers"> </span>
-                          <span>人,</span>
+                      <span userid="{{office.agency_uid}}">
+                          <span >创建者:</span>
+                          <span  class="officeUser_num"> </span>
+                          <span  class="text-primary fa fa-user-circle fa-2x"></span>
+                            <span class="text-muted">,</span>
                       </span>
                       <span >
-                         <span>店龄:</span>
-                         <span class="office_age" ng-bind="office.ages"></span>
-                         <span>年,</span>
+                         <span>区域:</span>
+                         <span class="office_age" ng-bind="office.agency_area"></span>
+                         <span class="text-muted">,</span>
                       </span>
                       <span class="office_tel">
                            <span>电话:</span>
-                           <span class="office_tel" ng-bind="office.user_agency_tel"></span>
+                           <span class="office_tel" >***********</span>
                       </span>
                   </div>
                   <div class="office_info office_address" >
@@ -61,6 +64,8 @@
           
         </main>
     </body>
+    <script type="text/javascript" src="js/md5.js"></script>
+    <script type="text/javascript" src="js/homeMode/com.js"></script>
     <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/homeMode/wed_office.js"></script>
 <script type="text/javascript">

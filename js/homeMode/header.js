@@ -13,13 +13,11 @@
     $(".search_btn").click(function(event) {
         var val = $(".search_val").val();
 
-        if (val !== "") {
-            // window.open("index.html#/search");
+       
+           
             var url = "index.html#/office_list?val=" + val;
             window.open(url);
-        } else {
-            parent.layer.msg("请输入搜索内容");
-        }
+      
     });
 
     function replace_phone(phone) {

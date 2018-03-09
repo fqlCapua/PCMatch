@@ -20,7 +20,7 @@
             "user_info_homework": ["家务", "任劳任怨", "希望对方承担家务", "一起分工合作", "看各自闲忙，协商分担"]
         }
     });
- 
+
     var listInfo = {
         "req_age": ["18-23", "23-28", "28-33", "33-39", "39-43", "43-48", "48-53"],
         "user_Gender": ["性别", "男", "女"],
@@ -103,10 +103,10 @@
                 type: 'POST',
                 async: false,
                 data: {
-                    service:"App.User.Get_users",
-                    time:time_token()[0],
-                    token:time_token()[1],
-                    limit:num,
+                    service: "App.User.Get_users",
+                    time: time_token()[0],
+                    token: time_token()[1],
+                    limit: num,
 
 
                 },
@@ -114,7 +114,7 @@
             .done(function(res) {
                 if (res.ret == 200) {
                     usersInfo = res.data;
-                 
+
                 } else {
                     layer.msg(res.msg);
                 }
@@ -123,41 +123,41 @@
                 layer.msg(err);
             })
             .always(function() {
-               
+
             });
 
         return usersInfo;
     }
 
- 
+
 
 
     function filterShow(u) {
-        
+              var formdata={
+                    service: "App.User.Get_users",
+                    time: time_token()[0],
+                    token: time_token()[1],
+                    user_sex: u[0],
+                    user_info_salary: u[1],
+                    user_info_constellation: u[2],
+                    user_info_animal: u[3],
+                    user_info_height: u[4],
+                    user_info_education: u[5],
+                    user_info_nation: u[6],
+                    user_info_profession: u[7],
+                    user_info_weight: u[8],
+                    user_info_child: u[9],
+                    user_info_believe: u[10],
+                    user_info_house: u[11],
+                    user_info_car: u[12],
+                    user_info_married: u[13],
+                };
+              
         $.ajax({
                 url: "http://47.104.94.216/api/public/",
                 type: 'POST',
                 async: false,
-                data: {
-                    service: "App.User.Get_user",
-                    time: time_token()[0],
-                    token: time_token()[1],
-                    user_id: getSession()[0],
-                    user_sex: u[0],
-                    user_info_salary: u[1],
-                    // user_info_constellation: u[2],
-                    // user_info_animal: u[3],
-                    // user_info_height: u[4],
-                    // user_info_education: u[5],
-                    // user_info_nation: u[6],
-                    // user_info_profession: u[7],
-                    // user_info_weight: u[8],
-                    // user_info_child: u[9],
-                    // user_info_believe: u[10],
-                    // user_info_house: u1[11],
-                    // user_info_car: u[12],
-                    // user_info_married: u[13],
-                },
+                data:formdata
             })
             .done(function(res) {
                 if (res.ret == 200) {
@@ -172,31 +172,46 @@
                 console.log(err);
             })
             .always(function() {
-               
+
             });
-        return  usersInfo;
+        return usersInfo;
     }
+    var that=this;
+    $(".filter_cont select").change(function() {
+       
+        var usersInfo;
+        var indexArr = new Array();
+        var selectObjs = $(".filter_cont select");
+        $.each(selectObjs, function(index, el){
+            indexArr.push($(el).find("option:selected").index());
+        });
+      
+        return that.usersInfo=filterShow(indexArr);
+    })
 
 
-var usersInfo = getAllusers(1000);
-
-    
+    var usersInfo = getAllusers(1000);
     var app = angular.module("Myapp", []);
-    app.controller("AllUserCtr", function($scope, $http) {
-        $scope.cityArray=cityArray;
-        $scope.Allusers=usersInfo;
-        $scope.usersInfo=listInfo;
-        $scope.getAllusers=
-        $scope.changeUsers=function(){
-         $scope.indexArr=[];
-           console.log($scope);
-           var selectArr=$(".filter_cont select");
-            $.each(selectArr,function(index, el) {
-                 $scope.indexArr.push($(el).find("option:selected").index());
+    app.controller("AllUserCtr", function($scope,$interval) {
+        $scope.cityArray = cityArray;
+        $scope.userInfo=listInfo;
+        $scope.Allusers =usersInfo;
+        $interval(function() {
+            $scope.Allusers =usersInfo;
+  
+        },2000);
+        
+
+        $scope.changeUsers = function() {
+            $scope.indexArr = [];
+            console.log($scope);
+            var selectArr = $(".filter_cont select");
+            $.each(selectArr, function(index, el) {
+                $scope.indexArr.push($(el).find("option:selected").index());
             });
 
-           return filterShow($scope.indexArr);
-       };
+            return filterShow($scope.indexArr);
+        };
         $scope.getDetail = function($event) {
 
             var Obj = $event.currentTarget;
@@ -205,21 +220,20 @@ var usersInfo = getAllusers(1000);
             window.open(url);
         };
 
-      
+
 
     });
-    app.filter('cityfilter', function() {
+       app.filter('cityfilter', function() {
         return function(str) {
-            var proIndex = str.split("-")[0];
-            var cityIndex = str.split("-")[1];
+            var Str=String(str)
+            var proIndex = Str.split("-")[0];
+            var cityIndex = Str.split("-")[1];
             if (proIndex == 0) {} else {
                 return cityArray[proIndex - 1][0] + cityArray[proIndex - 1][1].split("|")[cityIndex];
             }
 
 
         };
-
-
     })
     $(function() {
         $("#content").kkPages({
