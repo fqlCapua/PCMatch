@@ -142,7 +142,7 @@ var user_selectors = Mock.mock({
             window.open(url);
      }
   });
-      app.filter('cityfilter', function() { //可以注入依赖
+  app.filter('cityfilter', function() { //可以注入依赖
         return function(str) {
             var proIndex = str.split("-")[0];
             var cityIndex = str.split("-")[1];
@@ -151,7 +151,7 @@ var user_selectors = Mock.mock({
             }
 
 
-        };
+};
 
 
     })

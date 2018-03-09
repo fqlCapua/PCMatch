@@ -20,7 +20,7 @@
             "user_info_homework": ["家务", "任劳任怨", "希望对方承担家务", "一起分工合作", "看各自闲忙，协商分担"]
         }
     });
-
+ 
     var listInfo = {
         "req_age": ["18-23", "23-28", "28-33", "33-39", "39-43", "43-48", "48-53"],
         "user_Gender": ["性别", "男", "女"],
@@ -176,6 +176,8 @@
             });
         return  usersInfo;
     }
+
+
 var usersInfo = getAllusers(1000);
 
     
@@ -184,10 +186,8 @@ var usersInfo = getAllusers(1000);
         $scope.cityArray=cityArray;
         $scope.Allusers=usersInfo;
         $scope.usersInfo=listInfo;
-        // $scope.filterFunc=filterShow();
-       
-        
-       $scope.changeUsers=function(){
+        $scope.getAllusers=
+        $scope.changeUsers=function(){
          $scope.indexArr=[];
            console.log($scope);
            var selectArr=$(".filter_cont select");
@@ -197,7 +197,6 @@ var usersInfo = getAllusers(1000);
 
            return filterShow($scope.indexArr);
        };
-       
         $scope.getDetail = function($event) {
 
             var Obj = $event.currentTarget;
