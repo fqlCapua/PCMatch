@@ -80,6 +80,10 @@
               $("#main").attr("src","change_info.html");
        
         });
+         r.path('/agency_manage',function(){
+              $("#main").attr("src","agency_admin.html");
+       
+        });
         r.init();
 console.log()
 

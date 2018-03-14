@@ -22,3 +22,7 @@ $(".change_details").click(function() {
  
    parent.location.href="index.html#/change_info";
 });
+$(".agency_manage").click(function() {
+ 
+   parent.location.href="index.html#/agency_manage";
+});

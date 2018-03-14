@@ -5,6 +5,10 @@
         <meta charset="UTF-8">
         <title>婚介所管理</title>
         <link rel="stylesheet" href="css/agency.css">
+        <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
+        </script>
     </head>
 
     <body>
@@ -15,64 +19,106 @@
                         <a href=""></a>
                     </div>
                     <ul>
-                        <li><a href="#dashboard" id="targeted">dashboard</a></li>
-                        <li><a href="#posts">posts</a></li>
-                        <li><a href="#media">media</a></li>
-                        <li><a href="#pages">pages</a></li>
-                        <li><a href="#links">links</a></li>
-                        <li><a href="#comments">comments</a></li>
-                        <li><a href="#widgets">widgets</a></li>
-                        <li><a href="#plugins">plugins</a></li>
-                        <li><a href="#users">users</a></li>
-                        <li><a href="#tools">tools</a></li>
-                        <li><a href="#settings">settings</a></li>
+                        <li><a href="#dashboard" id="targeted">我的婚介所</a></li>
+                        <li><a href="#posts">创建婚介所</a></li>
+                        <li><a href="#media">修改婚介所</a></li>
+                        <li><a href="#pages">删除婚介所</a></li>
                     </ul>
                 </div>
                 <div class="main">
-                    <ul class="topbar clearfix">
+                    <!-- <ul class="topbar clearfix">
                         <li><a href="#">q</a></li>
                         <li><a href="#">p</a></li>
                         <li><a href="#">o</a></li>
                         <li><a href="#">f</a></li>
                         <li><a href="#">n</a></li>
-                    </ul>
+                    </ul> -->
                     <div class="mainContent clearfix">
                         <div id="dashboard">
                             <h2 class="header"><span class="icon"></span>Dashboard</h2>
                             <div class="monitor">
-                                <h4>Right Now</h4>
+                                <h4>我的婚介所</h4>
                                 <div class="clearfix">
-                                    <ul class="content">
-                                        <li>content</li>
-                                        <li class="posts"><span class="count">179</span><a href="">posts</a></li>
-                                        <li class="pages"><span class="count">13</span><a href="">pages</a></li>
-                                        <li class="categories"><span class="count">21</span><a href="">categories</a></li>
-                                        <li class="tags"><span class="count">305</span><a href="">tags</a></li>
-                                    </ul>
-                                    <ul class="discussions">
-                                        <li>discussions</li>
-                                        <li class="comments"><span class="count">353</span><a href="">comments</a></li>
-                                        <li class="approved"><span class="count">319</span><a href="">approved</a></li>
-                                        <li class="pending"><span class="count">0</span><a href="">pending</a></li>
-                                        <li class="spam"><span class="count">34</span><a href="">spam</a></li>
-                                    </ul>
+                                    <div class="">
+                                        <table class="table table-hover">
+                                            <tr>
+                                                <td>商品编号</td>
+                                                <td>商品名称</td>
+                                                <td>商品库存</td>
+                                                <td>商品价格</td>
+                                                <td>该产品总价值</td>
+                                                <td>操作</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Mi4</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-info" >-</button>
+                                                    <input type="text" value="122" size="8" ng-model="good.count">
+                                                    <button type="button" class="btn btn-info">+</button>
+                                                </td>
+                                                <td>4000</td>
+                                                <td>80000</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-danger">下架商品</button>
+                                                    <button type="button" class="btn btn-sm btn-success">修改商品</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>上架商品总数量</td>
+                                                <td>200</td>
+                                                <td>上架商品总价值</td>
+                                                <td>400000</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger">清空所有上架商品</button>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-info">添加商品</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!--0 -->
+                                        <h3>没有任何上架商品!</h3>
+                                        <div style="width:350px;border: 1px solid gray;background: rgba(220,220,220,0.4);height: 200px;display: none;">
+                                            <h3>您要修改的商品编号为:25</h3>
+                                            <p>商品名称:
+                                                <input type="text" value="" >
+                                            </p>
+                                            <p>商品单价:
+                                                <input type="text" value="" >
+                                            </p>
+                                            <button type="button" class="btn btn-info">保存</button>
+                                        </div>
+                                        <div style="width:400px;border: 1px solid gray;background: rgba(220,220,220,0.4);height: 300px;display: none;">
+                                            <h3>您要添加的新的商品的编号为: 20</h3>
+                                            <p>商品名称:
+                                                <input type="text" id="goodName">
+                                            </p>
+                                            <p>商品库存:
+                                                <input type="number" id="goodCount">
+                                            </p>
+                                            <p>商品单价:
+                                                <input type="number" id="goodPrice">
+                                            </p>
+                                            <button type="button" class="btn btn-info">保存</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p>Theme <a href="">Twenty Eleven</a> with <a href="">3 widgets</a></p>
+                              
                             </div>
+                        </div>
+                        <div id="posts">
                             <div class="quick-press">
                                 <h4>Quick Press</h4>
                                 <form action="" method="post">
-                                    <input type="text" name="title" placeholder="Title" />
+                                    <input type="text" name="title" placeholder="婚介所名称" />
                                     <input type="text" name="content" placeholder="Content" />
                                     <input type="text" name="tags" placeholder="Tags" />
                                     <button type="button" class="save">l</button>
                                     <button type="button" class="delet">m</button>
-                                    <button type="submit" class="submit" name="submit">Publish</button>
+                                    <button type="submit" class="submit" name="submit">创建</button>
                                 </form>
                             </div>
-                        </div>
-                        <div id="posts">
-                            <h2 class="header">posts</h2>
                         </div>
                         <div id="media">
                             <h2 class="header">media</h2>
@@ -80,34 +126,13 @@
                         <div id="pages">
                             <h2 class="header">pages</h2>
                         </div>
-                        <div id="links">
-                            <h2 class="header">links</h2>
-                        </div>
-                        <div id="comments">
-                            <h2 class="header">comments</h2>
-                        </div>
-                        <div id="widgets">
-                            <h2 class="header">widgets</h2>
-                        </div>
-                        <div id="plugins">
-                            <h2 class="header">plugins</h2>
-                        </div>
-                        <div id="users">
-                            <h2 class="header">users</h2>
-                        </div>
-                        <div id="tools">
-                            <h2 class="header">tools</h2>
-                        </div>
-                        <div id="settings">
-                            <h2 class="header">settings</h2>
-                        </div>
                     </div>
-                    <ul class="statusbar">
+                    <!--   <ul class="statusbar">
                         <li><a href=""></a></li>
                         <li><a href=""></a></li>
                         <li class="profiles-setting"><a href="">s</a></li>
                         <li class="logout"><a href="">k</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </main>
