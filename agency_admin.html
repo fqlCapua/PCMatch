@@ -4,138 +4,135 @@
     <head>
         <meta charset="UTF-8">
         <title>婚介所管理</title>
-        <link rel="stylesheet" href="css/agency.css">
         <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />
-        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js">
-        </script>
+        <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+       
+        <script type="text/javascript" src="js/md5.js"></script>
+        <script type="text/javascript" src="js/getSession.js"></script>
+        <script type="text/javascript" src="js/layer.js"></script>
+        <style>
+        .border{
+            border:1px solid red;
+        }
+        form{
+            border-radius:5px;
+            padding:30px 15px;
+            top:10px;
+            background-color:#F1F1F1;
+            width:400px;
+            border:1px solid #BABABA;
+           
+        }
+        .form-group{
+            margin:0;
+        }
+        </style>
     </head>
 
     <body>
-        <main>
-            <div class="admin-panel clearfix">
-                <div class="slidebar">
-                    <div class="logo">
-                        <a href=""></a>
-                    </div>
-                    <ul>
-                        <li><a href="#dashboard" id="targeted">我的婚介所</a></li>
-                        <li><a href="#posts">创建婚介所</a></li>
-                        <li><a href="#media">修改婚介所</a></li>
-                        <li><a href="#pages">删除婚介所</a></li>
-                    </ul>
-                </div>
-                <div class="main">
-                    <!-- <ul class="topbar clearfix">
-                        <li><a href="#">q</a></li>
-                        <li><a href="#">p</a></li>
-                        <li><a href="#">o</a></li>
-                        <li><a href="#">f</a></li>
-                        <li><a href="#">n</a></li>
-                    </ul> -->
-                    <div class="mainContent clearfix">
-                        <div id="dashboard">
-                            <h2 class="header"><span class="icon"></span>Dashboard</h2>
-                            <div class="monitor">
-                                <h4>我的婚介所</h4>
-                                <div class="clearfix">
-                                    <div class="">
-                                        <table class="table table-hover">
-                                            <tr>
-                                                <td>商品编号</td>
-                                                <td>商品名称</td>
-                                                <td>商品库存</td>
-                                                <td>商品价格</td>
-                                                <td>该产品总价值</td>
-                                                <td>操作</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Mi4</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-info" >-</button>
-                                                    <input type="text" value="122" size="8" ng-model="good.count">
-                                                    <button type="button" class="btn btn-info">+</button>
-                                                </td>
-                                                <td>4000</td>
-                                                <td>80000</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-danger">下架商品</button>
-                                                    <button type="button" class="btn btn-sm btn-success">修改商品</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>上架商品总数量</td>
-                                                <td>200</td>
-                                                <td>上架商品总价值</td>
-                                                <td>400000</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-danger">清空所有上架商品</button>
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-info">添加商品</button>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <!--0 -->
-                                        <h3>没有任何上架商品!</h3>
-                                        <div style="width:350px;border: 1px solid gray;background: rgba(220,220,220,0.4);height: 200px;display: none;">
-                                            <h3>您要修改的商品编号为:25</h3>
-                                            <p>商品名称:
-                                                <input type="text" value="" >
-                                            </p>
-                                            <p>商品单价:
-                                                <input type="text" value="" >
-                                            </p>
-                                            <button type="button" class="btn btn-info">保存</button>
-                                        </div>
-                                        <div style="width:400px;border: 1px solid gray;background: rgba(220,220,220,0.4);height: 300px;display: none;">
-                                            <h3>您要添加的新的商品的编号为: 20</h3>
-                                            <p>商品名称:
-                                                <input type="text" id="goodName">
-                                            </p>
-                                            <p>商品库存:
-                                                <input type="number" id="goodCount">
-                                            </p>
-                                            <p>商品单价:
-                                                <input type="number" id="goodPrice">
-                                            </p>
-                                            <button type="button" class="btn btn-info">保存</button>
-                                        </div>
-                                    </div>
-                                </div>
-                              
-                            </div>
-                        </div>
-                        <div id="posts">
-                            <div class="quick-press">
-                                <h4>Quick Press</h4>
-                                <form action="" method="post">
-                                    <input type="text" name="title" placeholder="婚介所名称" />
-                                    <input type="text" name="content" placeholder="Content" />
-                                    <input type="text" name="tags" placeholder="Tags" />
-                                    <button type="button" class="save">l</button>
-                                    <button type="button" class="delet">m</button>
-                                    <button type="submit" class="submit" name="submit">创建</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div id="media">
-                            <h2 class="header">media</h2>
-                        </div>
-                        <div id="pages">
-                            <h2 class="header">pages</h2>
-                        </div>
-                    </div>
-                    <!--   <ul class="statusbar">
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li class="profiles-setting"><a href="">s</a></li>
-                        <li class="logout"><a href="">k</a></li>
-                    </ul> -->
-                </div>
+        <main class="container">
+            <br />
+            <div class="alert alert-success">
+                <strong>我的婚介所</strong>
             </div>
+            <table class="table table-striped" width="100%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>名称</th>
+                        <th>区域</th>
+                        <th>婚介所头像</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="修改">&nbsp;
+                        </td>
+                        <td>小企鹅婚介所</td>
+                        <td>河南-郑州-金水</td>
+                        <td>Doe</td>
+                        <td>
+                            <input class="btn btn-sm btn-danger agencyDetail" type="button" value="详情">&nbsp;
+                            <input class="btn btn-sm btn-success agencyChange" type="button" value="修改">&nbsp;
+                            <input class="btn btn-sm btn-danger agencyDel" type="button" value="删除">&nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped">
+                <tr class="">
+                    <td>
+                        <input class="btn btn-sm btn-info agencyCreate" data-toggle="modal" data-target="#CreateNew" type="button" value="&nbsp;创建新婚介所&nbsp;">&nbsp;
+                        <input class="btn btn-sm btn-danger agencyDelAll" type="button" value="&nbsp;删除选中&nbsp;">&nbsp;
+                    </td>
+                </tr>
+            </table>
+           
+           
+                    <form class="CreateNew">
+                       <div class="form-group">
+                            <input type="text" class="form-control" placeholder="婚介所名称">
+                       </div> 
+                       <br />
+                       <div class="form-group">
+                           <input type="text" class="form-control" placeholder="婚介所地址">
+                       </div>
+                       <div class="form-group">
+                         <br />
+                           <textarea style="resize: none;" class="form-control" rows="3" placeholder="婚介所地址"></textarea> 
+                       </div>
+                        <div class="form-group">
+                             <br />
+                           <input type="file" class="form-control" multiple id="file1">
+                           <div id="show1"></div>
+                       </div>
+                       <div class="text-center ">
+                        <br />
+                           <button class="btn btn-sm btn-success subNew">创建</button>
+                       </div>
+                    </form>
+                    <form class="agencyInfo">
+                       <div class="form-group">
+                 
+                          
+                                        <input type="text" class="form-control" placeholder="请输入名字">
+                           
+                       </div> 
+                       <br />
+                       <div class="form-group">
+                       
+                         
+                                        <input type="text" class="form-control" placeholder="请输入名字">
+                          
+                       </div>
+                        <div class="text-center">
+                           <button class="btn btn-sm btn-success saveDetail">保存</button>
+                       </div>
+                    </form>
+                   
+             
+               
+           
         </main>
     </body>
+    <script type="text/javascript" src="js/jquery_image.js"></script>
+    <script>
+    $(document).ready(function() {
+        //图片显示插件
+        $.imageFileVisible({
+            wrapSelector : "#show1",
+            fileSelector : "#file1",
+            width :120,
+            height :120
+        });
+       
+    });
+</script>
+ <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/homeMode/agency_info.js"></script>
 
 </html>
