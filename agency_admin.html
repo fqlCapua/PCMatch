@@ -7,25 +7,35 @@
         <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-       
         <script type="text/javascript" src="js/md5.js"></script>
         <script type="text/javascript" src="js/getSession.js"></script>
         <script type="text/javascript" src="js/layer.js"></script>
         <style>
-        .border{
-            border:1px solid red;
+        .border {
+            border: 1px solid red;
         }
-        form{
-            border-radius:5px;
-            padding:30px 15px;
-            top:10px;
-            background-color:#F1F1F1;
-            width:400px;
-            border:1px solid #BABABA;
-           
+        form {
+            border-radius: 5px;
+            padding: 10px 15px 30px 15px;
+
+            background-color: #F1F1F1;
+            width: 400px;
+            border: 1px solid #BABABA;
         }
-        .form-group{
-            margin:0;
+        .form-group {
+            margin: 0;
+        }
+        .fa-times {
+            cursor: pointer;
+        }
+       
+        .agency_des{
+            max-width:300px;
+            
+            font-size:12px;
+            overflow:hidden;
+            text-overflow: ellipsis;
+            white-space:nowrap;
         }
         </style>
     </head>
@@ -46,76 +56,90 @@
                         <th>操作</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody class="agency_Info">
+                    <!-- <tr>
                         <td>
-                            <input type="checkbox" value="修改">&nbsp;
+                            <input type="checkbox">&nbsp;
                         </td>
                         <td>小企鹅婚介所</td>
                         <td>河南-郑州-金水</td>
                         <td>Doe</td>
                         <td>
-                            <input class="btn btn-sm btn-danger agencyDetail" type="button" value="详情">&nbsp;
-                            <input class="btn btn-sm btn-success agencyChange" type="button" value="修改">&nbsp;
+                            <input class="btn btn-sm btn-danger agencyDetail" type="button" name="agInfo" value="详情">&nbsp;
+                            <input class="btn btn-sm btn-success agencyChange" type="button" name="agInfo" value="修改">&nbsp;
                             <input class="btn btn-sm btn-danger agencyDel" type="button" value="删除">&nbsp;
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <table class="table table-striped">
                 <tr class="">
                     <td>
-                        <input class="btn btn-sm btn-info agencyCreate" data-toggle="modal" data-target="#CreateNew" type="button" value="&nbsp;创建新婚介所&nbsp;">&nbsp;
-                        <input class="btn btn-sm btn-danger agencyDelAll" type="button" value="&nbsp;删除选中&nbsp;">&nbsp;
+                        <input class="btn btn-sm btn-info agencyCreate" name="agNew" data-toggle="modal" data-target="#CreateNew" type="button" value="&nbsp;创建新婚介所&nbsp;">&nbsp;
+                       <!--  <input class="btn btn-sm btn-danger agencyDelAll" type="button" value="&nbsp;删除选中&nbsp;">&nbsp; -->
                     </td>
                 </tr>
             </table>
-           
-           
-                    <form class="CreateNew">
-                       <div class="form-group">
-                            <input type="text" class="form-control" placeholder="婚介所名称">
-                       </div> 
-                       <br />
-                       <div class="form-group">
-                           <input type="text" class="form-control" placeholder="婚介所地址">
-                       </div>
-                       <div class="form-group">
-                         <br />
-                           <textarea style="resize: none;" class="form-control" rows="3" placeholder="婚介所地址"></textarea> 
-                       </div>
-                        <div class="form-group">
-                             <br />
-                           <input type="file" class="form-control" multiple id="file1">
-                           <div id="show1"></div>
-                       </div>
-                       <div class="text-center ">
+            <div class="form_box">
+                <form class="agNew">
+                    <div class="text-right" style="height: 30px; ">
+                        <span class="fa fa-times form_close"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control ag_name" placeholder="婚介所名称">
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="text" class="form-control ag_address" placeholder="婚介所地址">
+                    </div>
+                    <div class="form-group">
                         <br />
-                           <button class="btn btn-sm btn-success subNew">创建</button>
-                       </div>
-                    </form>
-                    <form class="agencyInfo">
-                       <div class="form-group">
-                 
-                          
-                                        <input type="text" class="form-control" placeholder="请输入名字">
-                           
-                       </div> 
-                       <br />
-                       <div class="form-group">
-                       
-                         
-                                        <input type="text" class="form-control" placeholder="请输入名字">
-                          
-                       </div>
-                        <div class="text-center">
-                           <button class="btn btn-sm btn-success saveDetail">保存</button>
-                       </div>
-                    </form>
-                   
-             
-               
-           
+                        <textarea style="resize: none;" class="form-control ag_introduce" rows="3" placeholder="婚介所介绍"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <br />
+                        <input type="file" class="form-control" multiple id="file1">
+                        <div id="show1"></div>
+                    </div>
+                    <div class="text-center ">
+                        <br />
+                        <button class="btn btn-sm btn-success subNew">创建</button>
+                    </div>
+                </form>
+                <form class="agInfo" >
+                    <div class="text-right" style="height: 30px; ">
+                        <span class="fa fa-times form_close"></span>
+                    </div>
+                    <div class="form-group">
+                        <input name="agency_name" type="text" class="form-control a_name">
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input name="agency_address" type="text" class="form-control a_address">
+                    </div>
+                    <div class="form-group">
+                        <br />
+                        <textarea name="agency_introduce" style="resize: none;" class="form-control a_introduce" rows="3"></textarea>
+                    </div>
+                    <div>
+                        <div class="form-group a_pic">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">新增图片</label>
+                        <br />
+                        <input  type="file" class="form-control" multiple id="file2">
+                        <div id="show1"></div>
+                    </div>
+                    <div class="text-center">
+                        <br />
+                        <button class="btn btn-sm btn-success changeAgency">修改</button>
+                    </div>
+                </form>
+            </div>
+            <br />
+            <br />
+            <br />
         </main>
     </body>
     <script type="text/javascript" src="js/jquery_image.js"></script>
@@ -123,15 +147,16 @@
     $(document).ready(function() {
         //图片显示插件
         $.imageFileVisible({
-            wrapSelector : "#show1",
-            fileSelector : "#file1",
-            width :120,
-            height :120
+            wrapSelector: "#show1",
+            fileSelector: "#file1",
+            width: 120,
+            height: 120
         });
-       
+
     });
-</script>
- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </script>
+    <script type="text/javascript" src="js/homeMode/com.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/homeMode/agency_info.js"></script>
 

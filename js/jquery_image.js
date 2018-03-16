@@ -35,7 +35,7 @@
                     $(img).height(opts.height);
                    //imgArr.push(img)
                    $(opts.wrapSelector).append(img);
-                    console.log(img)
+                    
                   
                };
 
