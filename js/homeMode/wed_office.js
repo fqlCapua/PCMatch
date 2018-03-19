@@ -96,7 +96,11 @@ var app=angular.module("officeApp", []);
 app.controller("officeCtr", function($scope) {
      $scope.listform=JSONdata.userInfo;
      $scope.AllOffices=offices;
-     console.log($scope.AllOffices)
+   
+     if($scope.AllOffices.length==0){
+        layer.msg("无查询结果");
+     }
+   
 
 });
 
